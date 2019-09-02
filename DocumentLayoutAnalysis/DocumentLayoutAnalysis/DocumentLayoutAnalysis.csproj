@@ -65,10 +65,10 @@
     <None Include="Resources\Page segmentation\Document Structure and Layout Analysis--DocStructure.pdf" />
     <None Include="Resources\Page segmentation\Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms - Review.pdf" />
     <None Include="Resources\Page segmentation\Layout Analysis based on Text Line Segment Hypotheses.pdf" />
-    <None Include="Resources\Page segmentation\Logical segmentation and labeling of PDF documents_BLD.pdf" />
     <None Include="Resources\Page segmentation\Performance Comparison of Six Algorithms for Page Segmentation.pdf" />
     <None Include="Resources\Page segmentation\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf" />
     <None Include="Resources\Page segmentation\tab stop - tesseract.pdf" />
+    <None Include="Resources\Page segmentation\Two Geometric Algorithms for Layout Analysis--breuel-das.pdf" />
     <None Include="Resources\Page segmentation\Voronoi++.pdf" />
     <None Include="Resources\Samples\104-7-3.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
