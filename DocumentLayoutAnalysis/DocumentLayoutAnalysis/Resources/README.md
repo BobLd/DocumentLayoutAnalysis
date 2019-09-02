@@ -40,3 +40,11 @@ The method was merely intended by its author as a demonstration of the applicati
 - Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt | [`PDF`](Table%20extraction/Automatic%20Table%20Ground%20Truth%20Generation%20and%20A%20Background-analysis-based%20Table%20Structure%20Extraction%20Method.pdf)
 ## Chart and diagram extraction
 - Extraction, layout analysis and classification of diagrams in PDF documents | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes | [`PDF`](Chart%20and%20diagram%20extraction/Extraction%2C%20layout%20analysis%20and%20classification%20of%20diagrams%20in%20PDF%20documents.pdf)
+
+# Other
+## Shape detection
+- [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
+- [A Simple Approach to Recognise Geometric Shapes Interactively](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.24.2707&rep=rep1&type=pdf) | Joaquim A. Jorge and Manuel J. Fonseca
+- [The Detection of Rectangular Shape Objects Using Matching Schema](https://pdfs.semanticscholar.org/2a73/b9533532b7426fd5a7c47ac3f40e0dc88d7f.pdf) | Soo-Young Ye, Joon-Young Choi and Ki-Gon Nam
+- [Edge Detection Based Shape Identification](https://arxiv.org/ftp/arxiv/papers/1604/1604.02030.pdf) | Vivek Kumar, Sumit Pandey, Amrindra Pal, Sandeep Sharma
+- [Algorithms for the Reduction of the Number of Points Required to Represent a Digitized Line or its Caricature](http://www2.ipcku.kansai-u.ac.jp/~yasumuro/M_InfoMedia/paper/Douglas73.pdf) | David H. Douglas and Thomas K. Peucker
