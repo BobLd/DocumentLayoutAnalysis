@@ -1,5 +1,5 @@
 # Pdf file to image converter
-Tool to convert a pdf page to an image, using the _mupdf_ library. See the __Sources__ for original code.
+Tool to convert a pdf page to an image. It relies on the [_mupdf_](https://github.com/sumatrapdfreader/sumatrapdf) library, available in the [sumatra pdf reader](https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf). See the __Sources__ for original code.
 Can be used with PdfPig.
 
 ## Sources 
