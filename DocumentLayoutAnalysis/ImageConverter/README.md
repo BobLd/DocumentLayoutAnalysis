@@ -9,7 +9,7 @@ Can be used with PdfPig.
  * lib: https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf/fitz
  
  ## Usage example (using PdfPig)
- The below example print all pages of _test.pdf_ file the with the letter bounding boxes.
+ The below example prints all pages of _test.pdf_ file the with the letter bounding boxes.
  
             float zoom = 10;
             var greenPen = new Pen(Color.GreenYellow, zoom * 0.4f);
