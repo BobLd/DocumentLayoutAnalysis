@@ -86,9 +86,6 @@
     <None Include="Resources\Text extraction\High precision text extraction from PDF documents.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\AdobeFontMetrics\MustRead.html" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ImageConverter\ImageConverter.csproj">
       <Project>{78212f45-d69e-4a84-8a26-a4bb5609b660}</Project>
       <Name>ImageConverter</Name>
