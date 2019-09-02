@@ -5,51 +5,7 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentLayoutAnalysis", "DocumentLayoutAnalysis\DocumentLayoutAnalysis.csproj", "{FE6AB876-089C-4E87-8160-D305738DB783}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Table extraction", "Table extraction", "{C3F3047F-10CF-4FDC-B6AE-F957E01E6E58}"
-	ProjectSection(SolutionItems) = preProject
-		D:\MachineLearning\Document Layout Analysis\A Fast Preprocessing Method for Table Boundary Detection - Narrowing Down the Sparse Lines using Solely Coordinate Information.pdf = D:\MachineLearning\Document Layout Analysis\A Fast Preprocessing Method for Table Boundary Detection - Narrowing Down the Sparse Lines using Solely Coordinate Information.pdf
-		D:\MachineLearning\Document Layout Analysis\Algorithmic Extraction of Data in Tables in Pdf Documents - Nurminen.pdf = D:\MachineLearning\Document Layout Analysis\Algorithmic Extraction of Data in Tables in Pdf Documents - Nurminen.pdf
-		D:\MachineLearning\Document Layout Analysis\Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method.pdf = D:\MachineLearning\Document Layout Analysis\Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method.pdf
-		D:\MachineLearning\Document Layout Analysis\Automatic Tabular Data Extraction and Understanding.pdf = D:\MachineLearning\Document Layout Analysis\Automatic Tabular Data Extraction and Understanding.pdf
-		D:\MachineLearning\Document Layout Analysis\Detecting Table Region in PDF Documents Using Distant Supervision.pdf = D:\MachineLearning\Document Layout Analysis\Detecting Table Region in PDF Documents Using Distant Supervision.pdf
-		D:\MachineLearning\Document Layout Analysis\Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms.pdf = D:\MachineLearning\Document Layout Analysis\Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms.pdf
-		D:\MachineLearning\Document Layout Analysis\Identifying Table Boundaries in Digital Documents via Sparse Line Detection.pdf = D:\MachineLearning\Document Layout Analysis\Identifying Table Boundaries in Digital Documents via Sparse Line Detection.pdf
-		D:\MachineLearning\Document Layout Analysis\Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines.pdf = D:\MachineLearning\Document Layout Analysis\Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines.pdf
-		D:\MachineLearning\Document Layout Analysis\PDF-TREX.pdf = D:\MachineLearning\Document Layout Analysis\PDF-TREX.pdf
-		D:\MachineLearning\Document Layout Analysis\pdf2table.pdf = D:\MachineLearning\Document Layout Analysis\pdf2table.pdf
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Text extraction", "Text extraction", "{D0BB9BEB-589B-4038-9715-AF8C42C7C46B}"
-	ProjectSection(SolutionItems) = preProject
-		D:\MachineLearning\Document Layout Analysis\High precision text extraction from PDF documents.pdf = D:\MachineLearning\Document Layout Analysis\High precision text extraction from PDF documents.pdf
-		D:\MachineLearning\Document Layout Analysis\Layout Analysis based on Text Line Segment Hypotheses.pdf = D:\MachineLearning\Document Layout Analysis\Layout Analysis based on Text Line Segment Hypotheses.pdf
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chart and diagram extraction", "Chart and diagram extraction", "{F271FCB8-3D2A-4556-AE98-D6A827276789}"
-	ProjectSection(SolutionItems) = preProject
-		D:\MachineLearning\Document Layout Analysis\104-7-3.pdf = D:\MachineLearning\Document Layout Analysis\104-7-3.pdf
-		D:\MachineLearning\Document Layout Analysis\Extraction, layout analysis and classification of diagrams in PDF documents.pdf = D:\MachineLearning\Document Layout Analysis\Extraction, layout analysis and classification of diagrams in PDF documents.pdf
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page segmentation", "Page segmentation", "{325E385D-2221-4DF5-8200-04E9FDEA6B2C}"
-	ProjectSection(SolutionItems) = preProject
-		D:\MachineLearning\Document Layout Analysis\A Fast Algorithm for Bottom-Up Document Layout Analysis.pdf = D:\MachineLearning\Document Layout Analysis\A Fast Algorithm for Bottom-Up Document Layout Analysis.pdf
-		D:\MachineLearning\Document Layout Analysis\Document Layout Analysis - Inside Mines - Hoch.pdf = D:\MachineLearning\Document Layout Analysis\Document Layout Analysis - Inside Mines - Hoch.pdf
-		D:\MachineLearning\Document Layout Analysis\Document Structure and Layout Analysis--DocStructure.pdf = D:\MachineLearning\Document Layout Analysis\Document Structure and Layout Analysis--DocStructure.pdf
-		D:\MachineLearning\Document Layout Analysis\Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms - Review.pdf = D:\MachineLearning\Document Layout Analysis\Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms - Review.pdf
-		D:\MachineLearning\Document Layout Analysis\Logical segmentation and labeling of PDF documents_BLD.pdf = D:\MachineLearning\Document Layout Analysis\Logical segmentation and labeling of PDF documents_BLD.pdf
-		D:\MachineLearning\Document Layout Analysis\Performance Comparison of Six Algorithms for Page Segmentation.pdf = D:\MachineLearning\Document Layout Analysis\Performance Comparison of Six Algorithms for Page Segmentation.pdf
-		D:\MachineLearning\Document Layout Analysis\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf = D:\MachineLearning\Document Layout Analysis\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf
-		D:\MachineLearning\Document Layout Analysis\tab stop - tesseract.pdf = D:\MachineLearning\Document Layout Analysis\tab stop - tesseract.pdf
-		D:\MachineLearning\Document Layout Analysis\Voronoi++.pdf = D:\MachineLearning\Document Layout Analysis\Voronoi++.pdf
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{04AF69CA-45DE-4AD2-AC75-D0F9BEED83BB}"
-	ProjectSection(SolutionItems) = preProject
-		D:\MachineLearning\Document Layout Analysis\104-7-3.pdf = D:\MachineLearning\Document Layout Analysis\104-7-3.pdf
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{78212F45-D69E-4A84-8A26-A4BB5609B660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,16 +17,13 @@ Global
 		{FE6AB876-089C-4E87-8160-D305738DB783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6AB876-089C-4E87-8160-D305738DB783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6AB876-089C-4E87-8160-D305738DB783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C3F3047F-10CF-4FDC-B6AE-F957E01E6E58} = {13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}
-		{D0BB9BEB-589B-4038-9715-AF8C42C7C46B} = {13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}
-		{F271FCB8-3D2A-4556-AE98-D6A827276789} = {13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}
-		{325E385D-2221-4DF5-8200-04E9FDEA6B2C} = {13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}
-		{04AF69CA-45DE-4AD2-AC75-D0F9BEED83BB} = {13E7EDAB-6E08-4335-95BE-3A3E1BD4B3F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BAC0DED-E284-4954-8B93-E92E60F257B6}

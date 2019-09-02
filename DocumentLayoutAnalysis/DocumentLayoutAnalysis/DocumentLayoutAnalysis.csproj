@@ -35,12 +35,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UglyToad.PdfPig, Version=0.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.0.9\lib\net461\UglyToad.PdfPig.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -48,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Resources\Chart and diagram extraction\104-7-3.pdf" />
     <None Include="Resources\Chart and diagram extraction\Extraction, layout analysis and classification of diagrams in PDF documents.pdf" />
     <None Include="Resources\Page segmentation\A Fast Algorithm for Bottom-Up Document Layout Analysis.pdf" />
@@ -60,7 +67,9 @@
     <None Include="Resources\Page segmentation\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf" />
     <None Include="Resources\Page segmentation\tab stop - tesseract.pdf" />
     <None Include="Resources\Page segmentation\Voronoi++.pdf" />
-    <None Include="Resources\Samples\104-7-3.pdf" />
+    <None Include="Resources\Samples\104-7-3.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Table extraction\A Fast Preprocessing Method for Table Boundary Detection - Narrowing Down the Sparse Lines using Solely Coordinate Information.pdf" />
     <None Include="Resources\Table extraction\Algorithmic Extraction of Data in Tables in Pdf Documents - Nurminen.pdf" />
     <None Include="Resources\Table extraction\Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method.pdf" />
@@ -72,6 +81,9 @@
     <None Include="Resources\Table extraction\PDF-TREX.pdf" />
     <None Include="Resources\Table extraction\pdf2table.pdf" />
     <None Include="Resources\Text extraction\High precision text extraction from PDF documents.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AdobeFontMetrics\MustRead.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
