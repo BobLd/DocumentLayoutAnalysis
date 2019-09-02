@@ -18,7 +18,6 @@ namespace ImageConverter
     public class PdfImageConverter : IDisposable
     {
         private string _path;
-        //private float _zoom;
         private IntPtr _ctx;
         private IntPtr _stm;
         private IntPtr _doc;
@@ -36,7 +35,6 @@ namespace ImageConverter
             }
 
             _path = path;
-            //_zoom = zoom;
             _ctx = NativeMethods.NewContext(); // Creates the context
             _stm = NativeMethods.OpenFile(_ctx, _path); // opens file test.pdf as a stream
             _doc = NativeMethods.OpenDocumentStream(_ctx, _stm); // opens the document
