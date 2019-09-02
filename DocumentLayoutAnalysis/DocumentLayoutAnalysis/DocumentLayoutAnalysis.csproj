@@ -48,6 +48,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\Chart and diagram extraction\104-7-3.pdf" />
+    <None Include="Resources\Chart and diagram extraction\Extraction, layout analysis and classification of diagrams in PDF documents.pdf" />
+    <None Include="Resources\Page segmentation\A Fast Algorithm for Bottom-Up Document Layout Analysis.pdf" />
+    <None Include="Resources\Page segmentation\Document Layout Analysis - Inside Mines - Hoch.pdf" />
+    <None Include="Resources\Page segmentation\Document Structure and Layout Analysis--DocStructure.pdf" />
+    <None Include="Resources\Page segmentation\Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms - Review.pdf" />
+    <None Include="Resources\Page segmentation\Layout Analysis based on Text Line Segment Hypotheses.pdf" />
+    <None Include="Resources\Page segmentation\Logical segmentation and labeling of PDF documents_BLD.pdf" />
+    <None Include="Resources\Page segmentation\Performance Comparison of Six Algorithms for Page Segmentation.pdf" />
+    <None Include="Resources\Page segmentation\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf" />
+    <None Include="Resources\Page segmentation\tab stop - tesseract.pdf" />
+    <None Include="Resources\Page segmentation\Voronoi++.pdf" />
+    <None Include="Resources\Samples\104-7-3.pdf" />
+    <None Include="Resources\Table extraction\A Fast Preprocessing Method for Table Boundary Detection - Narrowing Down the Sparse Lines using Solely Coordinate Information.pdf" />
+    <None Include="Resources\Table extraction\Algorithmic Extraction of Data in Tables in Pdf Documents - Nurminen.pdf" />
+    <None Include="Resources\Table extraction\Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method.pdf" />
+    <None Include="Resources\Table extraction\Automatic Tabular Data Extraction and Understanding.pdf" />
+    <None Include="Resources\Table extraction\Detecting Table Region in PDF Documents Using Distant Supervision.pdf" />
+    <None Include="Resources\Table extraction\Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms.pdf" />
+    <None Include="Resources\Table extraction\Identifying Table Boundaries in Digital Documents via Sparse Line Detection.pdf" />
+    <None Include="Resources\Table extraction\Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines.pdf" />
+    <None Include="Resources\Table extraction\PDF-TREX.pdf" />
+    <None Include="Resources\Table extraction\pdf2table.pdf" />
+    <None Include="Resources\Text extraction\High precision text extraction from PDF documents.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
