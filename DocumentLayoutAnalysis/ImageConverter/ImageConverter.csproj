@@ -49,12 +49,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="x64\libmupdf.dll">
+    <Content Include="x64\libmupdf.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="x86\libmupdf.dll">
+    </Content>
+    <Content Include="x86\libmupdf.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

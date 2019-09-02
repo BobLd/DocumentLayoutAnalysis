@@ -1,7 +1,7 @@
 ﻿using System;
 
 /**********************************************************
- * https://github.com/wmjordan/mupdf/tree/master/MupdfSharp
+ * https://github.com/wmjordan/mupdf/blob/master/MupdfSharp/Structures.cs
  **********************************************************/
 
 namespace ImageConverter
