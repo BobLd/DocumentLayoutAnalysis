@@ -13,7 +13,7 @@ namespace DocumentLayoutAnalysis
             string file = @"Resources/Samples/104-7-3.pdf";
 
             ImageTest.Run(file);
-            ShapesTest.Run(file);
+            PathsTest.Run(file);
         }
     }
 }

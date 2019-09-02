@@ -8,7 +8,7 @@ using static UglyToad.PdfPig.Geometry.PdfPath;
 
 namespace DocumentLayoutAnalysis
 {
-    public class ShapesTest
+    public class PathsTest
     {
         public static void Run(string path)
         {
