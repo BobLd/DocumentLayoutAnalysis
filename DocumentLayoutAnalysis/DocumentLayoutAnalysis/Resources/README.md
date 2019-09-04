@@ -40,6 +40,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt | [`PDF`](Table%20extraction/Automatic%20Table%20Ground%20Truth%20Generation%20and%20A%20Background-analysis-based%20Table%20Structure%20Extraction%20Method.pdf)
 ## Chart and diagram extraction
 - Extraction, layout analysis and classification of diagrams in PDF documents | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes | [`PDF`](Chart%20and%20diagram%20extraction/Extraction%2C%20layout%20analysis%20and%20classification%20of%20diagrams%20in%20PDF%20documents.pdf)
+- Graphics Recognition in PDF documents | Mingyan Shao and Robert P. Futrelle | [`PDF`](https://pdfs.semanticscholar.org/9c18/d90f1988d1d98f061bdd076d56983a82803d.pdf)
+- A Study on the Document Zone Content Classification Problem | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick | [`PDF`](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
 
 # Other
 ## Shape detection
