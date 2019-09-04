@@ -7,6 +7,7 @@
 - [Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms: A Review](Page%20segmentation/Empirical%20Performance%20Evaluation%20Methodology%20and%20its%20Application%20to%20Page%20Segmentation%20Algorithms%20-%20Review.pdf) | Pinky Gather, Avininder Singh
 - [Layout Analysis based on Text Line Segment Hypotheses](Page%20segmentation/Layout%20Analysis%20based%20on%20Text%20Line%20Segment%20Hypotheses.pdf) | Thomas M. Breuel
 - [Hybrid Page Layout Analysis via Tab-Stop Detection](Page%20segmentation/tab%20stop%20-%20tesseract.pdf) | Ray Smith
+- Extending the Page Segmentation Algorithms of the Ocropus Documentation Layout Analysis System | Amy Alison Winder
 ### Recursive XY Cut [`code`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/RecursiveXYCut.cs)
   The X-Y cut segmentation algorithm, also referred to as recursive X-Y cuts (RXYC) algorithm, is a tree-based __top-down__ algorithm.
 The root of the tree represents the entire document page. All the leaf nodes together represent the final segmentation. The RXYC algorithm __recursively splits the document into two or more smaller rectangular blocks which represent the nodes of the tree. At each step of the recursion, the horizontal and vertical projection profiles of each node are computed.__ Then, the valleys along the horizontal and vertical directions, _VX_ and _VY_, are compared to corresponding predefined thresholds _TX_ and _TY_. If the valley is larger than the threshold, the node is split at the mid-point of the wider of _VX_ and _VY_ into two children nodes. The process continues until no leaf node can be split further. Then, noise regions are removed using noise removal thresholds _TnX_ and _TnY_. [`source`](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf)
@@ -26,6 +27,7 @@ The root of the tree represents the entire document page. All the leaf nodes tog
 The method was merely intended by its author as a demonstration of the application of two geometric algorithms, and not as a complete layout analysis system; nevertheless, we included it in the comparison because it has already proven useful in some applications. It is also nearly parameter free and resolution independent.[`source`](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf)
 - [Two Geometric Algorithms for Layout Analysis](Page%20segmentation/Two%20Geometric%20Algorithms%20for%20Layout%20Analysis--breuel-das.pdf) | Thomas M. Breuel
 - [High precision text extraction from PDF documents](Text%20extraction/High%20precision%20text%20extraction%20from%20PDF%20documents.pdf) | Øyvind Raddum Berg
+- High Performance Document Layout Analysis | Thomas M. Breuel
 ## Table extraction
 - [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](Table%20extraction/Extracting%20Tables%20from%20Documents%20using%20Conditional%20Generative%20Adversarial%20Networks%20and%20Genetic%20Algorithms.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](Table%20extraction/Detecting%20Table%20Region%20in%20PDF%20Documents%20Using%20Distant%20Supervision.pdf) | Miao Fan and Doo Soon Kim
@@ -33,6 +35,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Algorithmic Extraction of Data in Tables in PDF Documents](Table%20extraction/Algorithmic%20Extraction%20of%20Data%20in%20Tables%20in%20Pdf%20Documents%20-%20Nurminen.pdf) | Anssi Nurminen
 - [pdf2table: A Method to Extract Table Information from PDF Files](Table%20extraction/pdf2table.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
 - [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](Table%20extraction/PDF-TREX.pdf) | Ermelinda Oro, Massimo Ruffolo
+- [TAO: System for Table Detection and Extraction from PDF Documents](https://pdfs.semanticscholar.org/22c9/f2d80e0f0546a54c82dbc9cfc9e68ce9a1ff.pdf) | Martha O. Perez-Arriaga, Trilce Estrada, and Soraya Abad-Mota
+- [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | Nikola Milosevic
 ### Sparse line
 - [Identifying Table Boundaries in Digital Documents via Sparse Line Detection](Table%20extraction/Identifying%20Table%20Boundaries%20in%20Digital%20Documents%20via%20Sparse%20Line%20Detection.pdf) | Ying Liu, Prasenjit Mitra, C. Lee Giles
 - [A Fast Preprocessing Method for Table Boundary Detection: Narrowing Down the Sparse Lines using Solely Coordinate Information](Table%20extraction/A%20Fast%20Preprocessing%20Method%20for%20Table%20Boundary%20Detection%20-%20Narrowing%20Down%20the%20Sparse%20Lines%20using%20Solely%20Coordinate%20Information.pdf) | Ying Liu, Prasenjit Mitra, C. Lee Giles
@@ -43,7 +47,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Graphics Recognition in PDF documents](https://pdfs.semanticscholar.org/9c18/d90f1988d1d98f061bdd076d56983a82803d.pdf) | Mingyan Shao and Robert P. Futrelle
 - [A Study on the Document Zone Content Classification Problem](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
  | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick
-
+- Text/Figure Separation in Document Images Using Docstrum Descriptor and Two-Level Clustering | Valery Anisimovskiy, Ilya Kurilin, Andrey Shcherbinin, Petr Pohl
 # Other
 ## Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
