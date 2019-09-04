@@ -33,10 +33,11 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Detecting Table Region in PDF Documents Using Distant Supervision](Table%20extraction/Detecting%20Table%20Region%20in%20PDF%20Documents%20Using%20Distant%20Supervision.pdf) | Miao Fan and Doo Soon Kim
 - [Automatic Tabular Data Extraction and Understanding](Table%20extraction/Automatic%20Tabular%20Data%20Extraction%20and%20Understanding.pdf) | Roya Rastan
 - [Algorithmic Extraction of Data in Tables in PDF Documents](Table%20extraction/Algorithmic%20Extraction%20of%20Data%20in%20Tables%20in%20Pdf%20Documents%20-%20Nurminen.pdf) | Anssi Nurminen
+- [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | Nikola Milosevic
+### Systems
 - [pdf2table: A Method to Extract Table Information from PDF Files](Table%20extraction/pdf2table.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
 - [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](Table%20extraction/PDF-TREX.pdf) | Ermelinda Oro, Massimo Ruffolo
 - [TAO: System for Table Detection and Extraction from PDF Documents](https://pdfs.semanticscholar.org/22c9/f2d80e0f0546a54c82dbc9cfc9e68ce9a1ff.pdf) | Martha O. Perez-Arriaga, Trilce Estrada, and Soraya Abad-Mota
-- [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | Nikola Milosevic
 ### Sparse line
 - [Identifying Table Boundaries in Digital Documents via Sparse Line Detection](Table%20extraction/Identifying%20Table%20Boundaries%20in%20Digital%20Documents%20via%20Sparse%20Line%20Detection.pdf) | Ying Liu, Prasenjit Mitra, C. Lee Giles
 - [A Fast Preprocessing Method for Table Boundary Detection: Narrowing Down the Sparse Lines using Solely Coordinate Information](Table%20extraction/A%20Fast%20Preprocessing%20Method%20for%20Table%20Boundary%20Detection%20-%20Narrowing%20Down%20the%20Sparse%20Lines%20using%20Solely%20Coordinate%20Information.pdf) | Ying Liu, Prasenjit Mitra, C. Lee Giles
