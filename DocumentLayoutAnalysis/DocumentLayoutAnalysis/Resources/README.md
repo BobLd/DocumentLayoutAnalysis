@@ -9,6 +9,8 @@
 - [Hybrid Page Layout Analysis via Tab-Stop Detection](Page%20segmentation/tab%20stop%20-%20tesseract.pdf) | Ray Smith
 - Extending the Page Segmentation Algorithms of the Ocropus Documentation Layout Analysis System | Amy Alison Winder
 ### Recursive XY Cut [`code`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/RecursiveXYCut.cs)
+![alt text](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/xy%20cut.gif)
+
   The X-Y cut segmentation algorithm, also referred to as recursive X-Y cuts (RXYC) algorithm, is a tree-based __top-down__ algorithm.
 The root of the tree represents the entire document page. All the leaf nodes together represent the final segmentation. The RXYC algorithm __recursively splits the document into two or more smaller rectangular blocks which represent the nodes of the tree. At each step of the recursion, the horizontal and vertical projection profiles of each node are computed.__ Then, the valleys along the horizontal and vertical directions, _VX_ and _VY_, are compared to corresponding predefined thresholds _TX_ and _TY_. If the valley is larger than the threshold, the node is split at the mid-point of the wider of _VX_ and _VY_ into two children nodes. The process continues until no leaf node can be split further. Then, noise regions are removed using noise removal thresholds _TnX_ and _TnY_. [`source`](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf)
 - [Recursive X-Y Cut using Bounding Boxes of Connected Components](Page%20segmentation/Recursive%20X-Y%20Cut%20using%20Bounding%20Boxes%20of%20Connected%20Components.pdf) | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
