@@ -58,9 +58,9 @@ namespace DocumentLayoutAnalysis
                             var commands = p.Commands;
                             var points = ToPoints(commands);
 
-                            Scatterplot plot = new Scatterplot();
-                            plot.Compute(points.Select(po => (double)po.X).ToArray(), points.Select(po => (double)po.Y).ToArray());
-                            ScatterplotBox.Show(plot);
+                            //Scatterplot plot = new Scatterplot();
+                            //plot.Compute(points.Select(po => (double)po.X).ToArray(), points.Select(po => (double)po.Y).ToArray());
+                            //ScatterplotBox.Show(plot);
 
                             var shape = shapeChecker.CheckShapeType(points);
                             var subType = shapeChecker.CheckPolygonSubType(points);
@@ -140,6 +140,17 @@ namespace DocumentLayoutAnalysis
                             }
                         }
 
+                        var rectsPaths = RecursiveXYCutPath.Instance.GetBlocks(paths, 0, 10, 10);
+                        foreach (var rectPath in rectsPaths)
+                        {
+                            var rect = new Rectangle(
+                                (int)(rectPath.Left * (decimal)zoom),
+                                imageHeight - (int)(rectPath.Top * (decimal)zoom),
+                                (int)(rectPath.Width * (decimal)zoom),
+                                (int)(rectPath.Height * (decimal)zoom));
+                            graphics.DrawRectangle(aquaPen, rect);
+                        }
+
                         bitmap.Save(Path.ChangeExtension(path, (i + 1) + "_pathsTest.png"));
                     }
                 }
@@ -160,7 +171,7 @@ namespace DocumentLayoutAnalysis
             points.Add(curve.StartPoint);
             points.Add(curve.EndPoint);
 
-            Func<BezierCurve, double, PdfPoint> P_T = (bezierCurve, t) => // with 0 <= t <= 1
+            Func<BezierCurve, double, PdfPoint> P_t = (bezierCurve, t) => // with 0 <= t <= 1
             {
                 var x = (1 - t) * (1 - t) * (1 - t) * (double)bezierCurve.StartPoint.X +
                         3 * t * (1 - t) * (1 - t) * (double)bezierCurve.FirstControlPoint.X +
@@ -175,10 +186,10 @@ namespace DocumentLayoutAnalysis
                 return new PdfPoint(x, y);
             };
 
-            points.Add(P_T(curve, 0.20));
-            points.Add(P_T(curve, 0.40));
-            points.Add(P_T(curve, 0.60));
-            points.Add(P_T(curve, 0.80));
+            points.Add(P_t(curve, 0.20));
+            points.Add(P_t(curve, 0.40));
+            points.Add(P_t(curve, 0.60));
+            points.Add(P_t(curve, 0.80));
             return points;
         }
 

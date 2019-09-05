@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
 using UglyToad.PdfPig.DocumentLayoutAnalysis;
@@ -16,21 +17,24 @@ namespace DocumentLayoutAnalysis
     {
         //http://kba.cloud/hocr-spec/1.2
         //https://github.com/kba/hocrjs
+
         static decimal _scale;
         IPageSegmenter _pageSegmenter;
         IWordExtractor _wordExtractor;
         string _documentPath = "not_found.pdf";
+        string _indent;
 
         int pageCount = 0;
         int areaCount = 0;
         int lineCount = 0;
         int wordCount = 0;
 
-        public HOCR(IWordExtractor wordExtractor, IPageSegmenter pageSegmenter, double scale = 2.0)
+        public HOCR(IWordExtractor wordExtractor, IPageSegmenter pageSegmenter, double scale = 1.0, string indent = " ")
         {
             _wordExtractor = wordExtractor;
             _pageSegmenter = pageSegmenter;
             _scale = (decimal)scale;
+            _indent = indent;
         }
 
         private string GetPageImagePath(string documentPath, int pageNumber)
@@ -73,14 +77,14 @@ namespace DocumentLayoutAnalysis
 
             string html = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n";
             string head =
-                "\t<head>" +
-                "\n\t\t<title></title>" +
-                "\n\t\t<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />" +
-                "\n\t\t<meta name='ocr-system' content='" + _pageSegmenter.GetType().Name + "' />" +
-                "\n\t\t<meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word' />" +
-                "\n\t</head>\n";
+                _indent + "<head>" +
+                "\n" + _indent + _indent + "<title></title>" +
+                "\n" + _indent + _indent + "<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />" +
+                "\n" + _indent + _indent + "<meta name='ocr-system' content='" + _pageSegmenter.GetType().Name + "' />" +
+                "\n" + _indent + _indent + "<meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word' />" +
+                "\n" + _indent + "</head>\n";
 
-            string hocr = head + "\t<body>\n";
+            string hocr = head + _indent + "<body>\n";
 
             for (var i = 0; i < document.NumberOfPages; i++)
             {
@@ -88,7 +92,7 @@ namespace DocumentLayoutAnalysis
                 hocr += GetCode(page, GetPageImagePath(_documentPath, i + 1)) + "\n";
             }
 
-            hocr = hocr + "\t<script src='https://unpkg.com/hocrjs'></script>\n\t</body>";
+            hocr = hocr + _indent + "<script src='https://unpkg.com/hocrjs'></script>\n" + _indent + "</body>";
             hocr = xmlHeader + html + hocr + "\n</html>";
             return hocr;
         }
@@ -97,24 +101,28 @@ namespace DocumentLayoutAnalysis
         {
             pageCount++;
             imageName = Path.GetFileName(imageName);
-            string hocr = "\t" + @"<div class='ocr_page' id='page_" + page.Number.ToString() +
+            string hocr = _indent + @"<div class='ocr_page' id='page_" + page.Number.ToString() +
                 "' title='image \"" + imageName + "\"; bbox 0 0 " +
-                (int)Math.Round(page.Width * _scale) + " " + (int)Math.Round(page.Height * _scale) + "; ppageno " + (page.Number - 1) + "\'>";
-
-            var words = page.GetWords(_wordExtractor);
-            var blocks = _pageSegmenter.GetBlocks(words);
-
-            foreach (var block in blocks)
-            {
-                hocr += "\n" + GetCode(block, page.Height);
-            }
+                (int)Math.Round(page.Width * _scale) + " " + (int)Math.Round(page.Height * _scale) +
+                "; ppageno " + (page.Number - 1) + "\'>";
 
             foreach (var path in page.ExperimentalAccess.Paths)
             {
                 hocr += "\n" + GetCode(path, page.Height);
             }
 
-            hocr += "\n\t" + @"</div>";
+            var words = page.GetWords(_wordExtractor);
+
+            if (words.Count() > 0)
+            {
+                var blocks = _pageSegmenter.GetBlocks(words);
+                foreach (var block in blocks)
+                {
+                    hocr += "\n" + GetCode(block, page.Height);
+                }
+            }
+
+            hocr += "\n" + _indent + @"</div>";
             return hocr;
         }
 
@@ -124,7 +132,7 @@ namespace DocumentLayoutAnalysis
             var bbox = GetBoundingRectangle(path.Commands);
             if (bbox != null)
             {
-                return "\t\t" + @"<span class='ocr_linedrawing' id='drawing_" + pageCount + "_0' title='" + GetCode((PdfRectangle)bbox, pageHeight) + "'/ >";
+                return _indent + _indent + @"<span class='ocr_linedrawing' id='drawing_" + pageCount + "_0' title='" + GetCode((PdfRectangle)bbox, pageHeight) + "'/ >";
             }
             return string.Empty;
         }
@@ -177,12 +185,12 @@ namespace DocumentLayoutAnalysis
         private string GetCode(TextBlock block, decimal pageHeight)
         {
             areaCount++;
-            string hocr = "\t\t" + @"<div class='ocr_carea' id='block_" + pageCount + "_" + areaCount + "' title='" + GetCode(block.BoundingBox, pageHeight) + "'>";
+            string hocr = _indent + _indent + @"<div class='ocr_carea' id='block_" + pageCount + "_" + areaCount + "' title='" + GetCode(block.BoundingBox, pageHeight) + "'>";
             foreach (var line in block.TextLines)
             {
                 hocr += "\n" + GetCode(line, pageHeight);
             }
-            hocr += "\n\t\t" + @"</div>";
+            hocr += "\n" + _indent + _indent + @"</div>";
             return hocr;
         }
 
@@ -207,21 +215,21 @@ namespace DocumentLayoutAnalysis
             double baseLine = (double)line.Words[0].Letters[0].StartBaseLine.Y;
             baseLine = (double)line.BoundingBox.Bottom - baseLine;
 
-            string hocr = "\t\t\t" + @"<span class='ocr_line' id='line_" + pageCount + "_" + lineCount + "' title='" + GetCode(line.BoundingBox, pageHeight) 
-                + "; baseline "+ angle + " 0'>"; //"; baseline 0.005 - 10; x_size 42.392159; x_descenders 5.3921571; x_ascenders 12' >";
+            string hocr = _indent + _indent + _indent + @"<span class='ocr_line' id='line_" + pageCount + "_" + lineCount + "' title='" + GetCode(line.BoundingBox, pageHeight)
+                + "; baseline " + angle + " 0'>"; //"; baseline 0.005 - 10; x_size 42.392159; x_descenders 5.3921571; x_ascenders 12' >";
 
             foreach (var word in line.Words)
             {
                 hocr += "\n" + GetCode(word, pageHeight);
             }
-            hocr += "\n\t\t\t" + @"</span>";
+            hocr += "\n" + _indent + _indent + _indent + @"</span>";
             return hocr;
         }
 
         private string GetCode(Word word, decimal pageHeight)
         {
             wordCount++;
-            string hocr = "\t\t\t\t" + @"<span class='ocrx_word' id='word_" + pageCount + "_" + wordCount + "' title='" + GetCode(word.BoundingBox, pageHeight) + "; x_wconf 100'>" + word.Text + "</span> ";
+            string hocr = _indent + _indent + _indent + _indent + @"<span class='ocrx_word' id='word_" + pageCount + "_" + wordCount + "' title='" + GetCode(word.BoundingBox, pageHeight) + "; x_wconf 100'>" + word.Text + "</span> ";
             return hocr;
         }
 
@@ -234,7 +242,5 @@ namespace DocumentLayoutAnalysis
         }
 
         // x_bboxes // http://kba.cloud/hocr-spec/1.2/#propdef-x_bboxes
-
-
     }
 }
