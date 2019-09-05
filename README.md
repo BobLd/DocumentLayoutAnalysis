@@ -13,7 +13,7 @@ Research papers on __page segmentation__, __table extraction__ and __chart and d
 ### Done
 - [Recursive XY Cut](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/RecursiveXYCut.cs)
 
-![alt text](DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/xy%20cut.gif)
+![alt text](DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/xy%20cut_small.gif)
 - [Docstrum for bounding boxes](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/DocstrumBB.cs)
 ### To do
 - Page segmentation: Constrained text-line detection
