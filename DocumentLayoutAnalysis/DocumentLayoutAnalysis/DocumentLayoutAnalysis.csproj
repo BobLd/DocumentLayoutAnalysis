@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="doc\xy cut.gif" />
+    <Content Include="doc\xy cut_small.gif" />
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
