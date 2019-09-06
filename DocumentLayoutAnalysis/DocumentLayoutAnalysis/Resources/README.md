@@ -29,7 +29,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Two Geometric Algorithms for Layout Analysis](Page%20segmentation/Two%20Geometric%20Algorithms%20for%20Layout%20Analysis--breuel-das.pdf) | Thomas M. Breuel
 - [High precision text extraction from PDF documents](Text%20extraction/High%20precision%20text%20extraction%20from%20PDF%20documents.pdf) | Øyvind Raddum Berg
 - High Performance Document Layout Analysis | Thomas M. Breuel
-## PDF/A standard
+### PDF/A standard
 [PDF/A-1a](https://en.wikipedia.org/wiki/PDF/A#PDF/A-1) compliant document make the following information available:
   - Language specification
   - Hierarchical document structure
@@ -63,3 +63,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - [The Detection of Rectangular Shape Objects Using Matching Schema](https://pdfs.semanticscholar.org/2a73/b9533532b7426fd5a7c47ac3f40e0dc88d7f.pdf) | Soo-Young Ye, Joon-Young Choi and Ki-Gon Nam
 - [Edge Detection Based Shape Identification](https://arxiv.org/ftp/arxiv/papers/1604/1604.02030.pdf) | Vivek Kumar, Sumit Pandey, Amrindra Pal, Sandeep Sharma
 - [Algorithms for the Reduction of the Number of Points Required to Represent a Digitized Line or its Caricature](http://www2.ipcku.kansai-u.ac.jp/~yasumuro/M_InfoMedia/paper/Douglas73.pdf) | David H. Douglas and Thomas K. Peucker
+- [Shape description using cubic polynomial Bezier curves](https://www.sciencedirect.com/science/article/abs/pii/S0167865598000695) | L. Cinque, S. Levialdi, A. Malizia
+## Character Recognition
+### Bézier curves
+- [RNN-Based Handwriting Recognition in Gboard](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) | Sandro Feuz and Pedro Gonnet
+- [Handwritten Arabic Digits Recognition Using Bézier Curves](http://ijcsi.org/papers/IJCSI-10-5-2-257-263.pdf) | Aissa Kerkour El Miad and Azzeddine Mazroui
