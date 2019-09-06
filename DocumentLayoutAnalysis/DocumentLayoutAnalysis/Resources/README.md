@@ -29,6 +29,12 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Two Geometric Algorithms for Layout Analysis](Page%20segmentation/Two%20Geometric%20Algorithms%20for%20Layout%20Analysis--breuel-das.pdf) | Thomas M. Breuel
 - [High precision text extraction from PDF documents](Text%20extraction/High%20precision%20text%20extraction%20from%20PDF%20documents.pdf) | Øyvind Raddum Berg
 - High Performance Document Layout Analysis | Thomas M. Breuel
+## PDF/A standard
+[PDF/A-1a](https://en.wikipedia.org/wiki/PDF/A#PDF/A-1) compliant document make the following information available:
+  - Language specification
+  - Hierarchical document structure
+  - Tagged text spans and descriptive text for images and symbols
+  - Character mappings to Unicode
 ## Table extraction
 - [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](Table%20extraction/Extracting%20Tables%20from%20Documents%20using%20Conditional%20Generative%20Adversarial%20Networks%20and%20Genetic%20Algorithms.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](Table%20extraction/Detecting%20Table%20Region%20in%20PDF%20Documents%20Using%20Distant%20Supervision.pdf) | Miao Fan and Doo Soon Kim
