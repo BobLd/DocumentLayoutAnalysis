@@ -6,8 +6,8 @@ From [wikipedia](https://en.wikipedia.org/wiki/Document_layout_analysis): ___Doc
 
 In this repos, we will not considere scanned documents, but classic pdf documents and leverage all available information (e.g. letters bounding boxes, fonts).
 
-## Resources
-Research papers on __page segmentation__, __table extraction__ and __chart and diagram extraction__ are available in the [Resources](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources).
+## [Resources](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources)
+Research papers on __page segmentation__, __table extraction__ and __chart and diagram extraction__ are available in the [Resources](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources) section.
 
 ## Progress
 ### Done
