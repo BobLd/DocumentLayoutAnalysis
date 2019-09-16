@@ -65,6 +65,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Edge Detection Based Shape Identification](https://arxiv.org/ftp/arxiv/papers/1604/1604.02030.pdf) | Vivek Kumar, Sumit Pandey, Amrindra Pal, Sandeep Sharma
 - [Algorithms for the Reduction of the Number of Points Required to Represent a Digitized Line or its Caricature](http://www2.ipcku.kansai-u.ac.jp/~yasumuro/M_InfoMedia/paper/Douglas73.pdf) | David H. Douglas and Thomas K. Peucker
 - [Shape description using cubic polynomial Bezier curves](https://www.sciencedirect.com/science/article/abs/pii/S0167865598000695) | L. Cinque, S. Levialdi, A. Malizia
+- [New Algorithm for Medial Axis Transform of Plane Domain](https://pdfs.semanticscholar.org/70ae/5b583303af0b4d60d356d08f8ed84e1babbc.pdf) and details from [stackoverflow](https://stackoverflow.com/questions/29921826/how-do-i-calculate-the-medial-axis-for-a-2d-vector-shape) | Choi, Choi, Moon and Wee
 ## Character Recognition
 ### Bézier curves
 - [RNN-Based Handwriting Recognition in Gboard](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) | Sandro Feuz and Pedro Gonnet | [`arxiv`](https://arxiv.org/abs/1902.10525)
