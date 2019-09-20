@@ -20,6 +20,12 @@ Research papers on __page segmentation__, __table extraction__ and __chart and d
 - Table extraction
 - Diagram extraction
 
+## Output file format
+- hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](DocumentLayoutAnalysis/DocumentLayoutAnalysis/hOCR.cs)
+- ALTO XML: [alto schema](https://github.com/altoxml/schema)
+- TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr)
+- PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML)
+
 # Pdf page to image converter
 A [Pdf page to image converter](DocumentLayoutAnalysis/ImageConverter) is available to help in the research proces. It relies on the [_mupdf_](https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf) library, available in the [sumatra pdf reader](https://github.com/sumatrapdfreader/sumatrapdf).
  
