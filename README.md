@@ -26,6 +26,7 @@ Research papers on __page segmentation__, __table extraction__ and __chart and d
 - TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr)
 - PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML)
 
+[Validate and transform between OCR file formats (hOCR, ALTO, PAGE, FineReader)](https://github.com/UB-Mannheim/ocr-fileformat)
 # Pdf page to image converter
 A [Pdf page to image converter](DocumentLayoutAnalysis/ImageConverter) is available to help in the research proces. It relies on the [_mupdf_](https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf) library, available in the [sumatra pdf reader](https://github.com/sumatrapdfreader/sumatrapdf).
  
