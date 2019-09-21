@@ -57,6 +57,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Study on the Document Zone Content Classification Problem](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
  | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick
 - Text/Figure Separation in Document Images Using Docstrum Descriptor and Two-Level Clustering | Valery Anisimovskiy, Ilya Kurilin, Andrey Shcherbinin, Petr Pohl
+## Margins recognition
+- [Finding blocks of text in an image using Python, OpenCV and numpy](https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html)
 # Other
 ## Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
