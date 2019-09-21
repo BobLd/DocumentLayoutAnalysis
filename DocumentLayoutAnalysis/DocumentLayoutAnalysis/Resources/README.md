@@ -59,6 +59,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - Text/Figure Separation in Document Images Using Docstrum Descriptor and Two-Level Clustering | Valery Anisimovskiy, Ilya Kurilin, Andrey Shcherbinin, Petr Pohl
 ## Margins recognition
 - [Finding blocks of text in an image using Python, OpenCV and numpy](https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html)
+- [Notes on the margins: how to extract them using image segmentation, Google Vision API, and R](http://travelerslab.research.wesleyan.edu/2016/09/13/notes-on-the-margins/)
 # Other
 ## Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
