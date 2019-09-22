@@ -1,7 +1,8 @@
 # Resources
 ## Text extraction
 - [High precision text extraction from PDF documents](Text%20extraction/High%20precision%20text%20extraction%20from%20PDF%20documents.pdf) | Øyvind Raddum Berg
-- [User-Guided Information Extraction from Print-Oriented Documents]() | Tamir Hassan
+- [User-Guided Information Extraction from Print-Oriented Documents](https://www.dbai.tuwien.ac.at/staff/hassan/files/dissertation.pdf) | Tamir Hassan
+- [Combining Linguistic and Spatial Information for Document Analysis](https://arxiv.org/ftp/cs/papers/0009/0009014.pdf) | Aiello, Monz and Todoran
 ## Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](Page%20segmentation/A%20Fast%20Algorithm%20for%20Bottom-Up%20Document%20Layout%20Analysis.pdf) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
@@ -76,4 +77,4 @@ The method was merely intended by its author as a demonstration of the applicati
 - [RNN-Based Handwriting Recognition in Gboard](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) | Sandro Feuz and Pedro Gonnet | [`arxiv`](https://arxiv.org/abs/1902.10525)
 - [Handwritten Arabic Digits Recognition Using Bézier Curves](http://ijcsi.org/papers/IJCSI-10-5-2-257-263.pdf) | Aissa Kerkour El Miad and Azzeddine Mazroui
 # Datasets
-- [PubLayNet: largest dataset ever for documentlayout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
+- [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
