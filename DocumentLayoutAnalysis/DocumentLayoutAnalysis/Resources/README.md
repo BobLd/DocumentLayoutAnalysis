@@ -3,6 +3,7 @@
 - [High precision text extraction from PDF documents](Text%20extraction/High%20precision%20text%20extraction%20from%20PDF%20documents.pdf) | Øyvind Raddum Berg
 - [User-Guided Information Extraction from Print-Oriented Documents](https://www.dbai.tuwien.ac.at/staff/hassan/files/dissertation.pdf) | Tamir Hassan
 - [Combining Linguistic and Spatial Information for Document Analysis](https://arxiv.org/ftp/cs/papers/0009/0009014.pdf) | Aiello, Monz and Todoran
+- [New Methods for Metadata Extraction from Scientific Literature](https://arxiv.org/pdf/1710.10201.pdf) | Dominika Tkaczyk
 ## Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](Page%20segmentation/A%20Fast%20Algorithm%20for%20Bottom-Up%20Document%20Layout%20Analysis.pdf) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
