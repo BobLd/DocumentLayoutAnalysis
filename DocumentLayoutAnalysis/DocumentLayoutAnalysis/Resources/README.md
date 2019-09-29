@@ -61,6 +61,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Study on the Document Zone Content Classification Problem](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
  | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick
 - Text/Figure Separation in Document Images Using Docstrum Descriptor and Two-Level Clustering | Valery Anisimovskiy, Ilya Kurilin, Andrey Shcherbinin, Petr Pohl
+- [CHART-Synthetic](https://github.com/adobe-research/CHART-Synthetic)
 ## Margins recognition
 - [Finding blocks of text in an image using Python, OpenCV and numpy](https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html)
 - [Notes on the margins: how to extract them using image segmentation, Google Vision API, and R](http://travelerslab.research.wesleyan.edu/2016/09/13/notes-on-the-margins/)
