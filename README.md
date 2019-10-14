@@ -21,10 +21,10 @@ Research papers on __page segmentation__, __table extraction__ and __chart and d
 - Diagram extraction
 
 ## Output file format
-- hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](DocumentLayoutAnalysis/DocumentLayoutAnalysis/hOCR.cs)
-- ALTO XML: [alto schema](https://github.com/altoxml/schema)
-- TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr)
-- PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML)
+- hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
+- ALTO XML: [alto schema](https://github.com/altoxml/schema) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/AltoXmlTextExporter.cs)
+- TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr) | [schema](https://tei-c.org/guidelines/customization/)
+- PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/PageXmlTextExporter.cs)
 
 [Validate and transform between OCR file formats (hOCR, ALTO, PAGE, FineReader)](https://github.com/UB-Mannheim/ocr-fileformat)
 # Pdf page to image converter
