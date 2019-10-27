@@ -68,6 +68,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Font Setting Based Bayesian Model to Extract Mathematical Expression in PDF Files](https://www.researchgate.net/publication/322779502_A_Font_Setting_Based_Bayesian_Model_to_Extract_Mathematical_Expression_in_PDF_Files) | Xing Wang, Jyh-Charn Liu
 - [Mathematical Formula Identification in PDF Documents](https://www.researchgate.net/publication/220860588_Mathematical_Formula_Identification_in_PDF_Documents) | Xiaoyan Lin, Liangcai Gao, Zhi Tang, Xiaofan Lin
 - [Faithful Mathematical Formula Recognition from PDF Documents](https://www.cs.bham.ac.uk/~jbb/documents/das10.pdf) | Josef B. Baker, Alan P. Sexton and Volker Sorge
+- [Extracting Precise Data from PDF Documents for Mathematical Formula Recognition](https://www.cs.bham.ac.uk/~jbb/documents/das08.pdf) | Josef B. Baker, Alan P. Sexton and Volker Sorge
 ## Margins recognition
 - [Finding blocks of text in an image using Python, OpenCV and numpy](https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html)
 - [Notes on the margins: how to extract them using image segmentation, Google Vision API, and R](http://travelerslab.research.wesleyan.edu/2016/09/13/notes-on-the-margins/)
