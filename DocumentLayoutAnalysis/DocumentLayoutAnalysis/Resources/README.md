@@ -76,6 +76,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Notes on the margins: how to extract them using image segmentation, Google Vision API, and R](http://travelerslab.research.wesleyan.edu/2016/09/13/notes-on-the-margins/)
 - [A mixed approach to auto-detection of page body](https://www.researchgate.net/publication/221253859_A_mixed_approach_to_auto-detection_of_page_body) | Liangcai Gao, Zhi Tang, Ruiheng Qiu
 - [Header and Footer Extraction by Page-Association](https://www.hpl.hp.com/techreports/2002/HPL-2002-129.pdf) | Xiaofan Lin
+- [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
 ## Image related
 - [Analysing layout information: searching PDF documents for pictures](https://pdfs.semanticscholar.org/2bec/a8fcdbdcbe02bc30d40113432daed61f9660.pdf) | B. Mathiak et al.
 # Other
