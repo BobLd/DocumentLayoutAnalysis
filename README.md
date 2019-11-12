@@ -14,6 +14,7 @@ In this repos, we will not considere scanned documents, but classic pdf document
 - [New Methods for Metadata Extraction from Scientific Literature](https://arxiv.org/pdf/1710.10201.pdf) | Dominika Tkaczyk
 - [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
 - [Layout and Content Extraction for PDF Documents](https://www.researchgate.net/publication/220932927_Layout_and_Content_Extraction_for_PDF_Documents) | Hui Chao, Jian Fan
+- [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 ### Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](Page%20segmentation/Performance%20Comparison%20of%20Six%20Algorithms%20for%20Page%20Segmentation.pdf) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](Page%20segmentation/A%20Fast%20Algorithm%20for%20Bottom-Up%20Document%20Layout%20Analysis.pdf) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
@@ -65,6 +66,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Integrating and querying similar tables from PDF documentsusing deep learning](https://arxiv.org/pdf/1901.04672.pdf) | Rahul Anand, Hye-young Paik and Chen Wang
 - [Locating Tables in Scanned Documents for Reconstructing and Republishing ](https://arxiv.org/search/?query=document+layout+analysis&searchtype=all&source=header) | MAC Akmal Jahan, Roshan G Ragel 
 - [Recognition of Tables and Forms](https://hal.inria.fr/hal-01087230/document) | Bertrand Coüasnon, Aurélie Lemaitre
+- [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 ##### Systems
 - [pdf2table: A Method to Extract Table Information from PDF Files](Table%20extraction/pdf2table.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
 - [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](Table%20extraction/PDF-TREX.pdf) | Ermelinda Oro, Massimo Ruffolo
@@ -112,6 +114,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Retrieval Framework and Implementation for Electronic Documents with Similar Layouts](https://arxiv.org/ftp/arxiv/papers/1810/1810.07237.pdf) | Chung
 ## Datasets
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
+- [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
+- [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 
 ## Progress
 ### Done
