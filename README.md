@@ -67,7 +67,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Locating Tables in Scanned Documents for Reconstructing and Republishing ](https://arxiv.org/search/?query=document+layout+analysis&searchtype=all&source=header) | MAC Akmal Jahan, Roshan G Ragel 
 - [Recognition of Tables and Forms](https://hal.inria.fr/hal-01087230/document) | Bertrand Coüasnon, Aurélie Lemaitre
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
-- [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala
+- [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala | [website](http://pdffigures.allenai.org/)
 
 ##### Systems
 - [pdf2table: A Method to Extract Table Information from PDF Files](Table%20extraction/pdf2table.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
@@ -85,7 +85,7 @@ The method was merely intended by its author as a demonstration of the applicati
  | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick
 - Text/Figure Separation in Document Images Using Docstrum Descriptor and Two-Level Clustering | Valery Anisimovskiy, Ilya Kurilin, Andrey Shcherbinin, Petr Pohl
 - [CHART-Synthetic](https://github.com/adobe-research/CHART-Synthetic)
-- [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala
+- [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala | [website](http://pdffigures.allenai.org/)
 #### Mathematical expression
 - [A Font Setting Based Bayesian Model to Extract Mathematical Expression in PDF Files](https://www.researchgate.net/publication/322779502_A_Font_Setting_Based_Bayesian_Model_to_Extract_Mathematical_Expression_in_PDF_Files) | Xing Wang, Jyh-Charn Liu
 - [Mathematical Formula Identification in PDF Documents](https://www.researchgate.net/publication/220860588_Mathematical_Formula_Identification_in_PDF_Documents) | Xiaoyan Lin, Liangcai Gao, Zhi Tang, Xiaofan Lin
