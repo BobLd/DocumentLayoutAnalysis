@@ -68,7 +68,10 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Recognition of Tables and Forms](https://hal.inria.fr/hal-01087230/document) | Bertrand Coüasnon, Aurélie Lemaitre
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 - [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala | [`website`](http://pdffigures.allenai.org/)
-
+- [A Table Detection Method for Multipage PDF Documents via Visual Seperators and Tabular Structures](http://www.iapr-tc11.org/archive/icdar2011/fileup/PDF/4520a779.pdf) | J. Fang, L. Gao, K. Bai, R. Qiu, X. Tao, Z. Tang
+- [A Rectangle Mining Method for Understandingthe Semantics of Financial Tables](https://www.cs.cornell.edu/~xlchen/resources/papers/TableExtraction.pdf) | X. Chen, L. Chiticariu, M. Danilevsky, A. Evfimievski and P. Sen
+- [Table Header Detection and Classification](https://clgiles.ist.psu.edu/pubs/AAAI2012-table-header.pdf) | J. Fang, P. Mitra, Z. Tang, C. L. Giles
+- [Configurable Table Structure Recognition in Untagged PDF Documents](https://www.researchgate.net/publication/307174717_Configurable_Table_Structure_Recognition_in_Untagged_PDF_Documents) | A. Shigarov, A. Mikhailov, A. Altaev
 ##### Systems
 - [pdf2table: A Method to Extract Table Information from PDF Files](Table%20extraction/pdf2table.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
 - [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](Table%20extraction/PDF-TREX.pdf) | Ermelinda Oro, Massimo Ruffolo
