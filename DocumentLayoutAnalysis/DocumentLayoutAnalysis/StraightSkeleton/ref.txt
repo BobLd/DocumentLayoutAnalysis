@@ -1,0 +1,3 @@
+﻿http://www.dma.fi.upm.es/personal/mabellanas/tfcs/skeleton/html/documentacion/Straight%20Skeletons%20Implementation.pdf
+https://www.sthu.org/research/publications/files/phdthesis.pdf
+https://github.com/yonghah/polyskel

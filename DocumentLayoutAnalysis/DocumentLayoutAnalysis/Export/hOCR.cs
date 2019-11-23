@@ -11,9 +11,9 @@ using UglyToad.PdfPig.Geometry;
 using UglyToad.PdfPig.Util;
 using static UglyToad.PdfPig.Geometry.PdfPath;
 
-namespace DocumentLayoutAnalysis
+namespace DocumentLayoutAnalysis.Export
 {
-    class HOCR
+    public class hOCR
     {
         //http://kba.cloud/hocr-spec/1.2
         //https://github.com/kba/hocrjs
@@ -28,8 +28,9 @@ namespace DocumentLayoutAnalysis
         int areaCount = 0;
         int lineCount = 0;
         int wordCount = 0;
+        int pathCount = 0;
 
-        public HOCR(IWordExtractor wordExtractor, IPageSegmenter pageSegmenter, double scale = 1.0, string indent = " ")
+        public hOCR(IWordExtractor wordExtractor, IPageSegmenter pageSegmenter, double scale = 1.0, string indent = "\t")
         {
             _wordExtractor = wordExtractor;
             _pageSegmenter = pageSegmenter;
@@ -73,14 +74,14 @@ namespace DocumentLayoutAnalysis
         public string GetCode(PdfDocument document)
         {
             string xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-            xmlHeader += "\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
+            xmlHeader += "\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
 
             string html = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n";
             string head =
                 _indent + "<head>" +
                 "\n" + _indent + _indent + "<title></title>" +
                 "\n" + _indent + _indent + "<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />" +
-                "\n" + _indent + _indent + "<meta name='ocr-system' content='" + _pageSegmenter.GetType().Name + "' />" +
+                "\n" + _indent + _indent + "<meta name='ocr-system' content='" + _pageSegmenter.GetType().Name + "|" + _wordExtractor.GetType().Name + "' />" +
                 "\n" + _indent + _indent + "<meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word' />" +
                 "\n" + _indent + "</head>\n";
 
@@ -97,18 +98,18 @@ namespace DocumentLayoutAnalysis
             return hocr;
         }
 
-        private string GetCode(Page page, string imageName)
+        private string GetCode(Page page, string imageName = "unknown")
         {
             pageCount++;
             imageName = Path.GetFileName(imageName);
             string hocr = _indent + @"<div class='ocr_page' id='page_" + page.Number.ToString() +
-                "' title='image \"" + imageName + "\"; bbox 0 0 " +
+                "' title='image \"" + imageName + "\"; bbox 0 0 " + 
                 (int)Math.Round(page.Width * _scale) + " " + (int)Math.Round(page.Height * _scale) +
                 "; ppageno " + (page.Number - 1) + "\'>";
 
             foreach (var path in page.ExperimentalAccess.Paths)
             {
-                hocr += "\n" + GetCode(path, page.Height);
+                hocr += "\n" + GetCode(path, page.Height, true);
             }
 
             var words = page.GetWords(_wordExtractor);
@@ -126,23 +127,39 @@ namespace DocumentLayoutAnalysis
             return hocr;
         }
 
-        private string GetCode(PdfPath path, decimal pageHeight)
+        private string GetCode(PdfPath path, decimal pageHeight, bool subPaths)
         {
             if (path == null) return string.Empty;
-            var bbox = GetBoundingRectangle(path.Commands);
-            if (bbox != null)
+
+            pathCount++;
+            string hocr = string.Empty;
+
+            if (subPaths)
             {
-                return _indent + _indent + @"<span class='ocr_linedrawing' id='drawing_" + pageCount + "_0' title='" + GetCode((PdfRectangle)bbox, pageHeight) + "'/ >";
+                foreach (var subPath in path.Commands)
+                {
+                    var subBbox = subPath.GetBoundingRectangle();
+                    if (subBbox != null)
+                    {
+                        hocr += _indent + _indent + @"<span class='ocr_linedrawing' id='drawing_" + pageCount + "_"
+                            + pathCount + "' title='" + GetCode(subBbox.Value, pageHeight) + "' />\n";
+                    }
+                }
             }
-            return string.Empty;
+
+            var bbox = GetBoundingRectangle(path.Commands);
+            if (bbox.HasValue)
+            {
+                hocr += _indent + _indent + @"<span class='ocr_linedrawing' id='drawing_" + pageCount + "_0' title='"
+                    + GetCode(bbox.Value, pageHeight) + "' />";
+            }
+
+            return hocr;
         }
 
         internal static PdfRectangle? GetBoundingRectangle(IReadOnlyList<IPathCommand> commands)
         {
-            if (commands.Count == 0)
-            {
-                return null;
-            }
+            if (commands.Count == 0) return null;
 
             var minX = decimal.MaxValue;
             var maxX = decimal.MinValue;
@@ -182,31 +199,30 @@ namespace DocumentLayoutAnalysis
             return new PdfRectangle(minX, minY, maxX, maxY);
         }
 
+        int paraCount = 0;
+
         private string GetCode(TextBlock block, decimal pageHeight)
         {
             areaCount++;
-            string hocr = _indent + _indent + @"<div class='ocr_carea' id='block_" + pageCount + "_" + areaCount + "' title='" + GetCode(block.BoundingBox, pageHeight) + "'>";
+            paraCount++;
+            string bbox = GetCode(block.BoundingBox, pageHeight);
+            string hocr = _indent + _indent + @"<div class='ocr_carea' id='block_" + pageCount + "_" 
+                + areaCount + "' title='" + GetCode(block.BoundingBox, pageHeight) + "'>";
+
+            hocr += _indent + _indent + _indent + @"<p class='ocr_par' id='par_"+ pageCount + "_"
+                + paraCount + "' title='" + GetCode(block.BoundingBox, pageHeight) + "'>"; // lang='eng'
+
             foreach (var line in block.TextLines)
             {
                 hocr += "\n" + GetCode(line, pageHeight);
             }
+            hocr += "\n" + _indent + _indent + _indent + @"</p>";
             hocr += "\n" + _indent + _indent + @"</div>";
             return hocr;
         }
 
         private string GetCode(TextLine line, decimal pageHeight)
         {
-            /*foreach (var word in line.Words)
-            {
-                foreach (var letter in word.Letters)
-                {
-                    Console.WriteLine(letter.StartBaseLine.Y);
-                }
-            }
-
-            Console.WriteLine();*/
-
-
             lineCount++;
             double angle = 0;
 
@@ -216,7 +232,7 @@ namespace DocumentLayoutAnalysis
             baseLine = (double)line.BoundingBox.Bottom - baseLine;
 
             string hocr = _indent + _indent + _indent + @"<span class='ocr_line' id='line_" + pageCount + "_" + lineCount + "' title='" + GetCode(line.BoundingBox, pageHeight)
-                + "; baseline " + angle + " 0'>"; //"; baseline 0.005 - 10; x_size 42.392159; x_descenders 5.3921571; x_ascenders 12' >";
+                + "; baseline " + angle + " 0'>"; //"; x_size 42; x_descenders 5; x_ascenders 12' >";
 
             foreach (var word in line.Words)
             {
@@ -229,9 +245,43 @@ namespace DocumentLayoutAnalysis
         private string GetCode(Word word, decimal pageHeight)
         {
             wordCount++;
-            string hocr = _indent + _indent + _indent + _indent + @"<span class='ocrx_word' id='word_" + pageCount + "_" + wordCount + "' title='" + GetCode(word.BoundingBox, pageHeight) + "; x_wconf 100'>" + word.Text + "</span> ";
+            string hocr = _indent + _indent + _indent + _indent +
+                @"<span class='ocrx_word' id='word_" + pageCount + "_" + wordCount + "' title='" + GetCode(word.BoundingBox, pageHeight) + "; x_wconf 100";
+            hocr += "; x_font " + word.FontName;
+
+            if (word.Letters.Count > 0 && word.Letters[0].FontSize != 1)
+            {
+                hocr += "; x_fsize " + word.Letters[0].FontSize;
+            }
+            hocr += "'";
+
+            if (false) // only if different from paragraph language
+            {
+                hocr += " lang='" + "LANG_TBD" + "'";
+            }
+
+
+
+            /*switch (word.TextDirection)
+            {
+                // " dir='ltr'"
+                // " dir='rtl'"
+                case TextDirection.Horizontal:
+                case TextDirection.Rotate180:
+                case TextDirection.Rotate270:
+                case TextDirection.Rotate90:
+                case TextDirection.Unknown:
+                    break;
+            }*/
+
+            //if (bold) -> "<strong>";
+            //if (italic) -> "<em>";
+
+            hocr += ">" + word.Text + "</span> ";
             return hocr;
         }
+
+        int glyphCount = 0;
 
         private string GetCode(PdfRectangle rectangle, decimal pageHeight)
         {

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using DocumentLayoutAnalysis.Export;
+using System.IO;
 using UglyToad.PdfPig.DocumentLayoutAnalysis;
 
 namespace DocumentLayoutAnalysis
@@ -7,7 +8,7 @@ namespace DocumentLayoutAnalysis
     {
         public static void Run(string path)
         {
-            HOCR hocr = new HOCR(NearestNeighbourWordExtractor.Instance, RecursiveXYCut.Instance, 2, " ");
+            hOCR hocr = new hOCR(NearestNeighbourWordExtractor.Instance, RecursiveXYCut.Instance, 2);
             //using (PdfDocument document = PdfDocument.Open(path))
             //{
             //    string str = hocr.GetCode(document);

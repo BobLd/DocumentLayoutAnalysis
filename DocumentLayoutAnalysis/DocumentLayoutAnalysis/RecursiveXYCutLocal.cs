@@ -71,7 +71,7 @@ namespace DocumentLayoutAnalysis
         /// </summary>
         /// <param name="pageWords">The words in the page.</param>
         /// <returns></returns>
-        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<Word> pageWords)
+        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<UglyToad.PdfPig.Content.Word> pageWords)
         {
             return GetBlocks(pageWords, 0);
         }
@@ -82,7 +82,7 @@ namespace DocumentLayoutAnalysis
         /// </summary>
         /// <param name="pageWords">The words in the page.</param>
         /// <param name="minimumWidth">The minimum width for a block.</param>
-        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<Word> pageWords, decimal minimumWidth)
+        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<UglyToad.PdfPig.Content.Word> pageWords, decimal minimumWidth)
         {
             return GetBlocks(pageWords, minimumWidth, k => Math.Round(k.Mode(), 3), k => Math.Round(k.Mode() * 1.5m, 3));
         }
@@ -94,7 +94,7 @@ namespace DocumentLayoutAnalysis
         /// <param name="minimumWidth">The minimum width for a block.</param>
         /// <param name="dominantFontWidth">The dominant font width.</param>
         /// <param name="dominantFontHeight">The dominant font height.</param>
-        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<Word> pageWords, decimal minimumWidth,
+        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<UglyToad.PdfPig.Content.Word> pageWords, decimal minimumWidth,
             decimal dominantFontWidth, decimal dominantFontHeight)
         {
             return GetBlocks(pageWords, minimumWidth, k => dominantFontWidth, k => dominantFontHeight);
@@ -107,7 +107,7 @@ namespace DocumentLayoutAnalysis
         /// <param name="minimumWidth">The minimum width for a block.</param>
         /// <param name="dominantFontWidthFunc">The function that determines the dominant font width.</param>
         /// <param name="dominantFontHeightFunc">The function that determines the dominant font height.</param>
-        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<Word> pageWords, decimal minimumWidth,
+        public IReadOnlyList<TextBlock> GetBlocks(IEnumerable<UglyToad.PdfPig.Content.Word> pageWords, decimal minimumWidth,
             Func<IEnumerable<decimal>, decimal> dominantFontWidthFunc,
             Func<IEnumerable<decimal>, decimal> dominantFontHeightFunc)
         {
@@ -320,7 +320,7 @@ namespace DocumentLayoutAnalysis
         /// <summary>
         /// The words in the leaf.
         /// </summary>
-        public IReadOnlyList<Word> Words { get; }
+        public IReadOnlyList<UglyToad.PdfPig.Content.Word> Words { get; }
 
         /// <summary>
         /// The number of words in the leaf.
@@ -348,7 +348,7 @@ namespace DocumentLayoutAnalysis
         /// Create a new <see cref="XYLeaf"/>.
         /// </summary>
         /// <param name="words">The words contained in the leaf.</param>
-        public XYLeaf(params Word[] words) : this(words == null ? null : words.ToList())
+        public XYLeaf(params UglyToad.PdfPig.Content.Word[] words) : this(words == null ? null : words.ToList())
         {
 
         }
@@ -357,7 +357,7 @@ namespace DocumentLayoutAnalysis
         /// Create a new <see cref="XYLeaf"/>.
         /// </summary>
         /// <param name="words">The words contained in the leaf.</param>
-        public XYLeaf(IEnumerable<Word> words) : base(null)
+        public XYLeaf(IEnumerable<UglyToad.PdfPig.Content.Word> words) : base(null)
         {
             if (words == null)
             {
