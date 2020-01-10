@@ -59,6 +59,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Layout analysis and content classification indigitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | Andrea Corbelli, Lorenzo Baraldi, Fabrizio Balducci,Costantino Grana, Rita Cucchiara
 ### Reading order
 - [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern
+- [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
 ### Table
 - [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources/Table%20extraction/Extracting%20Tables%20from%20Documents%20using%20Conditional%20Generative%20Adversarial%20Networks%20and%20Genetic%20Algorithms.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources/Table%20extraction/Detecting%20Table%20Region%20in%20PDF%20Documents%20Using%20Distant%20Supervision.pdf) | Miao Fan and Doo Soon Kim
