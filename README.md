@@ -122,6 +122,11 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Handwritten Arabic Digits Recognition Using Bézier Curves](http://ijcsi.org/papers/IJCSI-10-5-2-257-263.pdf) | Aissa Kerkour El Miad and Azzeddine Mazroui
 ## Layout Similarity
 - [A Retrieval Framework and Implementation for Electronic Documents with Similar Layouts](https://arxiv.org/ftp/arxiv/papers/1810/1810.07237.pdf) | Chung
+
+## Dehyphenation
+- [Improved Dehyphenation of Line Breaks for PDF Text Extraction](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Mari_Hernaes_2019.pdf) | Mari Sverresdatter Hernæs
+- [Dehyphenation of Words and Guessing Ligatures](http://ad-publications.informatik.uni-freiburg.de/theses/Master_Sumitra_Corraya_2018.pdf) | Sumitra Magdalin Corraya
+
 # Datasets
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
