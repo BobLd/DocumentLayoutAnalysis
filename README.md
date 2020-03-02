@@ -99,14 +99,17 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Faithful Mathematical Formula Recognition from PDF Documents](https://www.cs.bham.ac.uk/~jbb/documents/das10.pdf) | Josef B. Baker, Alan P. Sexton and Volker Sorge
 - [Extracting Precise Data from PDF Documents for Mathematical Formula Recognition](https://www.cs.bham.ac.uk/~jbb/documents/das08.pdf) | Josef B. Baker, Alan P. Sexton and Volker Sorge
 - [Mathematical formula identification and performance evaluation in PDF documents](https://link.springer.com/article/10.1007%2Fs10032-013-0216-1) | Xiaoyan Lin, Liangcai Gao, Zhi Tang, Josef Baker, Volker Sorge
+
 ## Margins recognition
 - [Finding blocks of text in an image using Python, OpenCV and numpy](https://www.danvk.org/2015/01/07/finding-blocks-of-text-in-an-image-using-python-opencv-and-numpy.html)
 - [Notes on the margins: how to extract them using image segmentation, Google Vision API, and R](http://travelerslab.research.wesleyan.edu/2016/09/13/notes-on-the-margins/)
 - [A mixed approach to auto-detection of page body](https://www.researchgate.net/publication/221253859_A_mixed_approach_to_auto-detection_of_page_body) | Liangcai Gao, Zhi Tang, Ruiheng Qiu
 - [Header and Footer Extraction by Page-Association](https://www.hpl.hp.com/techreports/2002/HPL-2002-129.pdf) | Xiaofan Lin
 - [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
+
 ## Image related
 - [Analysing layout information: searching PDF documents for pictures](https://pdfs.semanticscholar.org/2bec/a8fcdbdcbe02bc30d40113432daed61f9660.pdf) | B. Mathiak et al.
+
 # Other
 ## Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
@@ -116,10 +119,11 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Algorithms for the Reduction of the Number of Points Required to Represent a Digitized Line or its Caricature](http://www2.ipcku.kansai-u.ac.jp/~yasumuro/M_InfoMedia/paper/Douglas73.pdf) | David H. Douglas and Thomas K. Peucker
 - [Shape description using cubic polynomial Bezier curves](https://www.sciencedirect.com/science/article/abs/pii/S0167865598000695) | L. Cinque, S. Levialdi, A. Malizia
 - [New Algorithm for Medial Axis Transform of Plane Domain](https://pdfs.semanticscholar.org/70ae/5b583303af0b4d60d356d08f8ed84e1babbc.pdf) and details from [stackoverflow](https://stackoverflow.com/questions/29921826/how-do-i-calculate-the-medial-axis-for-a-2d-vector-shape) | Choi, Choi, Moon and Wee
+
 ## Character Recognition
-### Bézier curves
 - [RNN-Based Handwriting Recognition in Gboard](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) | Sandro Feuz and Pedro Gonnet | [`arxiv`](https://arxiv.org/abs/1902.10525)
 - [Handwritten Arabic Digits Recognition Using Bézier Curves](http://ijcsi.org/papers/IJCSI-10-5-2-257-263.pdf) | Aissa Kerkour El Miad and Azzeddine Mazroui
+
 ## Layout Similarity
 - [A Retrieval Framework and Implementation for Electronic Documents with Similar Layouts](https://arxiv.org/ftp/arxiv/papers/1810/1810.07237.pdf) | Chung
 
@@ -127,21 +131,13 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Improved Dehyphenation of Line Breaks for PDF Text Extraction](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Mari_Hernaes_2019.pdf) | Mari Sverresdatter Hernæs
 - [Dehyphenation of Words and Guessing Ligatures](http://ad-publications.informatik.uni-freiburg.de/theses/Master_Sumitra_Corraya_2018.pdf) | Sumitra Magdalin Corraya
 
+## Data structure
+- [Kd-Trees for Document Layout Analysis](https://www.researchgate.net/publication/281267378_Kd-Trees_for_Document_Layout_Analysis) | Christoph Dalitz
+
 # Datasets
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
-
-# Progress
-## Done
-- [Recursive XY Cut](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/RecursiveXYCut.cs)
-
-![alt text](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/xy%20cut_small.gif)
-- [Docstrum for bounding boxes](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/DocumentLayoutAnalysis/DocstrumBB.cs)
-## To do
-- Page segmentation: Constrained text-line detection
-- Table extraction
-- Diagram extraction
 
 # Output file format
 - hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
