@@ -68,45 +68,40 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UglyToad.PdfPig, Version=0.0.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.0.9\lib\net461\UglyToad.PdfPig.dll</HintPath>
+    <Reference Include="UglyToad.PdfPig, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.DocumentLayoutAnalysis, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.DocumentLayoutAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.Fonts, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.Package, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Package.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.Tokenization, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Tokenization.dll</HintPath>
+    </Reference>
+    <Reference Include="UglyToad.PdfPig.Tokens, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltoTest.cs" />
-    <Compile Include="ClusteringAlgorithms.cs" />
-    <Compile Include="DocstrumBBTest.cs" />
-    <Compile Include="Export\Alto.cs" />
-    <Compile Include="Export\hOCR.cs" />
-    <Compile Include="Export\PageXml.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="HocrTest.cs" />
-    <Compile Include="IBlocksOrderer.cs" />
-    <Compile Include="ImageTest.cs" />
-    <Compile Include="PageSegmenter\ConstrainedTextlinePageSegmenter.cs" />
-    <Compile Include="PageSegmenter\DistancesLocal.cs" />
-    <Compile Include="PageXmlTest.cs" />
-    <Compile Include="PdfATest.cs" />
-    <Compile Include="PdfGeometry.cs" />
+    <Compile Include="PageExportExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PathsTest.cs" />
     <Compile Include="RamerDouglasPeucker.cs" />
-    <Compile Include="RecursiveXYCutLocal.cs" />
-    <Compile Include="RecursiveXYCutPath.cs" />
-    <Compile Include="RXYCutStepsTest.cs" />
-    <Compile Include="RXYCutTest.cs" />
-    <Compile Include="StraightSkeleton\Vertex.cs" />
-    <Compile Include="StringWriterUtf8.cs" />
-    <Compile Include="TextSequenceBlocksOrderer.cs" />
-    <Compile Include="TextSequenceTest.cs" />
-    <Compile Include="VertexTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\Samples\rotated block2.pdf" />
     <None Include="Export\Scemas\alto-4-1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -115,65 +110,18 @@
     </None>
     <None Include="Export\Scemas\tei_ocr.rng" />
     <None Include="packages.config" />
-    <None Include="Resources\Chart and diagram extraction\104-7-3.pdf" />
-    <None Include="Resources\Chart and diagram extraction\Extraction, layout analysis and classification of diagrams in PDF documents.pdf" />
-    <None Include="Resources\Page segmentation\A Fast Algorithm for Bottom-Up Document Layout Analysis.pdf" />
-    <None Include="Resources\Page segmentation\Document Layout Analysis - Inside Mines - Hoch.pdf" />
-    <None Include="Resources\Page segmentation\Document Structure and Layout Analysis--DocStructure.pdf" />
-    <None Include="Resources\Page segmentation\Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms - Review.pdf" />
-    <None Include="Resources\Page segmentation\Layout Analysis based on Text Line Segment Hypotheses.pdf" />
-    <None Include="Resources\Page segmentation\Performance Comparison of Six Algorithms for Page Segmentation.pdf" />
-    <None Include="Resources\Page segmentation\Recursive X-Y Cut using Bounding Boxes of Connected Components.pdf" />
-    <None Include="Resources\Page segmentation\tab stop - tesseract.pdf" />
-    <None Include="Resources\Page segmentation\Two Geometric Algorithms for Layout Analysis--breuel-das.pdf" />
-    <None Include="Resources\Page segmentation\Voronoi++.pdf" />
-    <None Include="Resources\Samples\104-7-3.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\excel.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\excel_2.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_2.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_3.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_4.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_6.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_5.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\oxyplot_7.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\Random 2 Columns Lists Chart.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Samples\Random 2 Columns Lists Chart_PDF-A.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Table extraction\A Fast Preprocessing Method for Table Boundary Detection - Narrowing Down the Sparse Lines using Solely Coordinate Information.pdf" />
-    <None Include="Resources\Table extraction\Algorithmic Extraction of Data in Tables in Pdf Documents - Nurminen.pdf" />
-    <None Include="Resources\Table extraction\Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method.pdf" />
-    <None Include="Resources\Table extraction\Automatic Tabular Data Extraction and Understanding.pdf" />
-    <None Include="Resources\Table extraction\Detecting Table Region in PDF Documents Using Distant Supervision.pdf" />
-    <None Include="Resources\Table extraction\Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms.pdf" />
-    <None Include="Resources\Table extraction\Identifying Table Boundaries in Digital Documents via Sparse Line Detection.pdf" />
-    <None Include="Resources\Table extraction\Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines.pdf" />
-    <None Include="Resources\Table extraction\PDF-TREX.pdf" />
-    <None Include="Resources\Table extraction\pdf2table.pdf" />
-    <None Include="Resources\Text extraction\High precision text extraction from PDF documents.pdf" />
+    <None Include="Resources\Samples\104-7-3.pdf" />
+    <None Include="Resources\Samples\excel.pdf" />
+    <None Include="Resources\Samples\excel_2.pdf" />
+    <None Include="Resources\Samples\oxyplot.pdf" />
+    <None Include="Resources\Samples\oxyplot_2.pdf" />
+    <None Include="Resources\Samples\oxyplot_3.pdf" />
+    <None Include="Resources\Samples\oxyplot_4.pdf" />
+    <None Include="Resources\Samples\oxyplot_6.pdf" />
+    <None Include="Resources\Samples\oxyplot_5.pdf" />
+    <None Include="Resources\Samples\oxyplot_7.pdf" />
+    <None Include="Resources\Samples\Random 2 Columns Lists Chart.pdf" />
+    <None Include="Resources\Samples\Random 2 Columns Lists Chart_PDF-A.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImageConverter\ImageConverter.csproj">
@@ -186,7 +134,6 @@
     <Content Include="doc\xy cut.gif" />
     <Content Include="doc\xy cut_small.gif" />
     <Content Include="License-LGPL.txt" />
-    <Content Include="StraightSkeleton\ref.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />

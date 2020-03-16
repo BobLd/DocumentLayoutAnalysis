@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using UglyToad.PdfPig.Geometry;
-
-namespace DocumentLayoutAnalysis
+﻿namespace DocumentLayoutAnalysis
 {
+    using System.Collections.Generic;
+    using UglyToad.PdfPig.Core;
+    
     /*
      * Sources:
      * https://www.codeproject.com/Articles/18936/A-C-Implementation-of-Douglas-Peucker-Line-Approxi
