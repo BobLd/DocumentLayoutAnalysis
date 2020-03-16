@@ -10,6 +10,9 @@
     using UglyToad.PdfPig.DocumentLayoutAnalysis.ReadingOrderDetector;
     using UglyToad.PdfPig.DocumentLayoutAnalysis.WordExtractor;
 
+    /// <summary>
+    /// Export pdf document the PAGE XML format.
+    /// </summary>
     public class PageExportExample
     {
         static readonly string pdfPath = @"../../Resources/Samples/rotated block2.pdf";
