@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\Samples\APISmap1.pdf" />
     <None Include="Resources\Samples\rotated block2.pdf" />
     <None Include="Export\Scemas\alto-4-1.xsd">
       <SubType>Designer</SubType>
