@@ -7,7 +7,7 @@ In this repos, we will not considere scanned documents, but classic pdf document
 
 # [Resources](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources)
 ## Text extraction
-- [High precision text extraction from PDF documents]() | Øyvind Raddum Berg
+- [High precision text extraction from PDF documents](https://www.duo.uio.no/bitstream/handle/10852/8893/Berg.pdf?sequence=1) | Øyvind Raddum Berg
 - [User-Guided Information Extraction from Print-Oriented Documents](https://www.dbai.tuwien.ac.at/staff/hassan/files/dissertation.pdf) | Tamir Hassan
 - [Combining Linguistic and Spatial Information for Document Analysis](https://arxiv.org/ftp/cs/papers/0009/0009014.pdf) | Aiello, Monz and Todoran
 - [New Methods for Metadata Extraction from Scientific Literature](https://arxiv.org/pdf/1710.10201.pdf) | Dominika Tkaczyk
@@ -15,11 +15,11 @@ In this repos, we will not considere scanned documents, but classic pdf document
 - [Layout and Content Extraction for PDF Documents](https://www.researchgate.net/publication/220932927_Layout_and_Content_Extraction_for_PDF_Documents) | Hui Chao, Jian Fan
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 ## Page segmentation
-- [Performance Comparison of Six Algorithms for Page Segmentation]() | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
-- [A Fast Algorithm for Bottom-Up Document Layout Analysis]() | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
-- [Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms: A Review]() | Pinky Gather, Avininder Singh
-- [Layout Analysis based on Text Line Segment Hypotheses]() | Thomas M. Breuel
-- [Hybrid Page Layout Analysis via Tab-Stop Detection]() | Ray Smith
+- [Performance Comparison of Six Algorithms for Page Segmentation](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
+- [A Fast Algorithm for Bottom-Up Document Layout Analysis](https://dl.acm.org/doi/10.1109/34.584106) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
+- [Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms: A Review](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Pinky Gather, Avininder Singh
+- [Layout Analysis based on Text Line Segment Hypotheses](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.124.3478) | Thomas M. Breuel
+- [Hybrid Page Layout Analysis via Tab-Stop Detection](http://www.cvc.uab.es/icdar2009/papers/3725a241.pdf) | Ray Smith
 - Extending the Page Segmentation Algorithms of the Ocropus Documentation Layout Analysis System | Amy Alison Winder
 - [Object-Level Document Analysis of PDF Files](https://www.dbai.tuwien.ac.at/staff/hassan/files/p47-hassan.pdf) | Tamir Hassan
 - [Document Image Segmentation as a Spectral Partitioning Problem](https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2008/Praveen08Document.pdf) | Dasigi, Jain and Jawahar
@@ -27,12 +27,12 @@ In this repos, we will not considere scanned documents, but classic pdf document
 #### Recursive XY Cut [`implementation`]()
   The X-Y cut segmentation algorithm, also referred to as recursive X-Y cuts (RXYC) algorithm, is a tree-based __top-down__ algorithm.
 The root of the tree represents the entire document page. All the leaf nodes together represent the final segmentation. The RXYC algorithm __recursively splits the document into two or more smaller rectangular blocks which represent the nodes of the tree. At each step of the recursion, the horizontal and vertical projection profiles of each node are computed.__ Then, the valleys along the horizontal and vertical directions, _VX_ and _VY_, are compared to corresponding predefined thresholds _TX_ and _TY_. If the valley is larger than the threshold, the node is split at the mid-point of the wider of _VX_ and _VY_ into two children nodes. The process continues until no leaf node can be split further. Then, noise regions are removed using noise removal thresholds _TnX_ and _TnY_. [`source`]
-- [Recursive X-Y Cut using Bounding Boxes of Connected Components]() | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
+- [Recursive X-Y Cut using Bounding Boxes of Connected Components](https://www.researchgate.net/publication/220860850_Recursive_X-Y_cut_using_bounding_boxes_of_connected_components) | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
 #### Docstrum [`implementation`]()
   The Docstrum algorithm by Gorman is a __bottom-up__ approach based on __nearest-neighborhood clustering__ of connected components extracted from the document image. After noise removal, the connected components are separated into two groups, one with dominant characters and another one with characters in titles and section heading, using a character size ratio factor _fd_. Then, _K_ nearest neighbors are found for each connected component. Then, text-lines are found by computing the transitive closure on within-line nearest neighbor pairings using a threshold _ft_. Finally, text-lines are merged to form text blocks using a parallel distance threshold _fpa_ and a perpendicular distance threshold _fpe_. [`source`]()
 - The Document Spectrum for Page Layout Analysis | Lawrence O’Gorman
-- [Document Structure and Layout Analysis]() | Anoop M. Namboodiri and Anil K. Jain
-- [Document Layout Analysis]() | Garrett Hoch
+- [Document Structure and Layout Analysis](https://www.semanticscholar.org/paper/Document-Structure-and-Layout-Analysis-Namboodiri-Jain/42b2bc874b1b080cde919c2d9220f32a0023ac66) | Anoop M. Namboodiri and Anil K. Jain
+- [Document Layout Analysis](https://inside.mines.edu/~whoff/courses/EENG510/projects/2015/Hoch.pdf) | Garrett Hoch
 #### Voronoi
   The Voronoi-diagram based segmentation algorithm by Kise et al. is also a bottom-up algorithm. In the first step, it extracts sample points from the boundaries of the connected components using a sampling rate _sr_. Then, noise removal is done using a maximum noise zone size threshold _nm_, in addition to width, height, and aspect ratio thresholds. After that the Voronoi diagram is generated using sample points obtained from the borders of the connected components. Superfluous Voronoi edges are deleted using a criterion involving the area ratio threshold _ta_, and the inter-line spacing margin control factor _fr_. Since we evaluate all algorithms on document pages with Manhattan layouts, a modified version of the algorithm is used to generate rectangular zones.[`source`]()
 - [Voronoi++: A Dynamic Page Segmentation approach based on Voronoi and Docstrum features](Page%20segmentation/Voronoi%2B%2B.pdf) | Mudit Agrawal and David Doermann
@@ -41,8 +41,8 @@ The root of the tree represents the entire document page. All the leaf nodes tog
 1. Find tall whitespace rectangles and evaluate them as candidates for gutters, column separators, etc. The algorithm for finding maximal empty whitespace is described in Breuel. The whitespace rectangles are returned in order of decreasing quality and are allowed a maximum overlap of _Om_.
 2. The whitespace rectangles representing the columns are used as obstacles in a robust least square, globally optimal text-line detection algorithm. Then, the bounding box of all the characters making the text-line is computed.
 The method was merely intended by its author as a demonstration of the application of two geometric algorithms, and not as a complete layout analysis system; nevertheless, we included it in the comparison because it has already proven useful in some applications. It is also nearly parameter free and resolution independent.[`source`]()
-- [Two Geometric Algorithms for Layout Analysis]() | Thomas M. Breuel
-- [High precision text extraction from PDF documents]() | Øyvind Raddum Berg
+- [Two Geometric Algorithms for Layout Analysis](https://static.aminer.org/pdf/PDF/000/140/219/two_geometric_algorithms_for_layout_analysis.pdf) | Thomas M. Breuel
+- [High precision text extraction from PDF documents](https://www.duo.uio.no/bitstream/handle/10852/8893/Berg.pdf?sequence=1) | Øyvind Raddum Berg
 - High Performance Document Layout Analysis | Thomas M. Breuel
 #### PDF/A standard
 [PDF/A-1a](https://en.wikipedia.org/wiki/PDF/A#PDF/A-1) compliant document make the following information available:
@@ -60,10 +60,10 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern
 - [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
 ### Table
-- [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms]() | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
-- [Detecting Table Region in PDF Documents Using Distant Supervision]() | Miao Fan and Doo Soon Kim
-- [Automatic Tabular Data Extraction and Understanding]() | Roya Rastan
-- [Algorithmic Extraction of Data in Tables in PDF Documents]() | Anssi Nurminen
+- [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](https://arxiv.org/pdf/1904.01947.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
+- [Detecting Table Region in PDF Documents Using Distant Supervision](https://arxiv.org/pdf/1506.08891v6.pdf) | Miao Fan and Doo Soon Kim
+- Automatic Tabular Data Extraction and Understanding | Roya Rastan
+- [Algorithmic Extraction of Data in Tables in PDF Documents](https://pdfs.semanticscholar.org/a9b1/67a86fb189bfcd366c3839f33f0404db9c10.pdf) | Anssi Nurminen
 - [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | Nikola Milosevic
 - [Integrating and querying similar tables from PDF documentsusing deep learning](https://arxiv.org/pdf/1901.04672.pdf) | Rahul Anand, Hye-young Paik and Chen Wang
 - [Locating Tables in Scanned Documents for Reconstructing and Republishing ](https://arxiv.org/search/?query=document+layout+analysis&searchtype=all&source=header) | MAC Akmal Jahan, Roshan G Ragel 
@@ -76,16 +76,16 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Configurable Table Structure Recognition in Untagged PDF Documents](https://www.researchgate.net/publication/307174717_Configurable_Table_Structure_Recognition_in_Untagged_PDF_Documents) | A. Shigarov, A. Mikhailov, A. Altaev | [`ppt`](https://www.slideshare.net/shig/configurable-table-structure-recognition-in-untagged-pdf-documents)
 - [Complicated Table Structure Recognition](https://arxiv.org/pdf/1908.04729.pdf) | Z. Chi, H. Huang, H. Xu, H. Yu, W. Yin, X. Mao | [github](https://github.com/Academic-Hammer/SciTSR)
 #### Systems
-- [pdf2table: A Method to Extract Table Information from PDF Files]() | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
-- [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents]() | Ermelinda Oro, Massimo Ruffolo
+- [pdf2table: A Method to Extract Table Information from PDF Files](http://ieg.ifs.tuwien.ac.at/pub/yildiz_iicai_2005.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
+- [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](http://www.cvc.uab.es/icdar2009/papers/3725a906.pdf) | Ermelinda Oro, Massimo Ruffolo
 - [TAO: System for Table Detection and Extraction from PDF Documents](https://pdfs.semanticscholar.org/22c9/f2d80e0f0546a54c82dbc9cfc9e68ce9a1ff.pdf) | Martha O. Perez-Arriaga, Trilce Estrada, and Soraya Abad-Mota
 #### Sparse line
-- [Identifying Table Boundaries in Digital Documents via Sparse Line Detection]() | Ying Liu, Prasenjit Mitra, C. Lee Giles
-- [A Fast Preprocessing Method for Table Boundary Detection: Narrowing Down the Sparse Lines using Solely Coordinate Information]() | Ying Liu, Prasenjit Mitra, C. Lee Giles
-- [Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines]() | Ying Liu, Kun Bai, Prasenjit Mitra, C. Lee Giles
-- [Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method]() | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt
+- [Identifying Table Boundaries in Digital Documents via Sparse Line Detection](https://clgiles.ist.psu.edu/pubs/CIKM2008-table-boundaries.pdf) | Ying Liu, Prasenjit Mitra, C. Lee Giles
+- [A Fast Preprocessing Method for Table Boundary Detection: Narrowing Down the Sparse Lines using Solely Coordinate Information](https://www.researchgate.net/publication/220933121_A_Fast_Preprocessing_Method_for_Table_Boundary_Detection_Narrowing_Down_the_Sparse_Lines_Using_Solely_Coordinate_Information) | Ying Liu, Prasenjit Mitra, C. Lee Giles
+- [Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines](https://clgiles.ist.psu.edu/pubs/ICDAR2009-table-boundary-detection.pdf) | Ying Liu, Kun Bai, Prasenjit Mitra, C. Lee Giles
+- [Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method](http://gsl.lab.asu.edu/doc/tableicdar01.pdf) | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt
 ### Chart and diagram
-- [Extraction, layout analysis and classification of diagrams in PDF documents]() | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes
+- [Extraction, layout analysis and classification of diagrams in PDF documents](http://www.ccs.northeastern.edu/home/futrelle/pubs37/diagrams/DiagramPapers/ExtractionLayout2003.pdf) | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes
 - [Graphics Recognition in PDF documents](https://pdfs.semanticscholar.org/9c18/d90f1988d1d98f061bdd076d56983a82803d.pdf) | Mingyan Shao and Robert P. Futrelle
 - [A Study on the Document Zone Content Classification Problem](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
  | Yalin Wang, Ihsin T. Phillips, and Robert M. Haralick
