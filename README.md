@@ -35,7 +35,7 @@ The root of the tree represents the entire document page. All the leaf nodes tog
 - [Document Layout Analysis](https://inside.mines.edu/~whoff/courses/EENG510/projects/2015/Hoch.pdf) | Garrett Hoch
 #### Voronoi
   The Voronoi-diagram based segmentation algorithm by Kise et al. is also a bottom-up algorithm. In the first step, it extracts sample points from the boundaries of the connected components using a sampling rate _sr_. Then, noise removal is done using a maximum noise zone size threshold _nm_, in addition to width, height, and aspect ratio thresholds. After that the Voronoi diagram is generated using sample points obtained from the borders of the connected components. Superfluous Voronoi edges are deleted using a criterion involving the area ratio threshold _ta_, and the inter-line spacing margin control factor _fr_. Since we evaluate all algorithms on document pages with Manhattan layouts, a modified version of the algorithm is used to generate rectangular zones.[`source`]()
-- [Voronoi++: A Dynamic Page Segmentation approach based on Voronoi and Docstrum features](Page%20segmentation/Voronoi%2B%2B.pdf) | Mudit Agrawal and David Doermann
+- [Voronoi++: A Dynamic Page Segmentation approach based on Voronoi and Docstrum features](http://www.cvc.uab.es/icdar2009/papers/3725b011.pdf) | Mudit Agrawal and David Doermann
 #### Constrained text-line detection
   The layout analysis approach by Breuel finds text-lines as a two step process:
 1. Find tall whitespace rectangles and evaluate them as candidates for gutters, column separators, etc. The algorithm for finding maximal empty whitespace is described in Breuel. The whitespace rectangles are returned in order of decreasing quality and are allowed a maximum overlap of _Om_.
