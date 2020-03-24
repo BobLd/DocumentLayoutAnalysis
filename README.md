@@ -51,6 +51,10 @@ The method was merely intended by its author as a demonstration of the applicati
 3. Tagged text spans and descriptive text for images and symbols
 4. Character mappings to Unicode
 ## Zone classification/extraction & Reading order
+> #### Related projects
+> - [PdfPig MLNet Block Classifier](https://github.com/BobLd/PdfPigMLNetBlockClassifier) - Proof of concept of training a simple Region Classifier using PdfPig and ML.NET (LightGBM).
+> - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
+> ---
 - [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | Oleg Okun, David Doermann, Matti Pietikainen
 - [Document image zone classification : A simple high-performance approach](https://www.researchgate.net/publication/221415986_Document_image_zone_classification_A_simple_high-performance_approach) | Daniel Keysers, Faisal Shafait, Thomas M. Breuel
 - [Document-Zone Classification using Partial Least Squares and Hybrid Classifiers](https://www.researchgate.net/publication/224375306_Document-Zone_Classification_using_Partial_Least_Squares_and_Hybrid_Classifiers) | Wael Abd-Almageed, Mudit Agrawal, Wontaek Seo, David Doermann
