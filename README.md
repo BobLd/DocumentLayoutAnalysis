@@ -21,6 +21,7 @@ In this repos, we will not considere scanned documents, but classic pdf document
 - [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
 - [Layout and Content Extraction for PDF Documents](https://www.researchgate.net/publication/220932927_Layout_and_Content_Extraction_for_PDF_Documents) | Hui Chao, Jian Fan
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
+
 ## Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](https://dl.acm.org/doi/10.1109/34.584106) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
@@ -51,21 +52,26 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Two Geometric Algorithms for Layout Analysis](https://static.aminer.org/pdf/PDF/000/140/219/two_geometric_algorithms_for_layout_analysis.pdf) | Thomas M. Breuel
 - [High precision text extraction from PDF documents](https://www.duo.uio.no/bitstream/handle/10852/8893/Berg.pdf?sequence=1) | Øyvind Raddum Berg
 - High Performance Document Layout Analysis | Thomas M. Breuel
+
 #### PDF/A standard
 [PDF/A-1a](https://en.wikipedia.org/wiki/PDF/A#PDF/A-1) compliant document make the following information available:
 1. Language specification
 2. Hierarchical document structure
 3. Tagged text spans and descriptive text for images and symbols
 4. Character mappings to Unicode
+
 ## Zone classification/extraction & Reading order
 - [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | Oleg Okun, David Doermann, Matti Pietikainen
 - [Document image zone classification : A simple high-performance approach](https://www.researchgate.net/publication/221415986_Document_image_zone_classification_A_simple_high-performance_approach) | Daniel Keysers, Faisal Shafait, Thomas M. Breuel
 - [Document-Zone Classification using Partial Least Squares and Hybrid Classifiers](https://www.researchgate.net/publication/224375306_Document-Zone_Classification_using_Partial_Least_Squares_and_Hybrid_Classifiers) | Wael Abd-Almageed, Mudit Agrawal, Wontaek Seo, David Doermann
 - [The Zonemap Metric for Page Segmentation and Area Classification Inscanned Documents](https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICIP-2014/Papers/1569886529.pdf) | Olivier Galibert, Juliette Kahn and Ilya Oparin
 - [Layout analysis and content classification indigitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | Andrea Corbelli, Lorenzo Baraldi, Fabrizio Balducci,Costantino Grana, Rita Cucchiara
+
 ### Reading order
 - [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern
 - [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
+- [A Data Mining Approach to Reading Order Detection](http://www.di.uniba.it/~ceci/Papers/Pubblicazioni/International%20Collections/IC.32__ICDAR07.pdf) | M. Ceci, M. Berardi, G. A. Porcelli
+
 ### Table
 - [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](https://arxiv.org/pdf/1904.01947.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](https://arxiv.org/pdf/1506.08891v6.pdf) | Miao Fan and Doo Soon Kim
