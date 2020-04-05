@@ -26,7 +26,7 @@ In this repos, we will not considere scanned documents, but classic pdf document
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](https://dl.acm.org/doi/10.1109/34.584106) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
 - [Empirical Performance Evaluation Methodology and its Application to Page Segmentation Algorithms: A Review](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Pinky Gather, Avininder Singh
 - [Layout Analysis based on Text Line Segment Hypotheses](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.124.3478) | Thomas M. Breuel
-- [Hybrid Page Layout Analysis via Tab-Stop Detection](http://www.cvc.uab.es/icdar2009/papers/3725a241.pdf) | Ray Smith
+- [Hybrid Page Layout Analysis via Tab-Stop Detection](http://www.cvc.uab.es/icdar2009/papers/3725a241.pdf) | [presentation](https://tesseract-ocr.github.io/docs/das_tutorial2016/5LayoutAnalysis.pdf) | Ray Smith
 - Extending the Page Segmentation Algorithms of the Ocropus Documentation Layout Analysis System | Amy Alison Winder
 - [Object-Level Document Analysis of PDF Files](https://www.dbai.tuwien.ac.at/staff/hassan/files/p47-hassan.pdf) | Tamir Hassan
 - [Document Image Segmentation as a Spectral Partitioning Problem](https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2008/Praveen08Document.pdf) | Dasigi, Jain and Jawahar
