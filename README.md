@@ -142,6 +142,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Retrieval Framework and Implementation for Electronic Documents with Similar Layouts](https://arxiv.org/ftp/arxiv/papers/1810/1810.07237.pdf) | Chung
 
 ## Dehyphenation
+- [Dehyphenation - Some empirical methods](https://www.duo.uio.no/bitstream/handle/10852/9043/Bauge2012-dehyphenation.pdf) | Ola S. Bauge
 - [Improved Dehyphenation of Line Breaks for PDF Text Extraction](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Mari_Hernaes_2019.pdf) | Mari Sverresdatter Hernæs
 - [Dehyphenation of Words and Guessing Ligatures](http://ad-publications.informatik.uni-freiburg.de/theses/Master_Sumitra_Corraya_2018.pdf) | Sumitra Magdalin Corraya
 
