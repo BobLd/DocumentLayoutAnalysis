@@ -145,6 +145,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Dehyphenation - Some empirical methods](https://www.duo.uio.no/bitstream/handle/10852/9043/Bauge2012-dehyphenation.pdf) | Ola S. Bauge
 - [Improved Dehyphenation of Line Breaks for PDF Text Extraction](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Mari_Hernaes_2019.pdf) | Mari Sverresdatter Hernæs
 - [Dehyphenation of Words and Guessing Ligatures](http://ad-publications.informatik.uni-freiburg.de/theses/Master_Sumitra_Corraya_2018.pdf) | Sumitra Magdalin Corraya
+- [How Document Pre-processing affects Keyphrase Extraction Performance](https://arxiv.org/pdf/1610.07809.pdf) | F. Boudin, H. Mougard, D. Cram
 
 ## Data structure
 - [Kd-Trees for Document Layout Analysis](https://www.researchgate.net/publication/281267378_Kd-Trees_for_Document_Layout_Analysis) | Christoph Dalitz
