@@ -34,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
@@ -69,31 +70,32 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UglyToad.PdfPig, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Core.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.Core.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.DocumentLayoutAnalysis, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.DocumentLayoutAnalysis.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.DocumentLayoutAnalysis.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Fonts, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Fonts.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="UglyToad.PdfPig.Package, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Package.dll</HintPath>
+    <Reference Include="UglyToad.PdfPig.Package, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.Package.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Tokenization, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Tokenization.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.Tokenization.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Tokens, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.1-alpha001\lib\net461\UglyToad.PdfPig.Tokens.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.1\lib\net461\UglyToad.PdfPig.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MarkedContentTest.cs" />
     <Compile Include="PageExportExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

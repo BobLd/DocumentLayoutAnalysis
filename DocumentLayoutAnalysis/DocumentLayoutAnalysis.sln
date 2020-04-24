@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentLayoutAnalysis", "DocumentLayoutAnalysis\DocumentLayoutAnalysis.csproj", "{FE6AB876-089C-4E87-8160-D305738DB783}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{78212F45-D69E-4A84-8A26-A4BB5609B660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DlaViewer", "DlaViewer\DlaViewer.csproj", "{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78212F45-D69E-4A84-8A26-A4BB5609B660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

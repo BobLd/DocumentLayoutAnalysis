@@ -13,17 +13,17 @@
     /// <summary>
     /// Export pdf document the PAGE XML format.
     /// </summary>
-    public class PageExportExample
+    public static class PageExportExample
     {
-        static readonly string pdfPath = @"../../Resources/Samples/rotated block2.pdf";
-        static readonly int zoom = 5;
-        static readonly int pageNo = 1;
+        private static readonly string pdfPath = @"../../Resources/Samples/rotated block2.pdf";
+        private static readonly int zoom = 5;
+        private static readonly int pageNo = 1;
 
         public static void Run()
         {
             var exporter = new PageXmlTextExporter(NearestNeighbourWordExtractor.Instance,
                                                    RecursiveXYCut.Instance,
-                                                   UnsupervisedReadingOrderDetector.Instance, 
+                                                   UnsupervisedReadingOrderDetector.Instance,
                                                    scale: zoom);
 
             using (var converter = new PdfImageConverter(pdfPath))

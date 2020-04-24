@@ -17,10 +17,10 @@ namespace ImageConverter
 {
     public class PdfImageConverter : IDisposable
     {
-        private string _path;
-        private IntPtr _ctx;
-        private IntPtr _stm;
-        private IntPtr _doc;
+        private readonly string _path;
+        private readonly IntPtr _ctx;
+        private readonly IntPtr _stm;
+        private readonly IntPtr _doc;
 
         /// <summary>
         /// The number of pages in the document.
@@ -71,6 +71,15 @@ namespace ImageConverter
             var page = RenderPage(_ctx, _doc, p, b, zoom, zoom);
             NativeMethods.FreePage(_doc, p); // releases the resources consumed by the page
             return page;
+        }
+
+        public Stream GetPageStream(int pageNumber, float zoom = 1.0f)
+        {
+            var bmp = GetPage(pageNumber, zoom);
+            MemoryStream memStream = new MemoryStream();
+            bmp.Save(memStream, ImageFormat.Png);
+            memStream.Seek(0, SeekOrigin.Begin);
+            return memStream;
         }
 
         private enum ColorSpace
@@ -200,9 +209,9 @@ namespace ImageConverter
         private static class NativeMethods
         {
             public static bool Is64bit => IntPtr.Size == 8;
-            const uint FZ_STORE_DEFAULT = 256 << 20;
-            const string DLL = "libmupdf.dll";
-            const string MuPDFVersion = "1.6";
+            private const uint FZ_STORE_DEFAULT = 256 << 20;
+            private const string DLL = "libmupdf.dll";
+            private const string MuPDFVersion = "1.6";
 
             static NativeMethods()
             {
@@ -214,7 +223,7 @@ namespace ImageConverter
             private static extern IntPtr LoadLibrary(string dllToLoad);
 
             [DllImport(DLL, EntryPoint = "fz_new_context_imp", CallingConvention = CC.Cdecl, BestFitMapping = false)]
-            static extern IntPtr NewContext(IntPtr alloc, IntPtr locks, uint max_store, [MarshalAs(UnmanagedType.LPStr)] string fz_version);
+            private static extern IntPtr NewContext(IntPtr alloc, IntPtr locks, uint max_store, [MarshalAs(UnmanagedType.LPStr)] string fz_version);
 
             public static IntPtr NewContext()
             {

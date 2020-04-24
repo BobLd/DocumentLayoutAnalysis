@@ -1,0 +1,24 @@
+﻿<Window x:Class="DlaViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" 
+        xmlns:local="clr-namespace:DlaViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="600" AllowDrop="True" Drop="Window_Drop">
+    <Grid>
+        <oxy:PlotView x:Name="plot1" Model="{Binding PlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="{Binding Path=CurrentPageNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,10,0,0" Text="/" TextWrapping="NoWrap" VerticalAlignment="Top" Width="6"/>
+        <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" Text="{Binding Path=NumberOfPages, Mode=OneWay}" TextWrapping="NoWrap" VerticalAlignment="Top"/>
+        <Button Name="buttonPrev" ToolTip="Previous page" Content="&lt;" HorizontalAlignment="Left" Margin="104,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonPrev_Click"/>
+        <Button Name="buttonNext" Content=">" ToolTip="Next page" HorizontalAlignment="Left" Margin="139,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonNext_Click"/>
+        <ComboBox Margin="0,4,10,0" SelectedValue="{Binding BboxLevel}" SelectedValuePath="Content" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120">
+            <ComboBoxItem Content="Letters" IsSelected="True"/>
+            <ComboBoxItem Content="Words"/>
+            <ComboBoxItem Content="Lines"/>
+            <ComboBoxItem Content="Paragraphs"/>
+        </ComboBox>
+    </Grid>
+</Window>
