@@ -23,6 +23,12 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [Layout and Content Extraction for PDF Documents](https://www.researchgate.net/publication/220932927_Layout_and_Content_Extraction_for_PDF_Documents) | Hui Chao, Jian Fan
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 
+## Word segmentation
+- [An Efficient Word Segmentation Technique for Historical and Degraded Machine-Printed Documents](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.145.2079) | M. Makridis, N. Nikolaou, B. Gatos
+- [Word Extraction Using Area Voronoi Diagram](http://andrei.clubcisco.ro/cursuri/f/f-sym/5master/analiza-extragerea-continutului/prezentari/Word%20Extraction%20Using%20Area%20Voronoi%20Diagram.pdf) | Zhe Wang, Yue Lu, Chew Lim Tan
+
+![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/nearest%20neighbour%20word%20example%20v2.png)
+
 ## Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
 - [A Fast Algorithm for Bottom-Up Document Layout Analysis](https://dl.acm.org/doi/10.1109/34.584106) | Anikó Simon, Jean-Christophe Pret, and A. Peter Johnson
@@ -36,10 +42,13 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 #### Recursive XY Cut [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/RecursiveXYCut.cs)
   The X-Y cut segmentation algorithm, also referred to as recursive X-Y cuts (RXYC) algorithm, is a tree-based __top-down__ algorithm.
 The root of the tree represents the entire document page. All the leaf nodes together represent the final segmentation. The RXYC algorithm __recursively splits the document into two or more smaller rectangular blocks which represent the nodes of the tree. At each step of the recursion, the horizontal and vertical projection profiles of each node are computed.__ Then, the valleys along the horizontal and vertical directions, _VX_ and _VY_, are compared to corresponding predefined thresholds _TX_ and _TY_. If the valley is larger than the threshold, the node is split at the mid-point of the wider of _VX_ and _VY_ into two children nodes. The process continues until no leaf node can be split further. Then, noise regions are removed using noise removal thresholds _TnX_ and _TnY_. [`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
+![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/rxyc%20example.png)
 - [Recursive X-Y Cut using Bounding Boxes of Connected Components](https://www.researchgate.net/publication/220860850_Recursive_X-Y_cut_using_bounding_boxes_of_connected_components) | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
 #### Docstrum [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/DocstrumBoundingBoxes.cs)
   The Docstrum algorithm by Gorman is a __bottom-up__ approach based on __nearest-neighborhood clustering__ of connected components extracted from the document image. After noise removal, the connected components are separated into two groups, one with dominant characters and another one with characters in titles and section heading, using a character size ratio factor _fd_. Then, _K_ nearest neighbors are found for each connected component. Then, text-lines are found by computing the transitive closure on within-line nearest neighbor pairings using a threshold _ft_. Finally, text-lines are merged to form text blocks using a parallel distance threshold _fpa_ and a perpendicular distance threshold _fpe_. [`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
-- The Document Spectrum for Page Layout Analysis | Lawrence O’Gorman
+![example or](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%202.png)
+![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%201.png)
+- [The Document Spectrum for Page Layout Analysis](https://ieeexplore.ieee.org/document/244677) | Lawrence O'Gorman
 - [Document Structure and Layout Analysis](https://www.semanticscholar.org/paper/Document-Structure-and-Layout-Analysis-Namboodiri-Jain/42b2bc874b1b080cde919c2d9220f32a0023ac66) | Anoop M. Namboodiri and Anil K. Jain
 - [Document Layout Analysis](https://inside.mines.edu/~whoff/courses/EENG510/projects/2015/Hoch.pdf) | Garrett Hoch
 #### Voronoi
