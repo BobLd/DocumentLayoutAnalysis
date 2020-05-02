@@ -1,8 +1,11 @@
-﻿using System.IO;
-using System.Windows;
-
-namespace DlaViewer
+﻿namespace DlaViewer
 {
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Windows;
+    using System.Windows.Threading;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -14,6 +17,12 @@ namespace DlaViewer
         {
             InitializeComponent();
             this.DataContext = this.mainViewModel;
+            PagePlotView.SizeChanged += PagePlotView_SizeChanged;
+        }
+
+        private void PagePlotView_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Debug.Print(e.PreviousSize.ToString() + "->" + e.NewSize);
         }
 
         private void Window_Drop(object sender, DragEventArgs e)

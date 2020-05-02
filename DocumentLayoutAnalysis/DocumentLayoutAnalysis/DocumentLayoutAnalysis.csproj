@@ -134,6 +134,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="doc\docstrum example 1.png" />
+    <Content Include="doc\docstrum example 2.png" />
+    <Content Include="doc\nearest neighbour word example v2.png" />
+    <Content Include="doc\rxyc example.png" />
     <Content Include="doc\xy cut.gif" />
     <Content Include="doc\xy cut_small.gif" />
     <Content Include="License-LGPL.txt" />

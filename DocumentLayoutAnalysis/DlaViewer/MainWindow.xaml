@@ -6,15 +6,29 @@
         xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" 
         xmlns:local="clr-namespace:DlaViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="850" Width="600" AllowDrop="True" Drop="Window_Drop">
+        Title="MainWindow" Height="850" Width="805" AllowDrop="True" Drop="Window_Drop">
     <Grid>
-        <oxy:PlotView x:Name="plot1" Model="{Binding PlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="{Binding Path=CurrentPageNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="40"/>
-        <TextBlock HorizontalAlignment="Left" Margin="55,10,0,0" Text="/" TextWrapping="NoWrap" VerticalAlignment="Top" Width="6"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" Text="{Binding Path=NumberOfPages, Mode=OneWay}" TextWrapping="NoWrap" VerticalAlignment="Top"/>
-        <Button Name="buttonPrev" ToolTip="Previous page" Content="&lt;" HorizontalAlignment="Left" Margin="104,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonPrev_Click"/>
-        <Button Name="buttonNext" Content=">" ToolTip="Next page" HorizontalAlignment="Left" Margin="139,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonNext_Click"/>
-        <ComboBox Margin="0,4,10,0" SelectedValue="{Binding BboxLevel}" SelectedValuePath="Content" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600*" />            <!--{Binding Path=PageWidth, Mode=OneWayToSource} OneWay-->
+            <ColumnDefinition Width="257*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="230"/>
+            <RowDefinition Height="230"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <oxy:PlotView x:Name="PagePlotView" Model="{Binding PagePlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0" Grid.RowSpan="3"/>
+        <oxy:PlotView Model="{Binding HeightHistoPlotModel}" Controller="{Binding CustomController}" Grid.Column="1" />
+        <oxy:PlotView Model="{Binding WidthHistoPlotModel}" Controller="{Binding CustomController}" Grid.Column="1" Grid.Row="1"/>
+        
+        <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="{Binding Path=CurrentPageNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="40" Height="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,10,0,0" Text="/" TextWrapping="NoWrap" VerticalAlignment="Top" Width="6" Height="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" Text="{Binding Path=NumberOfPages, Mode=OneWay}" TextWrapping="NoWrap" VerticalAlignment="Top" Height="16" Width="33"/>
+        <Button ToolTip="Previous page" Content="&lt;" HorizontalAlignment="Left" Margin="104,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonPrev_Click" Height="20"/>
+        <Button ToolTip="Next page" Content=">" HorizontalAlignment="Left" Margin="139,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonNext_Click" Height="20"/>
+        <ComboBox Margin="0,4,10,0" SelectedValue="{Binding BboxLevel}" SelectedValuePath="Content" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="22">
             <ComboBoxItem Content="Letters" IsSelected="True"/>
             <ComboBoxItem Content="Words"/>
             <ComboBoxItem Content="Lines"/>

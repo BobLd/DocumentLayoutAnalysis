@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentLayoutAnalysis", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{78212F45-D69E-4A84-8A26-A4BB5609B660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DlaViewer", "DlaViewer\DlaViewer.csproj", "{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DlaViewer", "DlaViewer\DlaViewer.csproj", "{24DCC056-5D71-48BF-B0C4-C20B5FA0EC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

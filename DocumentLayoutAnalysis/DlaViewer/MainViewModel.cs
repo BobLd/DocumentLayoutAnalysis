@@ -6,6 +6,7 @@
     using OxyPlot.Axes;
     using OxyPlot.Series;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
     using System.Linq;
@@ -14,32 +15,109 @@
     {
         public PlotController CustomController { get; }
 
-        PdfImageConverter _pdfImageConverter;
+        private PdfImageConverter _pdfImageConverter;
         private PdfDocumentModel _pdfDocumentModel;
 
-        private PlotModel _plotModel;
+        private PlotModel _pagePlotModel;
+        private IList<Series> _currentSeries;
+        private PlotModel _heightHistoPlotModel;
+        private PlotModel _widthtHistoPlotModel;
+
         private int _numberOfPages;
         private int _currentPageNumber;
         private string _bboxLevel;
 
-        /// <summary>
-        /// Gets the plot model.
-        /// </summary>
-        public PlotModel PlotModel
+        /*
+        public double _pageHeight;
+        public double PageHeight
         {
             get
             {
-                return _plotModel;
+                return _pageHeight;
+            }
+
+            set
+            {
+                _pageHeight = value;
+                this.RaisePropertyChanged(nameof(PageHeight));
+            }
+        }
+
+        public double _pageWidth;
+        public double PageWidth
+        {
+            get
+            {
+                return _pageWidth;
+            }
+
+            set
+            {
+                _pageWidth = value;
+                this.RaisePropertyChanged(nameof(PageWidth));
+            }
+        }
+        */
+
+        public void HidePagePlotModel()
+        {
+            _currentSeries = PagePlotModel?.Series.ToList();
+            PagePlotModel?.Series.Clear();
+        }
+
+        public void ShowPagePlotModel()
+        {
+            if (_currentSeries != null)
+            {
+                _currentSeries.ToList().ForEach(s => PagePlotModel.Series.Add(s));
+                PagePlotModel.InvalidatePlot(true);
+                this.RaisePropertyChanged(nameof(PagePlotModel));
+            }
+        }
+
+        public PlotModel PagePlotModel
+        {
+            get
+            {
+                return _pagePlotModel;
             }
 
             private set
             {
-                _plotModel = value;
-                this.RaisePropertyChanged("PlotModel");
+                _pagePlotModel = value;
+                this.RaisePropertyChanged(nameof(PagePlotModel));
+            }
+        }
+        
+        public PlotModel HeightHistoPlotModel
+        {
+            get
+            {
+                return _heightHistoPlotModel;
+            }
+
+            private set
+            {
+                _heightHistoPlotModel = value;
+                this.RaisePropertyChanged(nameof(HeightHistoPlotModel));
             }
         }
 
-        public OxyImage Image { get; private set; }
+        public PlotModel WidthHistoPlotModel
+        {
+            get
+            {
+                return _widthtHistoPlotModel;
+            }
+
+            private set
+            {
+                _widthtHistoPlotModel = value;
+                this.RaisePropertyChanged(nameof(WidthHistoPlotModel));
+            }
+        }
+
+        public OxyImage PageImage { get; private set; }
 
         public int CurrentPageNumber
         {
@@ -58,7 +136,7 @@
 
                 _currentPageNumber = value;
                 DisplayPage(_currentPageNumber);
-                this.RaisePropertyChanged("CurrentPageNumber");
+                this.RaisePropertyChanged(nameof(CurrentPageNumber));
             }
         }
 
@@ -72,7 +150,7 @@
             private set
             {
                 _numberOfPages = value;
-                this.RaisePropertyChanged("NumberOfPages");
+                this.RaisePropertyChanged(nameof(NumberOfPages));
             }
         }
 
@@ -88,7 +166,7 @@
                 if (value == _bboxLevel) return;
                 _bboxLevel = value;
                 DisplayPage(CurrentPageNumber);
-                this.RaisePropertyChanged("BboxLevel");
+                this.RaisePropertyChanged(nameof(BboxLevel));
             }
         }
 
@@ -126,13 +204,17 @@
 
             var page = _pdfDocumentModel.GetPage(pageNo);
 
-            // Create the plot model
-            var tmp = new PlotModel { IsLegendVisible = false };
-            tmp.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Minimum = 0, Maximum = page.Height });
-            tmp.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Minimum = 0, Maximum = page.Width });
+            var pageInfoModel = page.GetPageInfo();
 
-   
+            // Plot height distrib
+            HeightHistoPlotModel = pageInfoModel.HeightDistribution.GetPlotModel("Letters height distribution");
+            WidthHistoPlotModel = pageInfoModel.WidthDistribution.GetPlotModel("Letters width distribution");
 
+            // Plot page 
+            var pagePlotModel = new PlotModel { IsLegendVisible = false };
+            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Minimum = 0, Maximum = page.Height });
+            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Minimum = 0, Maximum = page.Width });
+            
             switch (BboxLevel)
             {
                 case "Words":
@@ -145,7 +227,7 @@
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        tmp.Series.Add(series1);
+                        pagePlotModel.Series.Add(series1);
                     }
                     break;
 
@@ -159,7 +241,7 @@
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        tmp.Series.Add(series1);
+                        pagePlotModel.Series.Add(series1);
                     }
                     break;
 
@@ -173,7 +255,7 @@
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        tmp.Series.Add(series1);
+                        pagePlotModel.Series.Add(series1);
                     }
                     break;
 
@@ -187,7 +269,7 @@
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
                         series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        tmp.Series.Add(series1);
+                        pagePlotModel.Series.Add(series1);
                     }
                     break;
             }
@@ -197,12 +279,12 @@
             {
                 using (var stream = _pdfImageConverter.GetPageStream(pageNo, 2))
                 {
-                    Image = new OxyImage(stream);
+                    PageImage = new OxyImage(stream);
                 }
 
-                tmp.Annotations.Add(new ImageAnnotation
+                pagePlotModel.Annotations.Add(new ImageAnnotation
                 {
-                    ImageSource = Image,
+                    ImageSource = PageImage,
                     Opacity = 0.5,
                     X = new PlotLength(0, PlotLengthUnit.Data),
                     Y = new PlotLength(0, PlotLengthUnit.Data),
@@ -217,7 +299,8 @@
                 throw;
             }
 
-            this.PlotModel = tmp;
+
+            this.PagePlotModel = pagePlotModel;
         }
 
         private string GetShorterText(string text)
