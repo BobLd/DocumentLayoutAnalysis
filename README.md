@@ -14,6 +14,36 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 
 
 # Resources
+- Text extraction
+- Word segmentation
+- Page segmentation
+	- Recursive XY Cut
+	- Docstrum
+	- Voronoi
+	- Constrained text-line detection
+	- PDF/A standard
+- Zone classification/extraction & Reading order
+	- Reading order
+	- Table
+		- Systems
+		- Sparse line
+	- Chart and diagram
+	- Mathematical expression
+	- Margins recognition
+- NLP & ML
+- Related topics
+	- Bounding boxes
+	- Images
+	- Shape detection
+	- Character Recognition
+	- Layout Similarity
+	- Dehyphenation
+	- Data structure
+- Datasets
+- Output file format
+- Pdf page to image converter
+
+
 ## Text extraction
 - [High precision text extraction from PDF documents](https://www.duo.uio.no/bitstream/handle/10852/8893/Berg.pdf?sequence=1) | Øyvind Raddum Berg
 - [User-Guided Information Extraction from Print-Oriented Documents](https://www.dbai.tuwien.ac.at/staff/hassan/files/dissertation.pdf) | Tamir Hassan
