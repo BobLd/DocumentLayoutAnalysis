@@ -220,6 +220,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
+- [Document Image Datasets](https://medium.com/@jdegange85/document-image-datasets-b7f8df01010d) | Jonathan DeGange
 
 ## Output file format
 - hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
