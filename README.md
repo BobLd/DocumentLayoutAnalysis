@@ -14,35 +14,35 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 
 
 # Resources
-- Text extraction
-- Word segmentation
-- Page segmentation
-	- Recursive XY Cut
-	- Docstrum
-	- Voronoi
-	- Constrained text-line detection
-	- PDF/A standard
-- Zone classification/extraction & Reading order
-	- Reading order
-	- Table
-		- Systems
-		- Sparse line
-	- Chart and diagram
-	- Mathematical expression
-	- Margins recognition
-- NLP & ML
-	- Workshops
-- Related topics
-	- Bounding boxes
-	- Images
-	- Shape detection
-	- Character Recognition
-	- Layout Similarity
-	- Dehyphenation
-	- Data structure
-- Datasets
-- Output file format
-- Pdf page to image converter
+- [Text extraction](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#text-extraction)
+- [Word segmentation](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#word-segmentation)
+- [Page segmentation](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#page-segmentation)
+	- [Recursive XY Cut](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#recursive-xy-cut-implementation)
+	- [Docstrum](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#docstrum-implementation)
+	- [Voronoi](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#voronoi)
+	- [Constrained text-line detection](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#constrained-text-line-detection-implementation-wip)
+	- [PDF/A standard](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#pdfa-standard)
+- [Zone classification/extraction & Reading order](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#zone-classificationextraction--reading-order)
+	- [Reading order](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#reading-order)
+	- [Table](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#table)
+		- [Systems](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#systems)
+		- [Sparse line](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#sparse-line)
+	- [Chart and diagram](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#chart-and-diagram)
+	- [Mathematical expression](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#mathematical-expression)
+	- [Margins recognition](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#margins-recognition)
+- [NLP & ML](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#nlp--ml)
+	- [Workshops](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#workshops)
+- [Related topics](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#related-topics)
+	- [Bounding boxes](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#bounding-boxes)
+	- [Images](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#images)
+	- [Shape detection](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#shape-detection)
+	- [Character Recognition](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#character-recognition)
+	- [Layout Similarity](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#layout-similarity)
+	- [Dehyphenation](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#dehyphenation)
+	- [Data structure](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#data-structure)
+- [Datasets](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#datasets)
+- [Output file format](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#output-file-format)
+
 
 
 ## Text extraction
