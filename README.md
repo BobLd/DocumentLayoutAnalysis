@@ -133,15 +133,15 @@ The method was merely intended by its author as a demonstration of the applicati
 ## Image related
 - [Analysing layout information: searching PDF documents for pictures](https://pdfs.semanticscholar.org/2bec/a8fcdbdcbe02bc30d40113432daed61f9660.pdf) | B. Mathiak et al.
 
+# Other
+- [Improving typography and minimising computation for documents with scalable layouts](http://eprints.nottingham.ac.uk/28872/1/alex-pinkney-thesis.pdf) | Pinkney, Alexander J.
+- [Breaking Paragraphs into Lines](https://jimfix.github.io/math382/knuth-plass-breaking.pdf) | D. E. Knuth, M. F. Plass
+
 ## Bounding boxes
 - [Fast Visual Object Tracking with Rotated Bounding Boxes](https://arxiv.org/abs/1907.03892) | Bao Xin Chen, John K. Tsotsos
 - [Building Non-Overlapping Polygons for Image Document Layout Analysis Results](https://pdfs.semanticscholar.org/86cb/00fb775af8d2d3970b1ccf31f5c3c83fdd89.pdf) | C.-A. Boiangiu, Mihai Zaharescu, I. Bucur
 - [Ensure Non-Overlapping in Document Layout Analysis](https://www.researchgate.net/publication/235419952_Ensure_Non-Overlapping_in_Document_Layout_Analysis) | C.-A. Boiangiu, B. Raducanu, S. Petrescu, I. Bucur
 - [Beta-Shape Using Delaunay-Based Triangle Erosion](https://www.academia.edu/39847463/Beta-Shape_Using_Delaunay-Based_Triangle_Erosion) | C.-A. Boiangiu
-
-# Other
-- [Improving typography and minimising computation for documents with scalable layouts](http://eprints.nottingham.ac.uk/28872/1/alex-pinkney-thesis.pdf) | Pinkney, Alexander J.
-- [Breaking Paragraphs into Lines](https://jimfix.github.io/math382/knuth-plass-breaking.pdf) | D. E. Knuth, M. F. Plass
 
 ## Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
