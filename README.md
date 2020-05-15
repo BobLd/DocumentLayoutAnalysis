@@ -13,7 +13,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
 
 
-# [Resources](DocumentLayoutAnalysis/DocumentLayoutAnalysis/Resources)
+# Resources
 ## Text extraction
 - [High precision text extraction from PDF documents](https://www.duo.uio.no/bitstream/handle/10852/8893/Berg.pdf?sequence=1) | Øyvind Raddum Berg
 - [User-Guided Information Extraction from Print-Oriented Documents](https://www.dbai.tuwien.ac.at/staff/hassan/files/dissertation.pdf) | Tamir Hassan
@@ -98,6 +98,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Table Header Detection and Classification](https://clgiles.ist.psu.edu/pubs/AAAI2012-table-header.pdf) | J. Fang, P. Mitra, Z. Tang, C. L. Giles
 - [Configurable Table Structure Recognition in Untagged PDF Documents](https://www.researchgate.net/publication/307174717_Configurable_Table_Structure_Recognition_in_Untagged_PDF_Documents) | A. Shigarov, A. Mikhailov, A. Altaev | [`ppt`](https://www.slideshare.net/shig/configurable-table-structure-recognition-in-untagged-pdf-documents)
 - [Complicated Table Structure Recognition](https://arxiv.org/pdf/1908.04729.pdf) | Z. Chi, H. Huang, H. Xu, H. Yu, W. Yin, X. Mao | [github](https://github.com/Academic-Hammer/SciTSR)
+
 #### Systems
 - [pdf2table: A Method to Extract Table Information from PDF Files](http://ieg.ifs.tuwien.ac.at/pub/yildiz_iicai_2005.pdf) | Burcu Yildiz, Katharina Kaiser, and Silvia Miksch
 - [PDF-TREX: An Approach for Recognizing and Extracting Tables from PDF Documents](http://www.cvc.uab.es/icdar2009/papers/3725a906.pdf) | Ermelinda Oro, Massimo Ruffolo
@@ -107,6 +108,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Fast Preprocessing Method for Table Boundary Detection: Narrowing Down the Sparse Lines using Solely Coordinate Information](https://www.researchgate.net/publication/220933121_A_Fast_Preprocessing_Method_for_Table_Boundary_Detection_Narrowing_Down_the_Sparse_Lines_Using_Solely_Coordinate_Information) | Ying Liu, Prasenjit Mitra, C. Lee Giles
 - [Improving the Table Boundary Detection in PDFs by Fixing the Sequence Error of the Sparse Lines](https://clgiles.ist.psu.edu/pubs/ICDAR2009-table-boundary-detection.pdf) | Ying Liu, Kun Bai, Prasenjit Mitra, C. Lee Giles
 - [Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method](http://gsl.lab.asu.edu/doc/tableicdar01.pdf) | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt
+
 ### Chart and diagram
 - [Extraction, layout analysis and classification of diagrams in PDF documents](http://www.ccs.northeastern.edu/home/futrelle/pubs37/diagrams/DiagramPapers/ExtractionLayout2003.pdf) | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes
 - [Graphics Recognition in PDF documents](https://pdfs.semanticscholar.org/9c18/d90f1988d1d98f061bdd076d56983a82803d.pdf) | Mingyan Shao and Robert P. Futrelle
@@ -116,6 +118,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [CHART-Synthetic](https://github.com/adobe-research/CHART-Synthetic)
 - [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](https://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | Christopher Clark and Santosh Divvala | [`website`](http://pdffigures.allenai.org/)
 - [Metrics for Evaluating Data Extraction from Charts](https://github.com/adobe-research/CHART-Synthetic/blob/master/metric6b.pdf) | Adobe Research | [github](https://github.com/adobe-research/CHART-Synthetic)
+
 ### Mathematical expression
 - [A Font Setting Based Bayesian Model to Extract Mathematical Expression in PDF Files](https://www.researchgate.net/publication/322779502_A_Font_Setting_Based_Bayesian_Model_to_Extract_Mathematical_Expression_in_PDF_Files) | Xing Wang, Jyh-Charn Liu
 - [Mathematical Formula Identification in PDF Documents](https://www.researchgate.net/publication/220860588_Mathematical_Formula_Identification_in_PDF_Documents) | Xiaoyan Lin, Liangcai Gao, Zhi Tang, Xiaofan Lin
@@ -130,20 +133,23 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Header and Footer Extraction by Page-Association](https://www.hpl.hp.com/techreports/2002/HPL-2002-129.pdf) | Xiaofan Lin
 - [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
 
-## Image related
-- [Analysing layout information: searching PDF documents for pictures](https://pdfs.semanticscholar.org/2bec/a8fcdbdcbe02bc30d40113432daed61f9660.pdf) | B. Mathiak et al.
+## NLP & ML
 
-# Other
+
+## Related topics
 - [Improving typography and minimising computation for documents with scalable layouts](http://eprints.nottingham.ac.uk/28872/1/alex-pinkney-thesis.pdf) | Pinkney, Alexander J.
 - [Breaking Paragraphs into Lines](https://jimfix.github.io/math382/knuth-plass-breaking.pdf) | D. E. Knuth, M. F. Plass
 
-## Bounding boxes
+### Bounding boxes
 - [Fast Visual Object Tracking with Rotated Bounding Boxes](https://arxiv.org/abs/1907.03892) | Bao Xin Chen, John K. Tsotsos
 - [Building Non-Overlapping Polygons for Image Document Layout Analysis Results](https://pdfs.semanticscholar.org/86cb/00fb775af8d2d3970b1ccf31f5c3c83fdd89.pdf) | C.-A. Boiangiu, Mihai Zaharescu, I. Bucur
 - [Ensure Non-Overlapping in Document Layout Analysis](https://www.researchgate.net/publication/235419952_Ensure_Non-Overlapping_in_Document_Layout_Analysis) | C.-A. Boiangiu, B. Raducanu, S. Petrescu, I. Bucur
 - [Beta-Shape Using Delaunay-Based Triangle Erosion](https://www.academia.edu/39847463/Beta-Shape_Using_Delaunay-Based_Triangle_Erosion) | C.-A. Boiangiu
 
-## Shape detection
+### Images
+- [Analysing layout information: searching PDF documents for pictures](https://pdfs.semanticscholar.org/2bec/a8fcdbdcbe02bc30d40113432daed61f9660.pdf) | B. Mathiak et al.
+
+### Shape detection
 - [Polygon Detection from a Set of Lines](https://web.ist.utl.pt/alfredo.ferreira/publications/12EPCG-PolygonDetection.pdf) |  Alfredo Ferreira, Manuel J. Fonseca, Joaquim A. Jorge
 - [A Simple Approach to Recognise Geometric Shapes Interactively](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.24.2707&rep=rep1&type=pdf) | Joaquim A. Jorge and Manuel J. Fonseca
 - [The Detection of Rectangular Shape Objects Using Matching Schema](https://pdfs.semanticscholar.org/2a73/b9533532b7426fd5a7c47ac3f40e0dc88d7f.pdf) | Soo-Young Ye, Joon-Young Choi and Ki-Gon Nam
@@ -152,28 +158,28 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Shape description using cubic polynomial Bezier curves](https://www.sciencedirect.com/science/article/abs/pii/S0167865598000695) | L. Cinque, S. Levialdi, A. Malizia
 - [New Algorithm for Medial Axis Transform of Plane Domain](https://pdfs.semanticscholar.org/70ae/5b583303af0b4d60d356d08f8ed84e1babbc.pdf) and details from [stackoverflow](https://stackoverflow.com/questions/29921826/how-do-i-calculate-the-medial-axis-for-a-2d-vector-shape) | Choi, Choi, Moon and Wee
 
-## Character Recognition
+### Character Recognition
 - [RNN-Based Handwriting Recognition in Gboard](https://ai.googleblog.com/2019/03/rnn-based-handwriting-recognition-in.html) | Sandro Feuz and Pedro Gonnet | [`arxiv`](https://arxiv.org/abs/1902.10525)
 - [Handwritten Arabic Digits Recognition Using Bézier Curves](http://ijcsi.org/papers/IJCSI-10-5-2-257-263.pdf) | Aissa Kerkour El Miad and Azzeddine Mazroui
 
-## Layout Similarity
+### Layout Similarity
 - [A Retrieval Framework and Implementation for Electronic Documents with Similar Layouts](https://arxiv.org/ftp/arxiv/papers/1810/1810.07237.pdf) | Chung
 
-## Dehyphenation
+### Dehyphenation
 - [Dehyphenation - Some empirical methods](https://www.duo.uio.no/bitstream/handle/10852/9043/Bauge2012-dehyphenation.pdf) | Ola S. Bauge
 - [Improved Dehyphenation of Line Breaks for PDF Text Extraction](http://ad-publications.informatik.uni-freiburg.de/theses/Bachelor_Mari_Hernaes_2019.pdf) | Mari Sverresdatter Hernæs
 - [Dehyphenation of Words and Guessing Ligatures](http://ad-publications.informatik.uni-freiburg.de/theses/Master_Sumitra_Corraya_2018.pdf) | Sumitra Magdalin Corraya
 - [How Document Pre-processing affects Keyphrase Extraction Performance](https://arxiv.org/pdf/1610.07809.pdf) | F. Boudin, H. Mougard, D. Cram
 
-## Data structure
+### Data structure
 - [Kd-Trees for Document Layout Analysis](https://www.researchgate.net/publication/281267378_Kd-Trees_for_Document_Layout_Analysis) | Christoph Dalitz
 
-# Datasets
+## Datasets
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 
-# Output file format
+## Output file format
 - hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
 - ALTO XML: [alto schema](https://github.com/altoxml/schema) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/AltoXmlTextExporter.cs)
 - TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr) | [schema](https://tei-c.org/guidelines/customization/)
