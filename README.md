@@ -1,6 +1,5 @@
 Document Layout Analysis repos for development with [PdfPig](https://github.com/UglyToad/PdfPig).
 
-# Definition
 >From [wikipedia](https://en.wikipedia.org/wiki/Document_layout_analysis): ___Document layout analysis__ is the process of identifying and categorizing the regions of interest in the scanned image of a text document. A reading system requires the segmentation of text zones from non-textual ones and the arrangement in their correct reading order. Detection and labeling of the different zones (or blocks) as text body, illustrations, math symbols, and tables embedded in a document is called __geometric layout analysis__. But text zones play different logical roles inside the document (titles, captions, footnotes, etc.) and this kind of semantic labeling is the scope of the __logical layout analysis__._
 
 **In this repos, we will not considere scanned documents, but classic pdf documents and leverage all available information (e.g. letters bounding boxes, fonts).**
@@ -54,11 +53,13 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [Layout and Content Extraction for PDF Documents](https://www.researchgate.net/publication/220932927_Layout_and_Content_Extraction_for_PDF_Documents) | Hui Chao, Jian Fan
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 
+
 ## Word segmentation
 - [An Efficient Word Segmentation Technique for Historical and Degraded Machine-Printed Documents](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.145.2079) | M. Makridis, N. Nikolaou, B. Gatos
 - [Word Extraction Using Area Voronoi Diagram](http://andrei.clubcisco.ro/cursuri/f/f-sym/5master/analiza-extragerea-continutului/prezentari/Word%20Extraction%20Using%20Area%20Voronoi%20Diagram.pdf) | Zhe Wang, Yue Lu, Chew Lim Tan
 
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/nearest%20neighbour%20word%20example%20v2.png)
+
 
 ## Page segmentation
 - [Performance Comparison of Six Algorithms for Page Segmentation](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation) | Faisal Shafait, Daniel Keysers, and Thomas M. Breuel
@@ -104,6 +105,7 @@ The method was merely intended by its author as a demonstration of the applicati
 2. Hierarchical document structure
 3. Tagged text spans and descriptive text for images and symbols
 4. Character mappings to Unicode
+
 
 ## Zone classification/extraction & Reading order
 - [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | Oleg Okun, David Doermann, Matti Pietikainen
@@ -169,14 +171,17 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Header and Footer Extraction by Page-Association](https://www.hpl.hp.com/techreports/2002/HPL-2002-129.pdf) | Xiaofan Lin
 - [A System for Converting PDF Documents into Structured XML Format](https://www.researchgate.net/publication/220933081_A_System_for_Converting_PDF_Documents_into_Structured_XML_Format) | Hervé Déjean, Jean-Luc Meunier
 
+
 ## NLP & ML
 - [Chargrid: Towards Understanding 2D Documents](https://arxiv.org/pdf/1809.08799.pdf) | A. R. Katti, C. Reisswig, C. Guder, S. Brarda, S. Bickel, J. Höhne, J. B. Faddoul | [medium](https://medium.com/sap-machine-learning-research/chargrid-77aa75e6d605)
 - [Chargrid-OCR: End-to-end trainable Optical Character Recognition through Semantic Segmentation and Object Detection](https://openreview.net/forum?id=SkxhzT5qIB) | C. Reisswig, A. R. Katti, M. Spinaci, J. Höhne | [slides](https://drive.google.com/file/d/1a6qIszxXl7FaXurW3MCbZzSTnmYRKDuQ/view)
 - [BERTgrid: Contextualized Embedding for 2D Document Representation and Understanding](https://openreview.net/forum?id=H1gsGaq9US) | Timo I. Denk, Christian Reisswig | [slides](https://drive.google.com/file/d/1WsgZ5QZFw8GBfxknb96AbH-dLzu0DIAN/view)
 - [LayoutLM: Pre-Training of Text and Layout for Document Image Understanding](https://arxiv.org/pdf/1912.13318.pdf) | Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou | [github](https://github.com/microsoft/unilm/tree/master/layoutlm)
+- [Detect2Rank: Combining Object Detectors UsingLearning to Rank](https://arxiv.org/pdf/1412.7957.pdf) | S. Karaoglu, Y. Liu., T. Gevers
 
 ### Workshops
 - [Workshop on Document Intelligence (DI 2019) at NeurIPS 2019](https://sites.google.com/view/di2019)
+
 
 ## Related topics
 - [Improving typography and minimising computation for documents with scalable layouts](http://eprints.nottingham.ac.uk/28872/1/alex-pinkney-thesis.pdf) | Pinkney, Alexander J.
@@ -215,6 +220,7 @@ The method was merely intended by its author as a demonstration of the applicati
 
 ### Data structure
 - [Kd-Trees for Document Layout Analysis](https://www.researchgate.net/publication/281267378_Kd-Trees_for_Document_Layout_Analysis) | Christoph Dalitz
+
 
 ## Datasets
 - [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
