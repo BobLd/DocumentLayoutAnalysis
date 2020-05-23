@@ -120,6 +120,8 @@ The method was merely intended by its author as a demonstration of the applicati
 - [A Data Mining Approach to Reading Order Detection](http://www.di.uniba.it/~ceci/Papers/Pubblicazioni/International%20Collections/IC.32__ICDAR07.pdf) | M. Ceci, M. Berardi, G. A. Porcelli
 
 ### Table
+- [Design of an end-to-end method to extract information from tables](https://www.researchgate.net/publication/225153001_Design_of_an_end-to-end_method_to_extract_information_from_tables) | A. Costa e Silva, A. Jorge, L. Torgo
+- [A Table Detection Method for PDF Documents Based on Convolutional Neural Networks](https://www.researchgate.net/publication/303950713_A_Table_Detection_Method_for_PDF_Documents_Based_on_Convolutional_Neural_Networks) | L. Hao, L. Gao, X. Yi, Z. Tang
 - [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](https://arxiv.org/pdf/1904.01947.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](https://arxiv.org/pdf/1506.08891v6.pdf) | Miao Fan and Doo Soon Kim
 - Automatic Tabular Data Extraction and Understanding | Roya Rastan
