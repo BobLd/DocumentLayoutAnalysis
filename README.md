@@ -109,6 +109,8 @@ The method was merely intended by its author as a demonstration of the applicati
 
 ## Zone classification/extraction & Reading order
 - [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | Oleg Okun, David Doermann, Matti Pietikainen
+- [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](http://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | C. Clark, S. Divvala
+- [PDFFigures 2.0: Mining Figures from Research Papers](http://ai2-website.s3.amazonaws.com/publications/pdf2.0.pdf) | C. Clark, S. Divvala | [github](https://github.com/allenai/pdffigures2)
 - [Document image zone classification : A simple high-performance approach](https://www.researchgate.net/publication/221415986_Document_image_zone_classification_A_simple_high-performance_approach) | Daniel Keysers, Faisal Shafait, Thomas M. Breuel
 - [Document-Zone Classification using Partial Least Squares and Hybrid Classifiers](https://www.researchgate.net/publication/224375306_Document-Zone_Classification_using_Partial_Least_Squares_and_Hybrid_Classifiers) | Wael Abd-Almageed, Mudit Agrawal, Wontaek Seo, David Doermann
 - [The Zonemap Metric for Page Segmentation and Area Classification Inscanned Documents](https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICIP-2014/Papers/1569886529.pdf) | Olivier Galibert, Juliette Kahn and Ilya Oparin
