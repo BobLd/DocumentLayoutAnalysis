@@ -152,6 +152,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Automatic Table Ground Truth Generation and A Background-analysis-based Table Structure Extraction Method](http://gsl.lab.asu.edu/doc/tableicdar01.pdf) | Yalin Wangt, Ihsin T. Phillips and Robert Haralickt
 
 ### Chart and diagram
+- [FigureSeer: Parsing Result-Figures in Research Papers](http://ai2-website.s3.amazonaws.com/publications/Siegel16eccv.pdf) | N. Siegel, Z. Horvitz, R. Levin, S. Divvala, and A. Farhadi
 - [Extraction, layout analysis and classification of diagrams in PDF documents](http://www.ccs.northeastern.edu/home/futrelle/pubs37/diagrams/DiagramPapers/ExtractionLayout2003.pdf) | Robert P. Futrelle, Mingyan Shao, Chris Cieslik and Andrea Elaina Grimes
 - [Graphics Recognition in PDF documents](https://pdfs.semanticscholar.org/9c18/d90f1988d1d98f061bdd076d56983a82803d.pdf) | Mingyan Shao and Robert P. Futrelle
 - [A Study on the Document Zone Content Classification Problem](http://gsl.lab.asu.edu/doc/zonedas02.pdf)
