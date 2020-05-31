@@ -46,15 +46,15 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <ComboBox Name="comboBoxWordExtractor" ItemsSource="{Binding WordExtractorList}" Margin="5,10,10,0" SelectedItem="0" VerticalAlignment="Top" SelectionChanged="comboBoxWordExtractor_SelectionChanged" Height="22"/>
-                <ComboBox Name="comboBoxPageSegmenter" ItemsSource="{Binding PageSegmenterList}" Margin="5,37,10,0" VerticalAlignment="Top" SelectionChanged="comboBoxPageSegmenter_SelectionChanged" Height="22"/>
+                <ComboBox SelectedItem="{Binding WordExtractor}" SelectedIndex="0" ItemsSource="{Binding WordExtractorList}" Margin="5,10,10,0" VerticalAlignment="Top" Height="22"/>
+                <ComboBox SelectedItem="{Binding PageSegmenter}" SelectedIndex="0" ItemsSource="{Binding PageSegmenterList}" Margin="5,37,10,0" VerticalAlignment="Top" Height="22"/>
 
                 <GroupBox Header="Display" Grid.Row="1">
                     <Grid>
                         <CheckBox IsChecked="{Binding IsDisplayLetters}" Content="Letters" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayWords}" Content="Words" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top"/>
-                        <CheckBox IsChecked="{Binding IsDisplayTextLines}" Content="Lines" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top"/>
-                        <CheckBox IsChecked="{Binding IsDisplayTextBlocks}" Content="TextBlock" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayTextLines}" Content="TextLines" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayTextBlocks}" Content="TextBlocks" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayPaths}" Content="Paths" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayImages}" Content="Images" HorizontalAlignment="Left" Margin="5,110,0,0" VerticalAlignment="Top"/>
                         <CheckBox Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />

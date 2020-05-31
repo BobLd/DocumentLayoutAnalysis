@@ -51,47 +51,5 @@
             mainViewModel.CurrentPageNumber++;
             e.Handled = true;
         }
-
-        private void comboBoxWordExtractor_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Type type = (sender as ComboBox)?.SelectedItem as Type;
-            if (type != null)
-            {
-                mainViewModel.SetWordExtractor(type);
-
-                if (mainViewModel.IsDisplayWords)
-                {
-                    mainViewModel.DisplayWords();
-                }
-
-                if (mainViewModel.IsDisplayTextLines)
-                {
-                    mainViewModel.DisplayTextLines();
-                }
-
-                if (mainViewModel.IsDisplayTextBlocks)
-                {
-                    mainViewModel.DisplayTextBlocks();
-                }
-            }
-        }
-
-        private void comboBoxPageSegmenter_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Type type = (sender as ComboBox)?.SelectedItem as Type;
-            if (type != null)
-            {
-                mainViewModel.SetPageSegmenter(type);
-                if (mainViewModel.IsDisplayTextLines)
-                {
-                    mainViewModel.DisplayTextLines();
-                }
-
-                if (mainViewModel.IsDisplayTextBlocks)
-                {
-                    mainViewModel.DisplayTextBlocks();
-                }
-            }
-        }
     }
 }

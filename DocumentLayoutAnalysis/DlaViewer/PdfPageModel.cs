@@ -21,12 +21,12 @@
         internal PdfPageModel(Page page)
         {
             this.page = page;
-            wordExtractor = DefaultWordExtractor.Instance;
-            pageSegmenter = DocstrumBoundingBoxes.Instance;
         }
 
         public void SetWordExtractor(Type wordExtractor)
         {
+            if (wordExtractor == null) return;
+
             try
             {
                 this.wordExtractor = (IWordExtractor)Activator.CreateInstance(wordExtractor);
@@ -39,6 +39,7 @@
 
         public void SetPageSegmenter(Type pageSegmenter)
         {
+            if (pageSegmenter == null) return;
             this.pageSegmenter = (IPageSegmenter)Activator.CreateInstance(pageSegmenter);
         }
 
@@ -49,11 +50,21 @@
 
         public IEnumerable<Word> GetWords()
         {
+            if (wordExtractor == null)
+            {
+                return new List<Word>();
+            }
+
             return page.GetWords(wordExtractor);
         }
 
         public IEnumerable<TextBlock> GetTextBlocks()
         {
+            if (pageSegmenter == null)
+            {
+                return new List<TextBlock>();
+            }
+
             return pageSegmenter.GetBlocks(GetWords());
         }
 

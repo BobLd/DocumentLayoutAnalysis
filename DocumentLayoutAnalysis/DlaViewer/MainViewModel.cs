@@ -36,14 +36,76 @@
 
         private PdfPageModel _pdfPageModel;
 
+        private Type _wordExtractor;
+        public Type WordExtractor
+        {
+            get
+            {
+                return _wordExtractor;
+            }
+
+            set
+            {
+                _wordExtractor = value;
+                SetWordExtractor(value);
+                this.RaisePropertyChanged(nameof(WordExtractor));
+            }
+        }
+
         public void SetWordExtractor(Type wordExtractor)
         {
-            _pdfPageModel?.SetWordExtractor(wordExtractor);
+            if (_pdfPageModel != null && wordExtractor != null)
+            {
+                _pdfPageModel.SetWordExtractor(wordExtractor);
+
+                if (IsDisplayWords)
+                {
+                    DisplayWords();
+                }
+
+                if (IsDisplayTextLines)
+                {
+                    DisplayTextLines();
+                }
+
+                if (IsDisplayTextBlocks)
+                {
+                    DisplayTextBlocks();
+                }
+            }
+        }
+
+        private Type _pageSegmenter;
+        public Type PageSegmenter
+        {
+            get
+            {
+                return _pageSegmenter;
+            }
+
+            set
+            {
+                _pageSegmenter = value;
+                SetPageSegmenter(value);
+                this.RaisePropertyChanged(nameof(PageSegmenter));
+            }
         }
 
         public void SetPageSegmenter(Type pageSegmenter)
         {
-            _pdfPageModel?.SetPageSegmenter(pageSegmenter);
+            if (_pdfPageModel != null && pageSegmenter != null)
+            {
+                _pdfPageModel.SetPageSegmenter(pageSegmenter);
+                if (IsDisplayTextLines)
+                {
+                    DisplayTextLines();
+                }
+
+                if (IsDisplayTextBlocks)
+                {
+                    DisplayTextBlocks();
+                }
+            }
         }
 
         public void HidePagePlotModel()
@@ -335,6 +397,12 @@
             if (_pdfDocumentModel == null) return false;
 
             _pdfPageModel = _pdfDocumentModel.GetPage(pageNo);
+
+            // set word extractor
+            _pdfPageModel.SetWordExtractor(WordExtractor);
+
+            // set page segmenter
+            _pdfPageModel.SetPageSegmenter(PageSegmenter);
 
             var pageInfoModel = _pdfPageModel.GetPageInfo();
 
