@@ -240,6 +240,12 @@ The method was merely intended by its author as a demonstration of the applicati
 - PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/PageXmlTextExporter.cs)
 
 [Validate and transform between OCR file formats (hOCR, ALTO, PAGE, FineReader)](https://github.com/UB-Mannheim/ocr-fileformat)
+
 # Pdf page to image converter
 A [Pdf page to image converter](DocumentLayoutAnalysis/ImageConverter) is available to help in the research proces. It relies on the [_mupdf_](https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf) library, available in the [sumatra pdf reader](https://github.com/sumatrapdfreader/sumatrapdf).
- 
+
+# Pdf layout analysis viewer
+A [Pdf layout analysis viewer](https://github.com/BobLd/DocumentLayoutAnalysis/tree/master/DocumentLayoutAnalysis/DlaViewer) is available, also relies on the [_mupdf_](https://github.com/sumatrapdfreader/sumatrapdf/tree/master/mupdf/include/mupdf) library.
+
+
+![viewer](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/viewer.png)
