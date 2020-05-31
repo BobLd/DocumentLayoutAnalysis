@@ -7,13 +7,18 @@
     using OxyPlot.Series;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.IO;
     using System.Linq;
+    using UglyToad.PdfPig.Core;
+    using static UglyToad.PdfPig.Core.PdfSubpath;
 
     public class MainViewModel : INotifyPropertyChanged, IDisposable
     {
         public PlotController CustomController { get; }
+
+        public string PdfPigVersion { get; set; }
 
         private PdfImageConverter _pdfImageConverter;
         private PdfDocumentModel _pdfDocumentModel;
@@ -25,39 +30,21 @@
 
         private int _numberOfPages;
         private int _currentPageNumber;
-        private string _bboxLevel;
 
-        /*
-        public double _pageHeight;
-        public double PageHeight
+        public ObservableCollection<Type> WordExtractorList { get; }
+        public ObservableCollection<Type>  PageSegmenterList { get; }
+
+        private PdfPageModel _pdfPageModel;
+
+        public void SetWordExtractor(Type wordExtractor)
         {
-            get
-            {
-                return _pageHeight;
-            }
-
-            set
-            {
-                _pageHeight = value;
-                this.RaisePropertyChanged(nameof(PageHeight));
-            }
+            _pdfPageModel?.SetWordExtractor(wordExtractor);
         }
 
-        public double _pageWidth;
-        public double PageWidth
+        public void SetPageSegmenter(Type pageSegmenter)
         {
-            get
-            {
-                return _pageWidth;
-            }
-
-            set
-            {
-                _pageWidth = value;
-                this.RaisePropertyChanged(nameof(PageWidth));
-            }
+            _pdfPageModel?.SetPageSegmenter(pageSegmenter);
         }
-        */
 
         public void HidePagePlotModel()
         {
@@ -88,7 +75,7 @@
                 this.RaisePropertyChanged(nameof(PagePlotModel));
             }
         }
-        
+
         public PlotModel HeightHistoPlotModel
         {
             get
@@ -130,12 +117,11 @@
             {
                 if (value > NumberOfPages || value < 1)
                 {
-                    // messagebox here
                     return;
                 }
 
                 _currentPageNumber = value;
-                DisplayPage(_currentPageNumber);
+                LoadPage(_currentPageNumber);
                 this.RaisePropertyChanged(nameof(CurrentPageNumber));
             }
         }
@@ -154,19 +140,161 @@
             }
         }
 
-        public string BboxLevel
+
+        bool _isDisplayLetters;
+        public bool IsDisplayLetters
         {
             get
             {
-                return _bboxLevel;
+                return _isDisplayLetters;
             }
 
             set
             {
-                if (value == _bboxLevel) return;
-                _bboxLevel = value;
-                DisplayPage(CurrentPageNumber);
-                this.RaisePropertyChanged(nameof(BboxLevel));
+                if (value == _isDisplayLetters) return;
+                _isDisplayLetters = value;
+
+                if (_isDisplayLetters)
+                {
+                    DisplayLetters();
+                }
+                else
+                {
+                    HideLetters();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayLetters));
+            }
+        }
+
+
+        bool _isDisplayWords;
+        public bool IsDisplayWords
+        {
+            get
+            {
+                return _isDisplayWords;
+            }
+
+            set
+            {
+                if (value == _isDisplayWords) return;
+                _isDisplayWords = value;
+
+                if (_isDisplayWords)
+                {
+                    DisplayWords();
+                }
+                else
+                {
+                    HideWords();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayWords));
+            }
+        }
+
+        bool _isDisplayTextLines;
+        public bool IsDisplayTextLines
+        {
+            get
+            {
+                return _isDisplayTextLines;
+            }
+
+            set
+            {
+                if (value == _isDisplayTextLines) return;
+                _isDisplayTextLines = value;
+
+                if (_isDisplayTextLines)
+                {
+                    DisplayTextLines();
+                }
+                else
+                {
+                    HideTextLines();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayTextLines));
+            }
+        }
+
+        bool _isDisplayTextBlocks;
+        public bool IsDisplayTextBlocks
+        {
+            get
+            {
+                return _isDisplayTextBlocks;
+            }
+
+            set
+            {
+                if (value == _isDisplayTextBlocks) return;
+                _isDisplayTextBlocks = value;
+
+                if (_isDisplayTextBlocks)
+                {
+                    DisplayTextBlocks();
+                }
+                else
+                {
+                    HideTextBlocks();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayTextBlocks));
+            }
+        }
+
+        bool _isDisplayPaths;
+        public bool IsDisplayPaths
+        {
+            get
+            {
+                return _isDisplayPaths;
+            }
+
+            set
+            {
+                if (value == _isDisplayPaths) return;
+                _isDisplayPaths = value;
+
+                if (_isDisplayPaths)
+                {
+                    DisplayPaths();
+                }
+                else
+                {
+                    HidePaths();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayPaths));
+            }
+        }
+
+        bool _isDisplayImages;
+        public bool IsDisplayImages
+        {
+            get
+            {
+                return _isDisplayImages;
+            }
+
+            set
+            {
+                if (value == _isDisplayImages) return;
+                _isDisplayImages = value;
+
+                if (_isDisplayImages)
+                {
+                    DisplayImages();
+                }
+                else
+                {
+                    HideImages();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayImages));
             }
         }
 
@@ -176,13 +304,16 @@
         public MainViewModel()
         {
             CustomController = new CustomPlotController();
+
+            WordExtractorList = new ObservableCollection<Type>(PdfDocumentModel.GetWordExtractors());
+            PageSegmenterList = new ObservableCollection<Type>(PdfDocumentModel.GetPageSegmenters());
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void RaisePropertyChanged(string property)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
         public void OpenDocument(string path)
@@ -195,84 +326,26 @@
             _pdfImageConverter = new PdfImageConverter(path);
             _pdfDocumentModel = PdfDocumentModel.Open(path);
             NumberOfPages = _pdfDocumentModel.NumberOfPages;
+            PdfPigVersion = _pdfDocumentModel.PdfPigVersion;
             CurrentPageNumber = 1;
         }
 
-        private void DisplayPage(int pageNo)
+        private bool LoadPage(int pageNo)
         {
-            if (_pdfDocumentModel == null) return;
+            if (_pdfDocumentModel == null) return false;
 
-            var page = _pdfDocumentModel.GetPage(pageNo);
+            _pdfPageModel = _pdfDocumentModel.GetPage(pageNo);
 
-            var pageInfoModel = page.GetPageInfo();
+            var pageInfoModel = _pdfPageModel.GetPageInfo();
 
             // Plot height distrib
-            HeightHistoPlotModel = pageInfoModel.HeightDistribution.GetPlotModel("Letters height distribution");
-            WidthHistoPlotModel = pageInfoModel.WidthDistribution.GetPlotModel("Letters width distribution");
+            HeightHistoPlotModel = pageInfoModel.HeightDistribution?.GetPlotModel("Letters height distribution");
+            WidthHistoPlotModel = pageInfoModel.WidthDistribution?.GetPlotModel("Letters width distribution");
 
             // Plot page 
             var pagePlotModel = new PlotModel { IsLegendVisible = false };
-            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Minimum = 0, Maximum = page.Height });
-            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Minimum = 0, Maximum = page.Width });
-            
-            switch (BboxLevel)
-            {
-                case "Words":
-                    foreach (var word in page.GetWords())
-                    {
-                        var series1 = new LineSeries { Title = GetShorterText(word.Text), LineStyle = LineStyle.Solid, Color = OxyColors.Red };
-                        var bbox = word.BoundingBox;
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        pagePlotModel.Series.Add(series1);
-                    }
-                    break;
-
-                case "Lines":
-                    foreach (var line in page.GetTextBlocks().SelectMany(b => b.TextLines))
-                    {
-                        var series1 = new LineSeries { Title = GetShorterText(line.Text), LineStyle = LineStyle.Solid, Color = OxyColors.Red };
-                        var bbox = line.BoundingBox;
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        pagePlotModel.Series.Add(series1);
-                    }
-                    break;
-
-                case "Paragraphs":
-                    foreach (var block in page.GetTextBlocks())
-                    {
-                        var series1 = new LineSeries { Title = GetShorterText(block.Text), LineStyle = LineStyle.Solid, Color = OxyColors.Red };
-                        var bbox = block.BoundingBox;
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        pagePlotModel.Series.Add(series1);
-                    }
-                    break;
-
-                default:
-                    foreach (var letter in page.GetLetters())
-                    {
-                        var series1 = new LineSeries { Title = letter.Value, LineStyle = LineStyle.Solid, Color = OxyColors.Red };
-                        var bbox = letter.GlyphRectangle;
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
-                        series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
-                        pagePlotModel.Series.Add(series1);
-                    }
-                    break;
-            }
+            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Minimum = 0, Maximum = _pdfPageModel.Height });
+            pagePlotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Minimum = 0, Maximum = _pdfPageModel.Width });
 
             // Add background image
             try
@@ -288,8 +361,8 @@
                     Opacity = 0.5,
                     X = new PlotLength(0, PlotLengthUnit.Data),
                     Y = new PlotLength(0, PlotLengthUnit.Data),
-                    Width = new PlotLength(page.Width, PlotLengthUnit.Data),
-                    Height = new PlotLength(page.Height, PlotLengthUnit.Data),
+                    Width = new PlotLength(_pdfPageModel.Width, PlotLengthUnit.Data),
+                    Height = new PlotLength(_pdfPageModel.Height, PlotLengthUnit.Data),
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Bottom
                 });
@@ -299,10 +372,290 @@
                 throw;
             }
 
-
             this.PagePlotModel = pagePlotModel;
+
+            if (IsDisplayLetters)
+            {
+                DisplayLetters();
+            }
+
+            if (IsDisplayWords)
+            {
+                DisplayWords();
+            }
+
+            if (IsDisplayTextLines)
+            {
+                DisplayTextLines();
+            }
+
+            if (IsDisplayTextBlocks)
+            {
+                DisplayTextBlocks();
+            }
+
+            if (IsDisplayPaths)
+            {
+                DisplayPaths();
+            }
+
+            if (IsDisplayImages)
+            {
+                DisplayImages();
+            }
+
+            return true;
         }
 
+        public void DisplayLetters()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "letter").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var letter in _pdfPageModel.GetLetters())
+            {
+                var series1 = new LineSeries { Tag = "letter", Title = GetShorterText(letter.Value), LineStyle = LineStyle.Solid, Color = OxyColors.Blue };
+                var bbox = letter.GlyphRectangle;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideLetters()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "letter").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void DisplayWords()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "word").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var word in _pdfPageModel.GetWords())
+            {
+                var series1 = new LineSeries { Tag = "word", Title = GetShorterText(word.Text), LineStyle = LineStyle.Solid, Color = OxyColors.Red };
+                var bbox = word.BoundingBox;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideWords()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "word").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void DisplayTextLines()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "textline").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var line in _pdfPageModel.GetTextBlocks().SelectMany(b => b.TextLines))
+            {
+                var series1 = new LineSeries { Tag = "textline", Title = GetShorterText(line.Text), LineStyle = LineStyle.Solid, Color = OxyColors.OrangeRed };
+                var bbox = line.BoundingBox;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideTextLines()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "textline").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void DisplayTextBlocks()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "textblock").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var block in _pdfPageModel.GetTextBlocks())
+            {
+                var series1 = new LineSeries { Tag = "textblock", Title = GetShorterText(block.Text), LineStyle = LineStyle.Solid, Color = OxyColors.Brown };
+                var bbox = block.BoundingBox;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideTextBlocks()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "textblock").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void DisplayPaths()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "pdfpath").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var path in _pdfPageModel.GetPdfPaths())
+            {
+                foreach (var sp in path)
+                {
+                    string title = ("path: " + (path.IsStroked ? "stroked " + (path.StrokeColor?.ToRGBValues()).ToString() : "") +
+                                               (path.IsFilled ? "filled " + (path.FillColor?.ToRGBValues()).ToString() : "") +
+                                               (path.IsClipping ? "clipping" : "")
+                                               ).Trim();
+                    var series1 = new LineSeries { Tag = "pdfpath", Title = title, LineStyle = LineStyle.Solid, Color = OxyColors.Yellow };
+
+                    PdfPoint first = PdfPoint.Origin;
+                    foreach (var c in sp.Commands)
+                    {
+                        if (c is Move m)
+                        {
+                            first = m.Location;
+                            series1.Points.Add(PdfDocumentModel.ToDataPoint(first));
+                        }
+                        else if (c is Line l)
+                        {
+                            series1.Points.Add(PdfDocumentModel.ToDataPoint(l.From));
+                            series1.Points.Add(PdfDocumentModel.ToDataPoint(l.To));
+                        }
+                        else if (c is BezierCurve bc)
+                        {
+                            var lines = bc.ToLines(10).ToList();
+                            for (int i = 0; i < lines.Count; i++)
+                            {
+                                series1.Points.Add(PdfDocumentModel.ToDataPoint(lines[i].From));
+                                series1.Points.Add(PdfDocumentModel.ToDataPoint(lines[i].To));
+                            }
+                        }
+                        else if (c is Close)
+                        {
+                            series1.Points.Add(PdfDocumentModel.ToDataPoint(first));
+                        }
+                        else
+                        {
+                            throw new ArgumentException();
+                        }
+                    }
+
+                    PagePlotModel.Series.Add(series1);
+                }
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HidePaths()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "pdfpath").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void DisplayImages()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "image").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var block in _pdfPageModel.GetImages())
+            {
+                var series1 = new LineSeries { Tag = "image", Title = "image", LineStyle = LineStyle.Solid, Color = OxyColors.YellowGreen };
+                var bbox = block.Bounds;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideImages()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "image").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
         private string GetShorterText(string text)
         {
             if (text.Length <= 25) return text;

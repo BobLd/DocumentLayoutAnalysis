@@ -9,7 +9,7 @@
         Title="MainWindow" Height="850" Width="805" AllowDrop="True" Drop="Window_Drop">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600*" />            <!--{Binding Path=PageWidth, Mode=OneWayToSource} OneWay-->
+            <ColumnDefinition Width="600*" />
             <ColumnDefinition Width="257*" />
         </Grid.ColumnDefinitions>
 
@@ -18,21 +18,51 @@
             <RowDefinition Height="230"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <oxy:PlotView x:Name="PagePlotView" Model="{Binding PagePlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0" Grid.RowSpan="3"/>
-        <oxy:PlotView Model="{Binding HeightHistoPlotModel}" Controller="{Binding CustomController}" Grid.Column="1" />
-        <oxy:PlotView Model="{Binding WidthHistoPlotModel}" Controller="{Binding CustomController}" Grid.Column="1" Grid.Row="1"/>
         
+        <oxy:PlotView x:Name="PagePlotView" Model="{Binding PagePlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0" Grid.RowSpan="3"/>
+
+        <GroupBox Grid.Column="1" Header="Letters" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="230*"/>
+                    <RowDefinition Height="230*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <oxy:PlotView Model="{Binding HeightHistoPlotModel}" Controller="{Binding CustomController}"/>
+                <oxy:PlotView Model="{Binding WidthHistoPlotModel}" Controller="{Binding CustomController}" Grid.Row="1"/>
+            </Grid>
+        </GroupBox>
+
         <TextBox HorizontalAlignment="Left" Margin="10,9,0,0" Text="{Binding Path=CurrentPageNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="40" Height="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="55,10,0,0" Text="/" TextWrapping="NoWrap" VerticalAlignment="Top" Width="6" Height="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="66,10,0,0" Text="{Binding Path=NumberOfPages, Mode=OneWay}" TextWrapping="NoWrap" VerticalAlignment="Top" Height="16" Width="33"/>
         <Button ToolTip="Previous page" Content="&lt;" HorizontalAlignment="Left" Margin="104,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonPrev_Click" Height="20"/>
         <Button ToolTip="Next page" Content=">" HorizontalAlignment="Left" Margin="139,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonNext_Click" Height="20"/>
-        <ComboBox Margin="0,4,10,0" SelectedValue="{Binding BboxLevel}" SelectedValuePath="Content" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Height="22">
-            <ComboBoxItem Content="Letters" IsSelected="True"/>
-            <ComboBoxItem Content="Words"/>
-            <ComboBoxItem Content="Lines"/>
-            <ComboBoxItem Content="Paragraphs"/>
-        </ComboBox>
+        <GroupBox Grid.Column="1" Header="Segmentation" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="152*"/>
+                    <RowDefinition Height="190"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <ComboBox Name="comboBoxWordExtractor" ItemsSource="{Binding WordExtractorList}" Margin="5,10,10,0" SelectedItem="0" VerticalAlignment="Top" SelectionChanged="comboBoxWordExtractor_SelectionChanged" Height="22"/>
+                <ComboBox Name="comboBoxPageSegmenter" ItemsSource="{Binding PageSegmenterList}" Margin="5,37,10,0" VerticalAlignment="Top" SelectionChanged="comboBoxPageSegmenter_SelectionChanged" Height="22"/>
+
+                <GroupBox Header="Display" Grid.Row="1">
+                    <Grid>
+                        <CheckBox IsChecked="{Binding IsDisplayLetters}" Content="Letters" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayWords}" Content="Words" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayTextLines}" Content="Lines" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayTextBlocks}" Content="TextBlock" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayPaths}" Content="Paths" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
+                        <CheckBox IsChecked="{Binding IsDisplayImages}" Content="Images" HorizontalAlignment="Left" Margin="5,110,0,0" VerticalAlignment="Top"/>
+                        <CheckBox Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+
+        <Label Name="DragDropLabel" Content="Drag and Drop pdf document here..." Margin="172,156,161,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
     </Grid>
 </Window>

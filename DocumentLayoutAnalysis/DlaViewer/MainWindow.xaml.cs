@@ -4,7 +4,7 @@
     using System.Diagnostics;
     using System.IO;
     using System.Windows;
-    using System.Windows.Threading;
+    using System.Windows.Controls;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,12 +28,13 @@
         private void Window_Drop(object sender, DragEventArgs e)
         {
             var data = e.Data as DataObject;
-            if (data != null && data.ContainsFileDropList())
+            if (data?.ContainsFileDropList() == true)
             {
                 foreach (var file in data.GetFileDropList())
                 {
-                    this.Title = Path.GetFileName(file);
                     this.mainViewModel.OpenDocument(file);
+                    this.Title = $"{Path.GetFileName(file)} ({this.mainViewModel.PdfPigVersion})";
+                    this.DragDropLabel.Visibility = Visibility.Hidden;
                     break; // take only one file
                 }
             }
@@ -49,6 +50,48 @@
         {
             mainViewModel.CurrentPageNumber++;
             e.Handled = true;
+        }
+
+        private void comboBoxWordExtractor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Type type = (sender as ComboBox)?.SelectedItem as Type;
+            if (type != null)
+            {
+                mainViewModel.SetWordExtractor(type);
+
+                if (mainViewModel.IsDisplayWords)
+                {
+                    mainViewModel.DisplayWords();
+                }
+
+                if (mainViewModel.IsDisplayTextLines)
+                {
+                    mainViewModel.DisplayTextLines();
+                }
+
+                if (mainViewModel.IsDisplayTextBlocks)
+                {
+                    mainViewModel.DisplayTextBlocks();
+                }
+            }
+        }
+
+        private void comboBoxPageSegmenter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Type type = (sender as ComboBox)?.SelectedItem as Type;
+            if (type != null)
+            {
+                mainViewModel.SetPageSegmenter(type);
+                if (mainViewModel.IsDisplayTextLines)
+                {
+                    mainViewModel.DisplayTextLines();
+                }
+
+                if (mainViewModel.IsDisplayTextBlocks)
+                {
+                    mainViewModel.DisplayTextBlocks();
+                }
+            }
         }
     }
 }
