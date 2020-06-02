@@ -3,6 +3,7 @@
     using OxyPlot;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Linq;
     using UglyToad.PdfPig;
@@ -18,12 +19,20 @@
 
         public PdfPageModel GetPage(int pageNo)
         {
-            return new PdfPageModel(pdfDocument.GetPage(pageNo));
+            try
+            {
+                return new PdfPageModel(pdfDocument.GetPage(pageNo));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
         }
 
         public string PdfPigVersion { get; set; }
 
-        public static PdfDocumentModel Open(string path)
+        public static PdfDocumentModel Open(string path, bool clipPaths)
         {
             if (!File.Exists(path))
             {
@@ -38,7 +47,7 @@
                 pdfDocument = PdfDocument.Open(path,
                                                new ParsingOptions()
                                                {
-                                                   ClipPaths = true
+                                                   ClipPaths = clipPaths
                                                }),
                 PdfPigVersion = $"{fullName} {version}".Trim()
             };

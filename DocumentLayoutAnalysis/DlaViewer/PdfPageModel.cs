@@ -17,6 +17,7 @@
 
         public double Height => page.Height;
         public double Width => page.Width;
+        public CropBox CropBox => page.CropBox;
 
         internal PdfPageModel(Page page)
         {

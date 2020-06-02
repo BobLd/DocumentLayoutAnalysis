@@ -202,6 +202,26 @@
             }
         }
 
+        private bool _clipPaths;
+        public bool ClipPaths
+        {
+            get
+            {
+                return _clipPaths;
+            }
+
+            set
+            {
+                if (value == _clipPaths) return;
+                _clipPaths = value;
+                if (!string.IsNullOrEmpty(_pdfPath))
+                {
+                    _pdfDocumentModel = PdfDocumentModel.Open(_pdfPath, _clipPaths);
+                    LoadPage(CurrentPageNumber);
+                }
+                this.RaisePropertyChanged(nameof(ClipPaths));
+            }
+        }
 
         bool _isDisplayLetters;
         public bool IsDisplayLetters
@@ -378,6 +398,8 @@
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
+        private string _pdfPath;
+
         public void OpenDocument(string path)
         {
             if (Path.GetExtension(path) != ".pdf")
@@ -385,8 +407,9 @@
                 return;
             }
 
-            _pdfImageConverter = new PdfImageConverter(path);
-            _pdfDocumentModel = PdfDocumentModel.Open(path);
+            _pdfPath = path;
+            _pdfImageConverter = new PdfImageConverter(_pdfPath);
+            _pdfDocumentModel = PdfDocumentModel.Open(_pdfPath, ClipPaths);
             NumberOfPages = _pdfDocumentModel.NumberOfPages;
             PdfPigVersion = _pdfDocumentModel.PdfPigVersion;
             CurrentPageNumber = 1;
@@ -397,6 +420,8 @@
             if (_pdfDocumentModel == null) return false;
 
             _pdfPageModel = _pdfDocumentModel.GetPage(pageNo);
+
+            if (_pdfPageModel == null) return false;
 
             // set word extractor
             _pdfPageModel.SetWordExtractor(WordExtractor);
@@ -427,10 +452,10 @@
                 {
                     ImageSource = PageImage,
                     Opacity = 0.5,
-                    X = new PlotLength(0, PlotLengthUnit.Data),
-                    Y = new PlotLength(0, PlotLengthUnit.Data),
-                    Width = new PlotLength(_pdfPageModel.Width, PlotLengthUnit.Data),
-                    Height = new PlotLength(_pdfPageModel.Height, PlotLengthUnit.Data),
+                    X = new PlotLength(_pdfPageModel.CropBox.Bounds.BottomLeft.X, PlotLengthUnit.Data),
+                    Y = new PlotLength(_pdfPageModel.CropBox.Bounds.BottomLeft.Y, PlotLengthUnit.Data),
+                    Width = new PlotLength(_pdfPageModel.CropBox.Bounds.Width, PlotLengthUnit.Data),
+                    Height = new PlotLength(_pdfPageModel.CropBox.Bounds.Height, PlotLengthUnit.Data),
                     HorizontalAlignment = HorizontalAlignment.Left,
                     VerticalAlignment = VerticalAlignment.Bottom
                 });

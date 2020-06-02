@@ -18,7 +18,7 @@
             <RowDefinition Height="230"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <oxy:PlotView x:Name="PagePlotView" Model="{Binding PagePlotModel}" Controller="{Binding CustomController}" Margin="0,33,0,0" Grid.RowSpan="3"/>
 
         <GroupBox Grid.Column="1" Header="Letters" Grid.RowSpan="2">
@@ -41,16 +41,27 @@
         <GroupBox Grid.Column="1" Header="Segmentation" Grid.Row="2">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="152*"/>
+                    <RowDefinition Height="95*"/>
+                    <RowDefinition Height="65*"/>
                     <RowDefinition Height="190"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <ComboBox SelectedItem="{Binding WordExtractor}" SelectedIndex="0" ItemsSource="{Binding WordExtractorList}" Margin="5,10,10,0" VerticalAlignment="Top" Height="22"/>
-                <ComboBox SelectedItem="{Binding PageSegmenter}" SelectedIndex="0" ItemsSource="{Binding PageSegmenterList}" Margin="5,37,10,0" VerticalAlignment="Top" Height="22"/>
+                <ComboBox SelectedItem="{Binding PageSegmenter}" SelectedIndex="0" ItemsSource="{Binding PageSegmenterList}" Margin="5,0,10,0" VerticalAlignment="Center" Height="22"/>
 
-                <GroupBox Header="Display" Grid.Row="1">
+                <GroupBox Header="Options" Margin="0,0,0,0" Grid.Row="1">
                     <Grid>
+                        <CheckBox IsChecked="{Binding ClipPaths}" Content="Clip paths" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" ToolTip="Will reload the document"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Display" Grid.Row="2" Margin="0,0,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="175*"/>
+                            <ColumnDefinition Width="43*"/>
+                        </Grid.ColumnDefinitions>
                         <CheckBox IsChecked="{Binding IsDisplayLetters}" Content="Letters" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayWords}" Content="Words" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayTextLines}" Content="TextLines" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top"/>
@@ -60,6 +71,7 @@
                         <CheckBox Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />
                     </Grid>
                 </GroupBox>
+
             </Grid>
         </GroupBox>
 
