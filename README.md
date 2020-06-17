@@ -117,7 +117,10 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Layout analysis and content classification indigitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | Andrea Corbelli, Lorenzo Baraldi, Fabrizio Balducci,Costantino Grana, Rita Cucchiara
 
 ### Reading order
-- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
+- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
+	- Categorization of text blocks [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) 
+	- Reading order [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
+
 - [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
 - [A Data Mining Approach to Reading Order Detection](http://www.di.uniba.it/~ceci/Papers/Pubblicazioni/International%20Collections/IC.32__ICDAR07.pdf) | M. Ceci, M. Berardi, G. A. Porcelli
 
