@@ -118,7 +118,7 @@ The method was merely intended by its author as a demonstration of the applicati
 
 ### Reading order
 - [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
-	- Categorization of text blocks [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) 
+	- Categorization of text blocks - Decorations [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) 
 	- Reading order [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
 
 - [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
