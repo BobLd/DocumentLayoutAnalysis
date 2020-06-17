@@ -108,13 +108,13 @@ The method was merely intended by its author as a demonstration of the applicati
 
 
 ## Zone classification/extraction & Reading order
-- [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | Oleg Okun, David Doermann, Matti Pietikainen
+- [Page Segmentation and Zone Classification: The State of the Art](https://www.researchgate.net/publication/235068649_Page_Segmentation_and_Zone_Classification_The_State_of_the_Art) | O. Okun, D. Doermann, M. Pietikainen
 - [Looking Beyond Text: Extracting Figures, Tables and Captions from Computer Science Papers](http://ai2-website.s3.amazonaws.com/publications/clark_divvala.pdf) | C. Clark, S. Divvala
 - [PDFFigures 2.0: Mining Figures from Research Papers](http://ai2-website.s3.amazonaws.com/publications/pdf2.0.pdf) | C. Clark, S. Divvala | [github](https://github.com/allenai/pdffigures2)
-- [Document image zone classification : A simple high-performance approach](https://www.researchgate.net/publication/221415986_Document_image_zone_classification_A_simple_high-performance_approach) | Daniel Keysers, Faisal Shafait, Thomas M. Breuel
-- [Document-Zone Classification using Partial Least Squares and Hybrid Classifiers](https://www.researchgate.net/publication/224375306_Document-Zone_Classification_using_Partial_Least_Squares_and_Hybrid_Classifiers) | Wael Abd-Almageed, Mudit Agrawal, Wontaek Seo, David Doermann
-- [The Zonemap Metric for Page Segmentation and Area Classification Inscanned Documents](https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICIP-2014/Papers/1569886529.pdf) | Olivier Galibert, Juliette Kahn and Ilya Oparin
-- [Layout analysis and content classification indigitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | Andrea Corbelli, Lorenzo Baraldi, Fabrizio Balducci,Costantino Grana, Rita Cucchiara
+- [Document image zone classification: A simple high-performance approach](https://www.researchgate.net/publication/221415986_Document_image_zone_classification_A_simple_high-performance_approach) | D. Keysers, F. Shafait, T. M. Breuel
+- [Document-Zone Classification using Partial Least Squares and Hybrid Classifiers](https://www.researchgate.net/publication/224375306_Document-Zone_Classification_using_Partial_Least_Squares_and_Hybrid_Classifiers) | W. Abd-Almageed, M. Agrawal, W. Seo, D. Doermann
+- [The Zonemap Metric for Page Segmentation and Area Classification in Scanned Documents](https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICIP-2014/Papers/1569886529.pdf) | O. Galibert, J. Kahn and I. Oparin
+- [Layout analysis and content classification in digitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | A. Corbelli, L. Baraldi, F. Balducci, C. Grana, R. Cucchiara
 
 ### Reading order
 - [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
@@ -127,11 +127,11 @@ The method was merely intended by its author as a demonstration of the applicati
 ### Table
 - [Design of an end-to-end method to extract information from tables](https://www.researchgate.net/publication/225153001_Design_of_an_end-to-end_method_to_extract_information_from_tables) | A. Costa e Silva, A. Jorge, L. Torgo
 - [A Table Detection Method for PDF Documents Based on Convolutional Neural Networks](https://www.researchgate.net/publication/303950713_A_Table_Detection_Method_for_PDF_Documents_Based_on_Convolutional_Neural_Networks) | L. Hao, L. Gao, X. Yi, Z. Tang
-- [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](https://arxiv.org/pdf/1904.01947.pdf) | Nataliya Le Vine, Matthew Zeigenfuse, Mark Rowany
+- [Extracting Tables from Documents using Conditional Generative Adversarial Networks and Genetic Algorithms](https://arxiv.org/pdf/1904.01947.pdf) | N. Le Vine, M. Zeigenfuse, M. Rowany
 - [Detecting Table Region in PDF Documents Using Distant Supervision](https://arxiv.org/pdf/1506.08891v6.pdf) | Miao Fan and Doo Soon Kim
-- Automatic Tabular Data Extraction and Understanding | Roya Rastan
-- [Algorithmic Extraction of Data in Tables in PDF Documents](https://pdfs.semanticscholar.org/a9b1/67a86fb189bfcd366c3839f33f0404db9c10.pdf) | Anssi Nurminen
-- [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | Nikola Milosevic
+- Automatic Tabular Data Extraction and Understanding | R. Rastan
+- [Algorithmic Extraction of Data in Tables in PDF Documents](https://pdfs.semanticscholar.org/a9b1/67a86fb189bfcd366c3839f33f0404db9c10.pdf) | A. Nurminen
+- [A Multi-Layered Approach to Information Extraction from Tables in Biomedical Documents](https://www.research.manchester.ac.uk/portal/files/70405100/FULL_TEXT.PDF) | N. Milosevic
 - [Integrating and querying similar tables from PDF documentsusing deep learning](https://arxiv.org/pdf/1901.04672.pdf) | Rahul Anand, Hye-young Paik and Chen Wang
 - [Locating Tables in Scanned Documents for Reconstructing and Republishing ](https://arxiv.org/search/?query=document+layout+analysis&searchtype=all&source=header) | MAC Akmal Jahan, Roshan G Ragel 
 - [Recognition of Tables and Forms](https://hal.inria.fr/hal-01087230/document) | Bertrand Coüasnon, Aurélie Lemaitre
