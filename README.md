@@ -72,13 +72,13 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [Document Image Segmentation as a Spectral Partitioning Problem](https://cdn.iiit.ac.in/cdn/cvit.iiit.ac.in/images/ConferencePapers/2008/Praveen08Document.pdf) | Dasigi, Jain and Jawahar
 - [Benchmarking Page Segmentation Algorithms](http://www2.vincent-net.com/luc/papers/94cvpr_seg_benchmark.pdf) | S. Randriamasy, L. Vincent
 
-#### Recursive XY Cut [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/RecursiveXYCut.cs)
+#### Recursive XY Cut [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/RecursiveXYCut.cs)
   The X-Y cut segmentation algorithm, also referred to as recursive X-Y cuts (RXYC) algorithm, is a tree-based __top-down__ algorithm.
 The root of the tree represents the entire document page. All the leaf nodes together represent the final segmentation. The RXYC algorithm __recursively splits the document into two or more smaller rectangular blocks which represent the nodes of the tree. At each step of the recursion, the horizontal and vertical projection profiles of each node are computed.__ Then, the valleys along the horizontal and vertical directions, _VX_ and _VY_, are compared to corresponding predefined thresholds _TX_ and _TY_. If the valley is larger than the threshold, the node is split at the mid-point of the wider of _VX_ and _VY_ into two children nodes. The process continues until no leaf node can be split further. Then, noise regions are removed using noise removal thresholds _TnX_ and _TnY_. [`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/rxyc%20example.png)
 - [Recursive X-Y Cut using Bounding Boxes of Connected Components](https://www.researchgate.net/publication/220860850_Recursive_X-Y_cut_using_bounding_boxes_of_connected_components) | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
 
-#### Docstrum [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/DocstrumBoundingBoxes.cs)
+#### Docstrum [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/DocstrumBoundingBoxes.cs)
   The Docstrum algorithm by Gorman is a __bottom-up__ approach based on __nearest-neighborhood clustering__ of connected components extracted from the document image. After noise removal, the connected components are separated into two groups, one with dominant characters and another one with characters in titles and section heading, using a character size ratio factor _fd_. Then, _K_ nearest neighbors are found for each connected component. Then, text-lines are found by computing the transitive closure on within-line nearest neighbor pairings using a threshold _ft_. Finally, text-lines are merged to form text blocks using a parallel distance threshold _fpa_ and a perpendicular distance threshold _fpe_. [`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
 ![example or](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%202.png)
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%201.png)
@@ -90,7 +90,7 @@ The root of the tree represents the entire document page. All the leaf nodes tog
   The Voronoi-diagram based segmentation algorithm by Kise et al. is also a bottom-up algorithm. In the first step, it extracts sample points from the boundaries of the connected components using a sampling rate _sr_. Then, noise removal is done using a maximum noise zone size threshold _nm_, in addition to width, height, and aspect ratio thresholds. After that the Voronoi diagram is generated using sample points obtained from the borders of the connected components. Superfluous Voronoi edges are deleted using a criterion involving the area ratio threshold _ta_, and the inter-line spacing margin control factor _fr_. Since we evaluate all algorithms on document pages with Manhattan layouts, a modified version of the algorithm is used to generate rectangular zones.[`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
 - [Voronoi++: A Dynamic Page Segmentation approach based on Voronoi and Docstrum features](http://www.cvc.uab.es/icdar2009/papers/3725b011.pdf) | Mudit Agrawal and David Doermann
 
-#### Constrained text-line detection [`implementation (wip)`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/WhitespaceCoverExtractor.cs)
+#### Constrained text-line detection [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/WhitespaceCoverExtractor.cs)
   The layout analysis approach by Breuel finds text-lines as a two step process:
 1. Find tall whitespace rectangles and evaluate them as candidates for gutters, column separators, etc. The algorithm for finding maximal empty whitespace is described in Breuel. The whitespace rectangles are returned in order of decreasing quality and are allowed a maximum overlap of _Om_.
 2. The whitespace rectangles representing the columns are used as obstacles in a robust least square, globally optimal text-line detection algorithm. Then, the bounding box of all the characters making the text-line is computed.
@@ -117,7 +117,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Layout analysis and content classification indigitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | Andrea Corbelli, Lorenzo Baraldi, Fabrizio Balducci,Costantino Grana, Rita Cucchiara
 
 ### Reading order
-- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern
+- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
 - [Document understanding for a broad class of documents](http://www.cs.rug.nl/~aiellom/publications/ijdar.pdf) | M. Aiello, C. Monz, L. Todoran, M. Worring
 - [A Data Mining Approach to Reading Order Detection](http://www.di.uniba.it/~ceci/Papers/Pubblicazioni/International%20Collections/IC.32__ICDAR07.pdf) | M. Ceci, M. Berardi, G. A. Porcelli
 
@@ -234,10 +234,10 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Document Image Datasets](https://medium.com/@jdegange85/document-image-datasets-b7f8df01010d) | Jonathan DeGange
 
 ## Output file format
-- hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
-- ALTO XML: [alto schema](https://github.com/altoxml/schema) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/AltoXmlTextExporter.cs)
+- hOCR: [hocr spec](https://github.com/kba/hocr-spec) | [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/HOcrTextExporter.cs)
+- ALTO XML: [alto schema](https://github.com/altoxml/schema) | [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/AltoXmlTextExporter.cs)
 - TEI: [tei-ocr](https://github.com/OpenPhilology/tei-ocr) | [schema](https://tei-c.org/guidelines/customization/)
-- PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML) | [`implementation`](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/PageXmlTextExporter.cs)
+- PAGE: [PAGE-XML](https://github.com/PRImA-Research-Lab/PAGE-XML) | [![Implementation PdfPig](https://img.shields.io/badge/Implementation-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig/Export/PageXmlTextExporter.cs)
 
 [Validate and transform between OCR file formats (hOCR, ALTO, PAGE, FineReader)](https://github.com/UB-Mannheim/ocr-fileformat)
 
