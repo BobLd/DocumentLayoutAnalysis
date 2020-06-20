@@ -38,24 +38,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.3.8.0\lib\net46\Accord.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Controls, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.Controls.3.8.0\lib\net46\Accord.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.MachineLearning, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.MachineLearning.3.8.0\lib\net46\Accord.MachineLearning.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.Math.3.8.0\lib\net46\Accord.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.Math.3.8.0\lib\net46\Accord.Math.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net46\Accord.Statistics.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -71,28 +53,25 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UglyToad.PdfPig, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Core, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.Core.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.Core.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.DocumentLayoutAnalysis, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.DocumentLayoutAnalysis.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.DocumentLayoutAnalysis.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Fonts, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.Fonts.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Package, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.Package.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.Package.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Tokenization, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.Tokenization.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.Tokenization.dll</HintPath>
     </Reference>
     <Reference Include="UglyToad.PdfPig.Tokens, Version=0.1.2.0, Culture=neutral, PublicKeyToken=605d367334e74123, processorArchitecture=MSIL">
-      <HintPath>..\packages\PdfPig.0.1.2-alpha002\lib\net461\UglyToad.PdfPig.Tokens.dll</HintPath>
-    </Reference>
-    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+      <HintPath>..\packages\PdfPig.0.1.2-alpha003\lib\net461\UglyToad.PdfPig.Tokens.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -141,14 +120,6 @@
     <Content Include="doc\rxyc example.png" />
     <Content Include="doc\xy cut.gif" />
     <Content Include="doc\xy cut_small.gif" />
-    <Content Include="License-LGPL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
-  </Target>
 </Project>
