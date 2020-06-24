@@ -10,7 +10,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [PublayNetSharp](https://github.com/BobLd/PublayNetSharp) - Extract and convert PubLayNet data to PageXml format
 - [PdfPig MLNet Block Classifier](https://github.com/BobLd/PdfPigMLNetBlockClassifier) - Proof of concept of training a simple Region Classifier using PdfPig and ML.NET (LightGBM).
 - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
-
+- [simple-docstrum](https://github.com/BobLd/simple-docstrum) - A step-by-step implementation of the Docstrum algorithm for pdf documents
 
 # Resources
 - [Text extraction](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#text-extraction)
