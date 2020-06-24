@@ -118,7 +118,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Layout analysis and content classification in digitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | A. Corbelli, L. Baraldi, F. Balducci, C. Grana, R. Cucchiara
 
 ### Reading order
-- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
+- [Unsupervised document structure analysis of digital scientific articles](https://mgrani.github.io/media/papers/14kla.gra.jac.ea-Unsupervised-document-structure-analysis.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
 	- Categorization of text blocks - Decorations [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) 
 	- Reading order [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
 
