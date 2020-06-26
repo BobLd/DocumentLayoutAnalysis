@@ -233,7 +233,7 @@ The method was merely intended by its author as a demonstration of the applicati
 
 ## Datasets
 - [DocBank: A Benchmark Dataset for Document Layout Analysis](https://arxiv.org/abs/2006.01038) | M. Li, Y. Xu, L. Cui, S. Huang, F. Wei, Z. Li, M. Zhou | [`github`](https://github.com/doc-analysis/DocBank)
-- [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
+- [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet) | [`ibm article`](https://www.ibm.com/blogs/research/2020/05/largest-dataset-for-document-layout-analysis-used-to-ingest-covid-19-data/)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 - [Document Image Datasets](https://medium.com/@jdegange85/document-image-datasets-b7f8df01010d) | Jonathan DeGange
