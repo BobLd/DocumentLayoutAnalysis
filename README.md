@@ -10,7 +10,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [PublayNetSharp](https://github.com/BobLd/PublayNetSharp) - Extract and convert PubLayNet data to PageXml format
 - [PdfPig MLNet Block Classifier](https://github.com/BobLd/PdfPigMLNetBlockClassifier) - Proof of concept of training a simple Region Classifier using PdfPig and ML.NET (LightGBM).
 - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
-
+- [simple-docstrum](https://github.com/BobLd/simple-docstrum) - A step-by-step implementation of the Docstrum algorithm for pdf documents
 
 # Resources
 - [Text extraction](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#text-extraction)
@@ -79,7 +79,7 @@ The root of the tree represents the entire document page. All the leaf nodes tog
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/rxyc%20example.png)
 - [Recursive X-Y Cut using Bounding Boxes of Connected Components](https://www.researchgate.net/publication/220860850_Recursive_X-Y_cut_using_bounding_boxes_of_connected_components) | Jaekyu Ha, Robert M. Haralick and Ihsin T. Phillips
 
-#### Docstrum [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/DocstrumBoundingBoxes.cs)
+#### Docstrum [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/PageSegmenter/DocstrumBoundingBoxes.cs) [![code PdfPig](https://img.shields.io/badge/code-jupyter-red.svg)](https://github.com/BobLd/simple-docstrum) 
   The Docstrum algorithm by Gorman is a __bottom-up__ approach based on __nearest-neighborhood clustering__ of connected components extracted from the document image. After noise removal, the connected components are separated into two groups, one with dominant characters and another one with characters in titles and section heading, using a character size ratio factor _fd_. Then, _K_ nearest neighbors are found for each connected component. Then, text-lines are found by computing the transitive closure on within-line nearest neighbor pairings using a threshold _ft_. Finally, text-lines are merged to form text blocks using a parallel distance threshold _fpa_ and a perpendicular distance threshold _fpe_. [`source`](https://www.researchgate.net/publication/220932988_Performance_Comparison_of_Six_Algorithms_for_Page_Segmentation)
 ![example or](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%202.png)
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/docstrum%20example%201.png)
@@ -118,7 +118,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Layout analysis and content classification in digitized books](http://imagelab.ing.unimore.it/imagelab/pubblicazioni/2016_IRCDL.pdf) | A. Corbelli, L. Baraldi, F. Balducci, C. Grana, R. Cucchiara
 
 ### Reading order
-- [Unsupervised document structure analysis of digital scientific articles](http://www.know-center.tugraz.at/download_extern/papers/ijdl-2013.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
+- [Unsupervised document structure analysis of digital scientific articles](https://mgrani.github.io/media/papers/14kla.gra.jac.ea-Unsupervised-document-structure-analysis.pdf) | S. Klampfl, M. Granitzer, K. Jack, R. Kern 
 	- Categorization of text blocks - Decorations [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/DecorationTextBlockClassifier.cs) 
 	- Reading order [![code PdfPig](https://img.shields.io/badge/code-PdfPig-red.svg)](https://github.com/UglyToad/PdfPig/blob/master/src/UglyToad.PdfPig.DocumentLayoutAnalysis/ReadingOrderDetector/UnsupervisedReadingOrderDetector.cs)
 
@@ -233,7 +233,7 @@ The method was merely intended by its author as a demonstration of the applicati
 
 ## Datasets
 - [DocBank: A Benchmark Dataset for Document Layout Analysis](https://arxiv.org/abs/2006.01038) | M. Li, Y. Xu, L. Cui, S. Huang, F. Wei, Z. Li, M. Zhou | [`github`](https://github.com/doc-analysis/DocBank)
-- [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet)
+- [PubLayNet: largest dataset ever for document layout analysis](https://arxiv.org/pdf/1908.07836.pdf) | Zhong, Tang and Yepes | [`github`](https://github.com/ibm-aur-nlp/PubLayNet) | [`ibm article`](https://www.ibm.com/blogs/research/2020/05/largest-dataset-for-document-layout-analysis-used-to-ingest-covid-19-data/)
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://arxiv.org/pdf/1911.01702.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel
 - [TableBank: Table Benchmark for Image-based Table Detection and Recognition](https://arxiv.org/pdf/1903.01949v1.pdf) | M. Li, L. Cui, S. Huang, F. Wei, M. Zhou and Z. Li
 - [Document Image Datasets](https://medium.com/@jdegange85/document-image-datasets-b7f8df01010d) | Jonathan DeGange
