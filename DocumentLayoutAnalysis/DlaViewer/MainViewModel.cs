@@ -223,6 +223,48 @@
             }
         }
 
+        private bool _removeDuplicateLetters;
+        public bool RemoveDuplicateLetters
+        {
+            get
+            {
+                return _removeDuplicateLetters;
+            }
+
+            set
+            {
+                if (value == _removeDuplicateLetters) return;
+                _removeDuplicateLetters = value;
+
+                if (_pdfPageModel != null)
+                {
+                    _pdfPageModel.SetRemoveDuplicateLetters(_removeDuplicateLetters);
+                }
+
+                if (IsDisplayLetters)
+                {
+                    DisplayLetters();
+                }
+
+                if (IsDisplayWords)
+                {
+                    DisplayWords();
+                }
+
+                if (IsDisplayTextLines)
+                {
+                    DisplayTextLines();
+                }
+
+                if (IsDisplayTextBlocks)
+                {
+                    DisplayTextBlocks();
+                }
+
+                this.RaisePropertyChanged(nameof(RemoveDuplicateLetters));
+            }
+        }
+
         bool _isDisplayLetters;
         public bool IsDisplayLetters
         {
@@ -422,6 +464,9 @@
             _pdfPageModel = _pdfDocumentModel.GetPage(pageNo);
 
             if (_pdfPageModel == null) return false;
+
+            // set remove duplicate letters
+            _pdfPageModel.SetRemoveDuplicateLetters(_removeDuplicateLetters);
 
             // set word extractor
             _pdfPageModel.SetWordExtractor(WordExtractor);

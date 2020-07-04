@@ -10,7 +10,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600*" />
-            <ColumnDefinition Width="257*" />
+            <ColumnDefinition Width="255" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -40,23 +40,30 @@
         <Button ToolTip="Next page" Content=">" HorizontalAlignment="Left" Margin="139,8,0,0" VerticalAlignment="Top" Width="30" Click="buttonNext_Click" Height="20"/>
         <GroupBox Grid.Column="1" Header="Segmentation" Grid.Row="2">
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="202*"/>
+                    <ColumnDefinition Width="27"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="95*"/>
-                    <RowDefinition Height="65*"/>
-                    <RowDefinition Height="190"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="225*"/>
                 </Grid.RowDefinitions>
 
-                <ComboBox SelectedItem="{Binding WordExtractor}" SelectedIndex="0" ItemsSource="{Binding WordExtractorList}" Margin="5,10,10,0" VerticalAlignment="Top" Height="22"/>
-                <ComboBox SelectedItem="{Binding PageSegmenter}" SelectedIndex="0" ItemsSource="{Binding PageSegmenterList}" Margin="5,0,10,0" VerticalAlignment="Center" Height="22"/>
+                <ComboBox SelectedItem="{Binding WordExtractor}" SelectedIndex="0" ItemsSource="{Binding WordExtractorList}" Margin="5,10,0,0" VerticalAlignment="Top" Height="22"/>
+                <Button x:Name="WordExtractorOptionButton" Content="o" Margin="5,10,5,0" VerticalAlignment="Top" Grid.Column="1" Height="22"/>
 
-                <GroupBox Header="Options" Margin="0,0,0,0" Grid.Row="1">
+                <ComboBox SelectedItem="{Binding PageSegmenter}" SelectedIndex="0" ItemsSource="{Binding PageSegmenterList}" Margin="5,37,0,0" Height="22" VerticalAlignment="Top"/>
+                <Button Content="o" Margin="5,37,5,0" VerticalAlignment="Top" Grid.Column="1" Height="22"/>
+
+                <GroupBox Header="Options" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,0,0,1">
                     <Grid>
                         <CheckBox IsChecked="{Binding ClipPaths}" Content="Clip paths" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" ToolTip="Will reload the document"/>
+                        <CheckBox IsChecked="{Binding RemoveDuplicateLetters}" Content="Remove Dupl. Letters" HorizontalAlignment="Left" Margin="83,10,0,0" VerticalAlignment="Top" Width="138" ToolTip="Remove Duplicate Overlapping Letters"/>
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="Display" Grid.Row="2" Margin="0,0,0,0">
+                <GroupBox Header="Display" Grid.Row="2" Grid.ColumnSpan="2">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="175*"/>
@@ -71,10 +78,9 @@
                         <CheckBox Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />
                     </Grid>
                 </GroupBox>
-
             </Grid>
         </GroupBox>
 
-        <Label Name="DragDropLabel" Content="Drag and Drop pdf document here..." Margin="172,156,161,0" Grid.Row="1" Height="48" VerticalAlignment="Top"/>
+        <Label Name="DragDropLabel" Content="Drag and Drop pdf document here..." HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Height="68"/>
     </Grid>
 </Window>

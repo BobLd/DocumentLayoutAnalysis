@@ -14,6 +14,7 @@
         private readonly Page page;
         private IWordExtractor wordExtractor;
         private IPageSegmenter pageSegmenter;
+        private bool removeDuplicateLetters;
 
         public double Height => page.Height;
         public double Width => page.Width;
@@ -22,6 +23,11 @@
         internal PdfPageModel(Page page)
         {
             this.page = page;
+        }
+
+        public void SetRemoveDuplicateLetters(bool remove)
+        {
+            removeDuplicateLetters = remove;
         }
 
         public void SetWordExtractor(Type wordExtractor)
@@ -44,8 +50,13 @@
             this.pageSegmenter = (IPageSegmenter)Activator.CreateInstance(pageSegmenter);
         }
 
-        public IEnumerable<Letter> GetLetters()
+        public IReadOnlyList<Letter> GetLetters()
         {
+            if (removeDuplicateLetters)
+            {
+                return DuplicateOverlappingTextProcessor.Get(page.Letters);
+            }
+
             return page.Letters;
         }
 
@@ -56,7 +67,7 @@
                 return new List<Word>();
             }
 
-            return page.GetWords(wordExtractor);
+            return wordExtractor.GetWords(GetLetters());
         }
 
         public IEnumerable<TextBlock> GetTextBlocks()
