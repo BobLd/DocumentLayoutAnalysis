@@ -19,7 +19,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 	- [Recursive XY Cut](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#recursive-xy-cut-)
 	- [Docstrum](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#docstrum--)
 	- [Voronoi](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#voronoi)
-	- [Constrained text-line detection](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#constrained-text-line-detection-implementation-wip)
+	- [Constrained text-line detection](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#constrained-text-line-detection-)
 	- [PDF/A standard](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#pdfa-standard)
 - [Zone classification/extraction & Reading order](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#zone-classificationextraction--reading-order)
 	- [Reading order](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#reading-order)
