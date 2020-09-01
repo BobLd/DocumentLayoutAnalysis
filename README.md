@@ -58,6 +58,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [An Efficient Word Segmentation Technique for Historical and Degraded Machine-Printed Documents](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.145.2079) | M. Makridis, N. Nikolaou, B. Gatos
 - [Word Extraction Using Area Voronoi Diagram](http://andrei.clubcisco.ro/cursuri/f/f-sym/5master/analiza-extragerea-continutului/prezentari/Word%20Extraction%20Using%20Area%20Voronoi%20Diagram.pdf) | Zhe Wang, Yue Lu, Chew Lim Tan
 - [A word extraction algorithm for machine-printed documents using a 3D neighborhood graph model](https://www.researchgate.net/publication/220163431_A_word_extraction_algorithm_for_machine-printed_documents_using_a_3D_neighborhood_graph_model) | Young-Jung Yu, Hwan-Gue Cho
+- [Recognition of Multi-Oriented, Multi-Sized, and Curved Text](https://usc-isi-i2.github.io/papers/chiang11-icdar.pdf) | Yao-Yi Chiang, Craig A. Knoblock
 
 ![example](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/DocumentLayoutAnalysis/DocumentLayoutAnalysis/doc/nearest%20neighbour%20word%20example%20v2.png)
 
