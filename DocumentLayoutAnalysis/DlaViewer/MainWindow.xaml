@@ -75,7 +75,8 @@
                         <CheckBox IsChecked="{Binding IsDisplayTextBlocks}" Content="TextBlocks" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayPaths}" Content="Paths" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top"/>
                         <CheckBox IsChecked="{Binding IsDisplayImages}" Content="Images" HorizontalAlignment="Left" Margin="5,110,0,0" VerticalAlignment="Top"/>
-                        <CheckBox Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />
+                        <CheckBox IsChecked="{Binding IsDisplayTables}" Content="Tables" HorizontalAlignment="Left" Margin="5,130,0,0" VerticalAlignment="Top" />
+                        <CheckBox IsChecked="{Binding IsDisplayWsCover}" Content="Whitespace cover" HorizontalAlignment="Left" Margin="5,150,0,0" VerticalAlignment="Top" />
                     </Grid>
                 </GroupBox>
             </Grid>

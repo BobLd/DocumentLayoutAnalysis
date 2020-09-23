@@ -6,6 +6,7 @@
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
+    using Tabula;
     using UglyToad.PdfPig;
     using UglyToad.PdfPig.Core;
     using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
@@ -21,7 +22,7 @@
         {
             try
             {
-                return new PdfPageModel(pdfDocument.GetPage(pageNo));
+                return new PdfPageModel(pdfDocument.GetPage(pageNo), (new ObjectExtractor(pdfDocument)).Extract(pageNo));
             }
             catch (Exception ex)
             {

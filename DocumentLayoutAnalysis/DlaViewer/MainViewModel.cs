@@ -72,6 +72,11 @@
                 {
                     DisplayTextBlocks();
                 }
+
+                if (IsDisplayWsCover)
+                {
+                    DisplayWsCover();
+                }
             }
         }
 
@@ -261,6 +266,11 @@
                     DisplayTextBlocks();
                 }
 
+                if (IsDisplayWsCover)
+                {
+                    DisplayWsCover();
+                }
+
                 this.RaisePropertyChanged(nameof(RemoveDuplicateLetters));
             }
         }
@@ -422,6 +432,59 @@
             }
         }
 
+
+        bool _isDisplayTables;
+        public bool IsDisplayTables
+        {
+            get
+            {
+                return _isDisplayTables;
+            }
+
+            set
+            {
+                if (value == _isDisplayTables) return;
+                _isDisplayTables = value;
+
+                if (_isDisplayTables)
+                {
+                    DisplayTables();
+                }
+                else
+                {
+                    HideTables();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayTables));
+            }
+        }
+
+        bool _isDisplayWsCover;
+        public bool IsDisplayWsCover
+        {
+            get
+            {
+                return _isDisplayWsCover;
+            }
+
+            set
+            {
+                if (value == _isDisplayWsCover) return;
+                _isDisplayWsCover = value;
+
+                if (_isDisplayWsCover)
+                {
+                    DisplayWsCover();
+                }
+                else
+                {
+                    HideWsCover();
+                }
+
+                this.RaisePropertyChanged(nameof(IsDisplayWsCover));
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainViewModel" /> class.
         /// </summary>
@@ -542,8 +605,59 @@
                 DisplayImages();
             }
 
+            if (IsDisplayTables)
+            {
+                DisplayTables();
+            }
+
+            if (IsDisplayWsCover)
+            {
+                DisplayWsCover();
+            }
+
             return true;
         }
+
+
+        public void DisplayWsCover()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "ws_cover").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var bbox in _pdfPageModel.GetWhitespaceCover())
+            {
+                var series1 = new LineSeries { Tag = "ws_cover", Title = "cover", LineStyle = LineStyle.Solid, Color = OxyColors.CadetBlue };
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideWsCover()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "ws_cover").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+
+
+
+
 
         public void DisplayLetters()
         {
@@ -702,7 +816,7 @@
             {
                 foreach (var sp in path)
                 {
-                    string title = ("path: " + (path.IsStroked ? "stroked " + (path.StrokeColor?.ToRGBValues()).ToString() : "") +
+                    string title = ("path: " + (path.IsStroked ? "stroked " + (path.StrokeColor?.ToRGBValues()).ToString() + " " + path.LineWidth : "") +
                                                (path.IsFilled ? "filled " + (path.FillColor?.ToRGBValues()).ToString() : "") +
                                                (path.IsClipping ? "clipping" : "")
                                                ).Trim();
@@ -794,6 +908,69 @@
 
             PagePlotModel.InvalidatePlot(true);
         }
+
+        public void DisplayTables()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "table").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "cell").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var table in _pdfPageModel.GetTables())
+            {
+                var series1 = new LineSeries { Tag = "table", Title = "table", LineStyle = LineStyle.Solid, StrokeThickness = 5.0, Color = OxyColors.Purple };
+                var bbox = table.BoundingBox;
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopRight));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.TopLeft));
+                series1.Points.Add(PdfDocumentModel.ToDataPoint(bbox.BottomLeft));
+                PagePlotModel.Series.Add(series1);
+
+                for (int r = 0; r < table.RowCount; r++)
+                {
+                    for (int c = 0; c < table.ColumnCount; c++)
+                    {
+                        var cell = table[r, c];
+                        var bboxCell = cell.BoundingBox;
+                        var series2 = new LineSeries { Tag = "cell", Title = $"cell[{r},{c}] {cell.IsSpanning} ({cell.GetText()})", LineStyle = LineStyle.DashDot, Color = OxyColors.Orange };
+                        series2.Points.Add(PdfDocumentModel.ToDataPoint(bboxCell.BottomLeft));
+                        series2.Points.Add(PdfDocumentModel.ToDataPoint(bboxCell.BottomRight));
+                        series2.Points.Add(PdfDocumentModel.ToDataPoint(bboxCell.TopRight));
+                        series2.Points.Add(PdfDocumentModel.ToDataPoint(bboxCell.TopLeft));
+                        series2.Points.Add(PdfDocumentModel.ToDataPoint(bboxCell.BottomLeft));
+                        PagePlotModel.Series.Add(series2);
+                    }
+                }
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
+        public void HideTables()
+        {
+            if (PagePlotModel == null) return;
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "table").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            foreach (var s in PagePlotModel.Series.Where(s => (string)s.Tag == "cell").ToList())
+            {
+                PagePlotModel.Series.Remove(s);
+            }
+
+            PagePlotModel.InvalidatePlot(true);
+        }
+
         private string GetShorterText(string text)
         {
             if (text.Length <= 25) return text;

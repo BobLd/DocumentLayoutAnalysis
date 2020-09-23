@@ -3,7 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Tabula;
+    using Tabula.Extractors;
     using UglyToad.PdfPig.Content;
+    using UglyToad.PdfPig.Core;
     using UglyToad.PdfPig.DocumentLayoutAnalysis;
     using UglyToad.PdfPig.DocumentLayoutAnalysis.PageSegmenter;
     using UglyToad.PdfPig.Graphics;
@@ -12,6 +15,7 @@
     public class PdfPageModel
     {
         private readonly Page page;
+        private readonly PageArea tabulaPage;
         private IWordExtractor wordExtractor;
         private IPageSegmenter pageSegmenter;
         private bool removeDuplicateLetters;
@@ -20,9 +24,10 @@
         public double Width => page.Width;
         public CropBox CropBox => page.CropBox;
 
-        internal PdfPageModel(Page page)
+        internal PdfPageModel(Page page, PageArea tabulaPage)
         {
             this.page = page;
+            this.tabulaPage = tabulaPage;
         }
 
         public void SetRemoveDuplicateLetters(bool remove)
@@ -88,6 +93,17 @@
         public IEnumerable<IPdfImage> GetImages()
         {
             return page.GetImages();
+        }
+
+        public IReadOnlyList<Table> GetTables()
+        {
+            IExtractionAlgorithm ea = new SpreadsheetExtractionAlgorithm();
+            return ea.Extract(tabulaPage);
+        }
+
+        public IEnumerable<PdfRectangle> GetWhitespaceCover()
+        {
+            return WhitespaceCoverExtractor.GetWhitespaces(GetWords(), GetImages());
         }
 
         public PageInfoModel GetPageInfo()
