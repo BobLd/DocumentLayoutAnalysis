@@ -190,6 +190,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [BERTgrid: Contextualized Embedding for 2D Document Representation and Understanding](https://openreview.net/forum?id=H1gsGaq9US) | Timo I. Denk, Christian Reisswig | [slides](https://drive.google.com/file/d/1WsgZ5QZFw8GBfxknb96AbH-dLzu0DIAN/view)
 - [LayoutLM: Pre-Training of Text and Layout for Document Image Understanding](https://arxiv.org/pdf/1912.13318.pdf) | Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou | [github](https://github.com/microsoft/unilm/tree/master/layoutlm)
 - [Detect2Rank: Combining Object Detectors UsingLearning to Rank](https://arxiv.org/pdf/1412.7957.pdf) | S. Karaoglu, Y. Liu., T. Gevers
+- [DocParser: Hierarchical Structure Parsing of Document Renderings](https://github.com/DS3Lab/DocParser/blob/master/docparser.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel | [github](https://github.com/DS3Lab/DocParser) | [medium](https://medium.com/swlh/paper-review-docparser-hierarchical-structure-parsing-of-document-renderings-54edba20d8f4)
 
 ### Workshops
 - [Workshop on Document Intelligence (DI 2019) at NeurIPS 2019](https://sites.google.com/view/di2019)
