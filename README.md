@@ -192,6 +192,14 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Detect2Rank: Combining Object Detectors UsingLearning to Rank](https://arxiv.org/pdf/1412.7957.pdf) | S. Karaoglu, Y. Liu., T. Gevers
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://github.com/DS3Lab/DocParser/blob/master/docparser.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel | [github](https://github.com/DS3Lab/DocParser) | [medium](https://medium.com/swlh/paper-review-docparser-hierarchical-structure-parsing-of-document-renderings-54edba20d8f4)
 
+### Pre-trained models
+- [MaskRCNN on PubLayNet datasets.](https://github.com/phamquiluan/PubLayNet)
+- [DocParser](https://github.com/DS3Lab/DocParser)
+- [Object Detection — Document Layout Analysis Using Monk AI](https://medium.com/towards-artificial-intelligence/object-detection-document-layout-analysis-using-monk-object-detection-toolkit-6c57200bde5)
+- [CDeC-Net](https://github.com/mdv3101/CDeCNet)
+- [Graphical Object Detection in document images](https://github.com/rnjtsh/graphical-object-detector)
+- [CascadeTabNet](https://github.com/DevashishPrasad/CascadeTabNet)
+
 ### Workshops
 - [Workshop on Document Intelligence (DI 2019) at NeurIPS 2019](https://sites.google.com/view/di2019)
 
