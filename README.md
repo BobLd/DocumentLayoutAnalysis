@@ -31,6 +31,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 	- [Mathematical expression](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#mathematical-expression)
 	- [Margins recognition](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#margins-recognition)
 - [NLP & ML](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#nlp--ml)
+	- [Pre-trained models](https://github.com/BobLd/DocumentLayoutAnalysis#pre-trained-models)
 	- [Workshops](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#workshops)
 - [Related topics](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#related-topics)
 	- [Bounding boxes](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#bounding-boxes)
