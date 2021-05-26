@@ -201,7 +201,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [CDeC-Net](https://github.com/mdv3101/CDeCNet)
 - [Graphical Object Detection in document images](https://github.com/rnjtsh/graphical-object-detector)
 - [CascadeTabNet](https://github.com/DevashishPrasad/CascadeTabNet)
-- [Parsing PDFs using YOLOV3](https://github.com/ismail-mebsout/Parsing-PDFs-using-YOLOV3)
+- [Parsing PDFs using YOLOV3](https://github.com/ismail-mebsout/Parsing-PDFs-using-YOLOV3) (using [Camelot](https://camelot-py.readthedocs.io/en/master/))
 
 ### Workshops
 - [Workshop on Document Intelligence (DI 2019) at NeurIPS 2019](https://sites.google.com/view/di2019)
