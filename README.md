@@ -10,6 +10,7 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [camelot-sharp](https://github.com/BobLd/camelot-sharp) (port of [camelot](https://github.com/camelot-dev/camelot)) - Extract tables from PDF files
 - [tabula-sharp](https://github.com/BobLd/tabula-sharp) (port of [tabula-java](https://github.com/tabulapdf/tabula-java)) - Extract tables from PDF files
 - [PublayNetSharp](https://github.com/BobLd/PublayNetSharp) - Extract and convert PubLayNet data to PageXml format
+- [PublayNet-maskrcnn-mlnet](https://github.com/BobLd/PublayNet-maskrcnn-mlnet) - Using a MaskRCNN model trained on the PublayNet dataset with ML.Net in C# / .Net for Document layout analysis and page segmmentation task.
 - [PdfPig MLNet Block Classifier](https://github.com/BobLd/PdfPigMLNetBlockClassifier) - Proof of concept of training a simple Region Classifier using PdfPig and ML.NET (LightGBM).
 - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
 - [simple-docstrum](https://github.com/BobLd/simple-docstrum) - A step-by-step implementation of the Docstrum algorithm for pdf documents
@@ -195,7 +196,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://github.com/DS3Lab/DocParser/blob/master/docparser.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel | [github](https://github.com/DS3Lab/DocParser) | [medium](https://medium.com/swlh/paper-review-docparser-hierarchical-structure-parsing-of-document-renderings-54edba20d8f4)
 
 ### Pre-trained models
-- [MaskRCNN on PubLayNet datasets.](https://github.com/phamquiluan/PubLayNet)
+- [MaskRCNN on PubLayNet datasets.](https://github.com/phamquiluan/PubLayNet) | [![code C#](https://img.shields.io/badge/code-.Net-red.svg)](https://github.com/BobLd/PublayNet-maskrcnn-mlnet)
 - [DocParser](https://github.com/DS3Lab/DocParser)
 - [Object Detection — Document Layout Analysis Using Monk AI](https://medium.com/towards-artificial-intelligence/object-detection-document-layout-analysis-using-monk-object-detection-toolkit-6c57200bde5)
 - [CDeC-Net](https://github.com/mdv3101/CDeCNet)
