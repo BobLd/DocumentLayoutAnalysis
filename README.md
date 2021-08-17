@@ -2,8 +2,6 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 
 >From [wikipedia](https://en.wikipedia.org/wiki/Document_layout_analysis): ___Document layout analysis__ is the process of identifying and categorizing the regions of interest in the scanned image of a text document. A reading system requires the segmentation of text zones from non-textual ones and the arrangement in their correct reading order. Detection and labeling of the different zones (or blocks) as text body, illustrations, math symbols, and tables embedded in a document is called __geometric layout analysis__. But text zones play different logical roles inside the document (titles, captions, footnotes, etc.) and this kind of semantic labeling is the scope of the __logical layout analysis__._
 
-**In this repos, we will not considere scanned documents, but classic pdf documents and leverage all available information (e.g. letters bounding boxes, fonts).**
-
 
 # Related projects
 - [PdfPig](https://github.com/UglyToad/PdfPig) - Read text content from PDFs in C# (port of PdfBox)
