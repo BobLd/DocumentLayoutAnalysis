@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="OxyPlot.Wpf" Version="2.0.0" />
-    <PackageReference Include="PdfPig" Version="0.1.2" />
+    <PackageReference Include="PdfPig" Version="0.1.5-alpha-20210817-b1f88" />
   </ItemGroup>
 
   <ItemGroup>
