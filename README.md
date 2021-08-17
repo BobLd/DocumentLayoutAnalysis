@@ -13,6 +13,9 @@ Document Layout Analysis repos for development with [PdfPig](https://github.com/
 - [PdfPig SVM Region Classifier](https://github.com/BobLd/PdfPigSvmRegionClassifier) - Proof of concept of a simple SVM Region Classifier using PdfPig and Accord.Net.
 - [simple-docstrum](https://github.com/BobLd/simple-docstrum) - A step-by-step implementation of the Docstrum algorithm for pdf documents
 
+# Cited by
+- [LayoutParser: A Unified Toolkit for Deep Learning Based Document Image Analysis](https://arxiv.org/pdf/2103.15348.pdf) | Zejiang Shen, Ruochen Zhang, Melissa Dell, Benjamin Charles Germain Lee, Jacob Carlson, and Weining Li | [website](https://layout-parser.github.io/) | [github](https://github.com/Layout-Parser/layout-parser)
+
 # Resources
 - [Text extraction](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#text-extraction)
 - [Word segmentation](https://github.com/BobLd/DocumentLayoutAnalysis/blob/master/README.md#word-segmentation)
@@ -192,6 +195,7 @@ The method was merely intended by its author as a demonstration of the applicati
 - [LayoutLM: Pre-Training of Text and Layout for Document Image Understanding](https://arxiv.org/pdf/1912.13318.pdf) | Yiheng Xu, Minghao Li, Lei Cui, Shaohan Huang, Furu Wei, Ming Zhou | [github](https://github.com/microsoft/unilm/tree/master/layoutlm)
 - [Detect2Rank: Combining Object Detectors UsingLearning to Rank](https://arxiv.org/pdf/1412.7957.pdf) | S. Karaoglu, Y. Liu., T. Gevers
 - [DocParser: Hierarchical Structure Parsing of Document Renderings](https://github.com/DS3Lab/DocParser/blob/master/docparser.pdf) | J. Rausch, O. Martinez, F. Bissig, C. Zhang, and S. Feuerriegel | [github](https://github.com/DS3Lab/DocParser) | [medium](https://medium.com/swlh/paper-review-docparser-hierarchical-structure-parsing-of-document-renderings-54edba20d8f4)
+- [LayoutParser: A Unified Toolkit for Deep Learning Based Document Image Analysis](https://arxiv.org/pdf/2103.15348.pdf) | Zejiang Shen, Ruochen Zhang, Melissa Dell, Benjamin Charles Germain Lee, Jacob Carlson, and Weining Li | [website](https://layout-parser.github.io/) | [github](https://github.com/Layout-Parser/layout-parser)
 
 ### Pre-trained models
 - [MaskRCNN on PubLayNet datasets.](https://github.com/phamquiluan/PubLayNet) | [![code C#](https://img.shields.io/badge/code-.Net-red.svg)](https://github.com/BobLd/PublayNet-maskrcnn-mlnet)
