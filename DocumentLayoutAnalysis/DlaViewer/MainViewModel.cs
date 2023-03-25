@@ -490,6 +490,11 @@
             {
                 using (var stream = _pdfImageConverter.GetPageStream(pageNo, 2))
                 {
+                    using (var fs = new FileStream("image.jpg", FileMode.Create))
+                    {
+                        stream.CopyTo(fs);
+                    }
+                    stream.Position = 0;
                     PageImage = new OxyImage(stream);
                 }
 
