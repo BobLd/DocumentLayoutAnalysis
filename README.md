@@ -205,10 +205,11 @@ The method was merely intended by its author as a demonstration of the applicati
 - [Graphical Object Detection in document images](https://github.com/rnjtsh/graphical-object-detector)
 - [CascadeTabNet](https://github.com/DevashishPrasad/CascadeTabNet)
 - [Parsing PDFs using YOLOV3](https://github.com/ismail-mebsout/Parsing-PDFs-using-YOLOV3) (using [Camelot](https://camelot-py.readthedocs.io/en/master/))
+- [PubTables-1M: Towards comprehensive table extraction from unstructured documents](https://github.com/microsoft/table-transformer)
+- [Interactive demo: Document Layout Analysis with DiT](https://huggingface.co/spaces/nielsr/dit-document-layout-analysis) | [github](https://github.com/microsoft/unilm/tree/master/dit)
 
 ### Workshops
 - [Workshop on Document Intelligence (DI 2019) at NeurIPS 2019](https://sites.google.com/view/di2019)
-
 
 ## Related topics
 - [Improving typography and minimising computation for documents with scalable layouts](http://eprints.nottingham.ac.uk/28872/1/alex-pinkney-thesis.pdf) | Pinkney, Alexander J.
