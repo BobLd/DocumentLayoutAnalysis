@@ -189,6 +189,8 @@ The method was merely intended by its author as a demonstration of the applicati
 
 
 ## NLP & ML
+- [A Graphical Approach to Document Layout Analysis](https://arxiv.org/pdf/2308.02051.pdf) |
+J. Wang, M. Krumdick, B. Tong, H. Halim, M. Sokolov, V. Barda, D. Vendryes, C. Tanner
 - [Chargrid: Towards Understanding 2D Documents](https://arxiv.org/pdf/1809.08799.pdf) | A. R. Katti, C. Reisswig, C. Guder, S. Brarda, S. Bickel, J. Höhne, J. B. Faddoul | [medium](https://medium.com/sap-machine-learning-research/chargrid-77aa75e6d605)
 - [Chargrid-OCR: End-to-end trainable Optical Character Recognition through Semantic Segmentation and Object Detection](https://openreview.net/forum?id=SkxhzT5qIB) | C. Reisswig, A. R. Katti, M. Spinaci, J. Höhne | [slides](https://drive.google.com/file/d/1a6qIszxXl7FaXurW3MCbZzSTnmYRKDuQ/view)
 - [BERTgrid: Contextualized Embedding for 2D Document Representation and Understanding](https://openreview.net/forum?id=H1gsGaq9US) | Timo I. Denk, Christian Reisswig | [slides](https://drive.google.com/file/d/1WsgZ5QZFw8GBfxknb96AbH-dLzu0DIAN/view)
